@@ -1,0 +1,45 @@
+﻿using RogueLibsCore;
+
+namespace ResistanceHR.Traits.Combat_Ranged
+{
+    public class Cursed_Strikes2 : T_CombatMelee
+    {
+        [RLSetup]
+        public static void Setup()
+        {
+            RogueLibs.CreateCustomTrait<Cursed_Strikes2>()
+                .WithDescription(new CustomNameInfo
+                {
+                    [LanguageCode.English] = "<color=yellow>Accommodations:</color> Applicant stated that their hands will \"herald the Undoing of the Realm of Light.\" Nothing on Google or in the manual about that. Can we make them wear gloves?\n\n" + 
+                    "- Unarmed & Melee attacks can hit Ghosts\n" +
+                    "- Unarmed & Melee damage to all Non-Supernatural increased by 50%",
+                    [LanguageCode.Russian] = "",
+                })
+                .WithName(new CustomNameInfo
+                {
+                    [LanguageCode.English] = DisplayName(typeof(Cursed_Strikes2)),
+                    [LanguageCode.Russian] = "",
+                })
+                .WithUnlock(new TraitUnlock
+                {
+                    Cancellations = { nameof(Blessed_Strikes), nameof(Blessed_Strikes2) },
+                    CharacterCreationCost = 6,
+                    IsAvailable = false,
+                    IsAvailableInCC = true,
+                    IsUnlocked = Core.DebugMode,
+                    UnlockCost = 5,
+                    Unlock =
+                    {
+                        cantLose = true,
+                        cantSwap = false,
+                        isUpgrade = true,
+                        prerequisites = { nameof(Cursed_Strikes) },
+                        recommendations = { },
+                        upgrade = nameof(Cursed_Strikes2),
+                    }
+                });
+        }
+        public override void OnAdded() { }
+        public override void OnRemoved() { }
+    }
+}
