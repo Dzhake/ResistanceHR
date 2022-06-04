@@ -11,8 +11,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Sniper2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant looks and smells like garbage. Appears to be wearing a poncho made out of garbage bags. But they blend right into the City!\n" +
-                    "<color=yellow>Accommodation:</color> Applicant will wear Resistance-issued high-visibility vest and car air freshener when in the office environment.\n\n" +
+                    [LanguageCode.English] = "Wow, that's a poncho made of garbage, isn't it? Well, whatever it takes to blend into the urban environment.\n\n" +
                     "- Using a silent ranged weapon while hidden behind a Bush or other object will not remove you from concealment.",
                     [LanguageCode.Russian] = "",
                 })
@@ -35,7 +34,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
                         cantSwap = true,
                         isUpgrade = true,
                         prerequisites = { nameof(Eagle_Eyes) },
-                        recommendations = { nameof(Ballistician) },
+                        recommendations = { nameof(Ballistician), /*nameof(Stealth_Bastard_Deluxe)*/ },
                         upgrade = null,
                     }
                 });

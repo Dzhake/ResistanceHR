@@ -11,7 +11,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Cursed_Strikes>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Accommodations:</color> Applicant's hands were cursed by a Voodoo shaman. May require a designated coffee cup.\n\n" + 
+                    [LanguageCode.English] = "You didn't call a Voodoo shaman back after a night of... magic. She didn't take it well.\n\n" + 
                     "- Unarmed attacks can hit Ghosts\n" +
                     "- Unarmed damage to all Non-Supernatural increased by 25%",
                     [LanguageCode.Russian] = "",

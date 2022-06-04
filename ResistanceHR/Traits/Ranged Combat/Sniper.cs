@@ -11,7 +11,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Sniper>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> An actual military sniper training certification. Come to think of it, maybe we should require *actual* credentials in general.\n\n" +
+                    [LanguageCode.English] = "They can run, but they'll only die tired. But you'll be tired too, so it's best if they just die before.\n\n" +
                     "- Past a certain distance, Revolver hits deal massive damage\n" + 
                     "- Minimum range for a sniper hit is lower on unaware targets\n" +
                     "- Bullet range increased",

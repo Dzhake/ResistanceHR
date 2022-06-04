@@ -11,7 +11,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Ballistician2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> A 6-year old reference claimed that Applicant makes really cool 'Pew Pew' noises.\n\n" +
+                    [LanguageCode.English] = "When you shoot people you like to make 'Pew Pew' noises. And who's gonna stop you??\n\n" +
                     "- Your bullets fly fasterer, furtherer, and harderer.",
                     [LanguageCode.Russian] = "",
                 })

@@ -12,7 +12,7 @@ namespace ResistanceHR.Traits.Vision_Range
             RogueLibs.CreateCustomTrait<Eagle_Eyes2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant was kicked out of Sniper training when the military didn't believe they could see farther *without* a scope.\n" +
+                    [LanguageCode.English] = "You were kicked out of Sniper training when the military didn't believe you could see further *without* a scope.\n" +
                     "No-Scoping is still against Resistance policies.\n\n",
                     [LanguageCode.Russian] = "",
                 })

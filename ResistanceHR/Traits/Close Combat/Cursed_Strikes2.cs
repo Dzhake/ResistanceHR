@@ -10,7 +10,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Cursed_Strikes2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=yellow>Accommodations:</color> Applicant stated that their hands will \"herald the Undoing of the Realm of Light.\" Nothing on Google or in the manual about that. Can we make them wear gloves?\n\n" + 
+                    [LanguageCode.English] = "Your hands scream that they will \"herald the Undoing of the Realm of Light.\" Nothing on Google or in the manual about that. Can you wear gloves to silence them during meetings, at least?\n\n" + 
                     "- Unarmed & Melee attacks can hit Ghosts\n" +
                     "- Unarmed & Melee damage to all Non-Supernatural increased by 50%",
                     [LanguageCode.Russian] = "",

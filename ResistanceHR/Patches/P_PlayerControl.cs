@@ -3,7 +3,6 @@ using HarmonyLib;
 using ResistanceHR.Traits.Vision_Range;
 using RogueLibsCore;
 using System.Linq;
-using UnityEngine;
 
 namespace ResistanceHR.Patches
 {

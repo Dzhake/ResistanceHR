@@ -10,7 +10,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Wetworker>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant came in splattered with brains. A ringing endorsement!\n\n" +
+                    [LanguageCode.English] = "You're not some kind of monster. A quick bullet to the back of the head is more humane than the alternatives, isn't it?\n\n" +
                     "- Bullet attacks from behind within melee range do 2x damage. 10x if you're invisible or hidden.",
                     [LanguageCode.Russian] = "",
                 })

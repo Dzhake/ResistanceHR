@@ -10,8 +10,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Blessed_Strikes2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant designated Slayer Of The Unholy by the Pope.\n" + 
-                    "<color=orange>Warning:</color> Seems to have a weird guilt complex. Possibly *too* Catholic.\n" +
+                    [LanguageCode.English] = "You've been designated Slayer Of The Unholy by the Pope. That's a thing?\n" + 
                     "- Unarmed & Melee attacks can hit Ghosts\n" +
                     "- Unarmed & Melee damage to all Supernatural increased by 100%",
                     [LanguageCode.Russian] = "",

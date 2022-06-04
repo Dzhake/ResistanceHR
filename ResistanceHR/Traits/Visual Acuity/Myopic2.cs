@@ -13,7 +13,7 @@ namespace ResistanceHR.Traits.Vision_Range
             RogueLibs.CreateCustomTrait<Myopic2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=orange>Accommodation:</color> Applicant can't see their own hands in front of their face. I even tested this by making a non-HR-Approved gesture to them, and they didn't even react!",
+                    [LanguageCode.English] = "You can't see your own hands in front of your face. I'm giving you the finger, right now!",
                     [LanguageCode.Russian] = "Обычно вы держите людей на расстоянии вытянотой руки, жаль что вы их всё равно не видите.",
                 })
                 .WithName(new CustomNameInfo

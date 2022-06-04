@@ -13,7 +13,7 @@ namespace ResistanceHR.Traits.Vision_Range
             RogueLibs.CreateCustomTrait<Myopic>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=orange>Accommodation:</color> Applicant can't see too far. In fact, they can't even see regular far, or even far enough!",
+                    [LanguageCode.English] = "You can't see too far. In fact, you can't even see regular-far, or even far enough!",
                     [LanguageCode.Russian] = "Вы не можете видеть слишком далеко.",
                 })
                 .WithName(new CustomNameInfo

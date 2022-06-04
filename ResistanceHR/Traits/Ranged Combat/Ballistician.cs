@@ -11,7 +11,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Ballistician>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Certified Extra Shooty Mans, Level VI. Sounds legit.\n\n" +
+                    [LanguageCode.English] = "Certified Extra Shooty Mans, Level VI. Sounds legit.\n\n" +
                     "- Your bullets fly faster, further, and harder.",
                     [LanguageCode.Russian] = "",
                 })

@@ -12,7 +12,7 @@ namespace ResistanceHR.Traits.Vision_Range
             RogueLibs.CreateCustomTrait<Eagle_Eyes>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant can see further than normal. Applicant can also see further than *abnormal*.",
+                    [LanguageCode.English] = "You can see further than normal. Hell, you can also see further than *abnormal*.",
                     [LanguageCode.Russian] = "Вы можете видеть дальше, чем обычно. Чёрт! Это же ненормально!",
                 })
                 .WithName(new CustomNameInfo

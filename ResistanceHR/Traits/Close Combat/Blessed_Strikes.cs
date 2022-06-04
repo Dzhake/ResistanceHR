@@ -10,7 +10,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
             RogueLibs.CreateCustomTrait<Blessed_Strikes>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "<color=blue>Credential:</color> Applicant's fists are registered deadly weapons, and designated holy Relics by the Catholic Church. Documented by a cool scroll. Absolutely wild!\n\n" + 
+                    [LanguageCode.English] = "Your fists are registered deadly weapons, and designated holy Relics by the Catholic Church. It's even documented on a cool scroll. Absolutely wild!\n\n" + 
                     "- Unarmed attacks can hit Ghosts\n" +
                     "- Unarmed damage to all Supernatural increased by 50%",
                     [LanguageCode.Russian] = "",
