@@ -125,6 +125,6 @@ if exist %25patcherDirectory%25 copy /y %25dllRLPatcher%25 %25patcherDirectory%2
 if exist %25pluginDirectory%25 copy /y %25dllMain%25 %25pluginDirectory%25
 if exist %25pluginDirectory%25 copy /y %25dllRLCore%25 %25pluginDirectory%25
 
-Start "" "C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\StreetsOfRogue.exe"</PostBuildEvent>
+if exist %25gameDirectory%25 Start "" "C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\StreetsOfRogue.exe"</PostBuildEvent>
   </PropertyGroup>
 </Project>

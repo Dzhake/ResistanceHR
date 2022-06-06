@@ -6,10 +6,12 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Teetotaller : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { VItemCategory.Drugs, VItemCategory.Alcohol };
-        public override List<string> ProhibitedItemTypes => new List<string>() { };
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseTeetotaller };
-     
+        protected override List<string> Dialogue => 
+            new List<string>() { CDialogue.CantUseTeetotaller };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !(invItem.Categories.Contains(VItemCategory.Alcohol) || invItem.Categories.Contains(VItemCategory.Drugs));
+
         [RLSetup]
         public static void Setup()
         {
@@ -43,6 +45,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }

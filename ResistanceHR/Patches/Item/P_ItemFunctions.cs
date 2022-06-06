@@ -19,7 +19,7 @@ namespace ResistanceHR.Patches.Item
 		[HarmonyPostfix, HarmonyPatch(methodName: nameof(ItemFunctions.DetermineHealthChange), argumentTypes: new[] { typeof(InvItem), typeof(Agent) })]
 		public static void DetermineHealthChange_Postfix(InvItem item, Agent agent, ref int __result)
 		{
-			if (!T_ItemRestrictions.CanUseItem(agent, item, true))
+			if (!T_ItemRestrictions.AgentTryUseItem(agent, item, true))
 				__result = 0;
 		}
 
@@ -33,7 +33,7 @@ namespace ResistanceHR.Patches.Item
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(ItemFunctions.UseItem), argumentTypes: new[] { typeof(InvItem), typeof(Agent) })]
 		public static bool UseItem_Prefix(InvItem item, Agent agent)
 		{
-			if (!T_ItemRestrictions.CanUseItem(agent, item, true))
+			if (!T_ItemRestrictions.AgentTryUseItem(agent, item, true))
 				return false;
 
 			return true;

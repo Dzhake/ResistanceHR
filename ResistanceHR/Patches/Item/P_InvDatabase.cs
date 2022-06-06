@@ -55,8 +55,11 @@ namespace ResistanceHR.Patches.Item
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvDatabase.DetermineIfCanUseWeapon), argumentTypes: new[] { typeof(InvItem) })]
 		public static bool DetermineIfCanUseWeapon_Prefix(InvItem item, ref bool __result)
 		{
+			logger.LogDebug("DetermineIfCanUseWeapon");
+			bool result = T_ItemRestrictions.AgentTryUseItem(item.agent, item, true);
+			logger.LogDebug("Result:\t" + result);
 			if (item.agent is null ||
-				T_ItemRestrictions.CanUseItem(item.agent, item, true))
+				!result)
 				return true; // NOT returning result here
             else
             {
@@ -68,19 +71,28 @@ namespace ResistanceHR.Patches.Item
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvDatabase.EquipArmor), argumentTypes: new[] { typeof(InvItem), typeof(bool) })]
 		public static bool EquipArmor_Prefix(InvItem item, InvDatabase __instance)
 		{
-			return T_ItemRestrictions.CanUseItem(__instance.agent, item, true);
+			logger.LogDebug("EquipArmor");
+			bool result = T_ItemRestrictions.AgentTryUseItem(__instance.agent, item, true);
+			logger.LogDebug("Result:\t" + result);
+			return result;
 		}
 
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvDatabase.EquipArmorHead), argumentTypes: new[] { typeof(InvItem), typeof(bool) })]
 		public static bool EquipArmorHead_Prefix(InvItem item, InvDatabase __instance)
 		{
-			return T_ItemRestrictions.CanUseItem(__instance.agent, item, true);
+			logger.LogDebug("EquipArmorHead");
+			bool result = T_ItemRestrictions.AgentTryUseItem(__instance.agent, item, true);
+			logger.LogDebug("Result:\t" + result);
+			return result;
 		}
 
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvDatabase.EquipWeapon), argumentTypes: new[] { typeof(InvItem), typeof(bool) })] 
 		public static bool EquipWeapon_Prefix(InvItem item, InvDatabase __instance)
 		{
-			return T_ItemRestrictions.CanUseItem(__instance.agent, item, true);
+			logger.LogDebug("EquipWeapon");
+			bool result = T_ItemRestrictions.AgentTryUseItem(__instance.agent, item, true);
+			logger.LogDebug("Result:\t" + result);
+			return result;
 		}
 	}
 }

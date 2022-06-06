@@ -6,9 +6,11 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class DAREdevil : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { VItemCategory.Drugs };
-        public override List<string> ProhibitedItemTypes => new List<string>() { };
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseDrugs };
+        protected override List<string> Dialogue => 
+            new List<string>() { CDialogue.CantUseDrugs };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !invItem.Categories.Contains(VItemCategory.Drugs);
 
         [RLSetup]
         public static void Setup()
@@ -43,6 +45,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }

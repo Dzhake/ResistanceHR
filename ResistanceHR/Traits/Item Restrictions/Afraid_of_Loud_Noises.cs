@@ -6,9 +6,11 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Afraid_of_Loud_Noises : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { CItemCategory.Loud };
-        public override List<string> ProhibitedItemTypes => new List<string>() {  };
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseLoud };
+        protected override List<string> Dialogue => 
+            new List<string>() { CDialogue.CantUseLoud };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !invItem.Categories.Contains(CItemCategory.Loud) || invItem.contents.Contains(VItem.Silencer);
 
         [RLSetup]
         public static void Setup()
@@ -49,6 +51,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }

@@ -45,7 +45,7 @@ namespace ResistanceHR.Patches.Item
 		//[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvItem.UseItem))]
 		public static bool UseItem_Prefix(InvItem __instance)
 		{
-			if (!T_ItemRestrictions.CanUseItem(__instance.agent, __instance, true))
+			if (!T_ItemRestrictions.AgentTryUseItem(__instance.agent, __instance, true))
 				return false;
 
 			return true;

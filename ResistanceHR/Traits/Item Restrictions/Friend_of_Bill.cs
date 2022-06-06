@@ -6,9 +6,10 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Friend_of_Bill : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { VItemCategory.Alcohol };
-        public override List<string> ProhibitedItemTypes => new List<string>() { };
         protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseAlcohol1, CDialogue.CantUseAlcohol2, CDialogue.CantUseAlcohol3 };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !invItem.Categories.Contains(VItemCategory.Alcohol);
 
         [RLSetup]
         public static void Setup()
@@ -43,6 +44,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }

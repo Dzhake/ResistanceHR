@@ -6,9 +6,11 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Draw_No_Blood : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { CItemCategory.Piercing };
-        public override List<string> ProhibitedItemTypes => new List<string>() { };
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUsePiercing1, CDialogue.CantUsePiercing2 };
+        protected override List<string> Dialogue => 
+            new List<string>() { CDialogue.CantUsePiercing1, CDialogue.CantUsePiercing2 };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !invItem.Categories.Contains(CItemCategory.Piercing);
 
         [RLSetup]
         public static void Setup()
@@ -48,6 +50,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }

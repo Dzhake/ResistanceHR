@@ -6,9 +6,11 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Fatass : T_ItemRestrictions
     {
-        public override List<string> ProhibitedItemCategories => new List<string>() { };
-        public override List<string> ProhibitedItemTypes => new List<string>() { };
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseHeadgear };
+        protected override List<string> Dialogue => 
+            new List<string>() { CDialogue.CantUseHeadgear };
+
+        public override bool ItemUsable(InvItem invItem) =>
+            !(invItem.itemType == VItemType.Wearable && !invItem.isArmorHead);
 
         [RLSetup]
         public static void Setup()
@@ -47,6 +49,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                     }
                 });
         }
+
         public override void OnAdded() { }
         public override void OnRemoved() { }
     }
