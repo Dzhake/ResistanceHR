@@ -92,7 +92,6 @@
     <Compile Include="Localization\VItemCategory.cs" />
     <Compile Include="Localization\VItemType.cs" />
     <Compile Include="Localization\VNameType.cs" />
-    <Compile Include="Patches\C_Combat.cs" />
     <Compile Include="Patches\Items\P_InvDatabase.cs" />
     <Compile Include="Patches\Items\P_InvItem.cs" />
     <Compile Include="Patches\Items\P_ItemFunctions.cs" />
@@ -105,11 +104,12 @@
     <Compile Include="Patches\Combat Ranged\P_BulletHitbox.cs" />
     <Compile Include="Patches\P_PlayfieldObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Traits\Close Combat\Cursed_Strikes.cs" />
-    <Compile Include="Traits\Close Combat\Cursed_Strikes2.cs" />
-    <Compile Include="Traits\Close Combat\Blessed_Strikes2.cs" />
-    <Compile Include="Traits\Close Combat\Blessed_Strikes.cs" />
+    <Compile Include="Traits\Close Combat\Special Strikes\Cursed_Strikes.cs" />
+    <Compile Include="Traits\Close Combat\Special Strikes\Cursed_Strikes2.cs" />
+    <Compile Include="Traits\Close Combat\Special Strikes\Blessed_Strikes2.cs" />
+    <Compile Include="Traits\Close Combat\Special Strikes\Blessed_Strikes.cs" />
     <Compile Include="Traits\Close Combat\T_CombatMelee.cs" />
+    <Compile Include="Traits\Close Combat\Special Strikes\T_SpecialStrikes.cs" />
     <Compile Include="Traits\Item Restrictions\Afraid_of_Loud_Noises.cs" />
     <Compile Include="Traits\Item Restrictions\Fat_Head.cs" />
     <Compile Include="Traits\Item Restrictions\Fatass.cs" />
@@ -126,9 +126,9 @@
     <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
     <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum2.cs" />
     <Compile Include="Traits\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
-    <Compile Include="Traits\Ranged Combat\Wetworker.cs" />
-    <Compile Include="Traits\Ranged Combat\Sniper.cs" />
-    <Compile Include="Traits\Ranged Combat\Sniper2.cs" />
+    <Compile Include="Traits\Ranged Combat\Skills\Wetworker.cs" />
+    <Compile Include="Traits\Ranged Combat\Skills\Sniper.cs" />
+    <Compile Include="Traits\Ranged Combat\Skills\Sniper2.cs" />
     <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer2.cs" />
     <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
     <Compile Include="Traits\Ranged Combat\T_CombatRanged.cs" />

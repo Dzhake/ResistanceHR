@@ -55,11 +55,8 @@ namespace ResistanceHR.Patches.Items
 		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvDatabase.DetermineIfCanUseWeapon), argumentTypes: new[] { typeof(InvItem) })]
 		public static bool DetermineIfCanUseWeapon_Prefix(InvItem item, ref bool __result)
 		{
-			logger.LogDebug("DetermineIfCanUseWeapon");
-			bool result = T_ItemRestrictions.AgentTryUseItem(item.agent, item, true);
-			logger.LogDebug("Result:\t" + result);
-			if (item.agent is null ||
-				!result)
+			if (item.agent is null || 
+				T_ItemRestrictions.AgentTryUseItem(item.agent, item, true))
 				return true; // NOT returning result here
             else
             {

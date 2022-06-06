@@ -1,4 +1,5 @@
 ﻿using RogueLibsCore;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace ResistanceHR.Traits.Combat_Ranged
@@ -16,8 +17,9 @@ namespace ResistanceHR.Traits.Combat_Ranged
         {
             float damage = bullet.damage;
 
-            foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
-                damage *= trait.BulletDamageMultiplier;
+            if (BulletTypeBullets.Contains((int)bullet.bulletType))
+                foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
+                    damage *= trait.BulletDamageMultiplier;
 
             return Mathf.Clamp((int)damage, 1, 99999);
         }
@@ -26,8 +28,9 @@ namespace ResistanceHR.Traits.Combat_Ranged
         {
             float range = 13.44f;
 
-            foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
-                range *= trait.BulletRangeMultiplier;
+            if (BulletTypeBullets.Contains((int)bullet.bulletType))
+                foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
+                    range *= trait.BulletRangeMultiplier;
 
             return Mathf.Clamp(range, 1.00f, 99.00f);
         }
@@ -36,12 +39,18 @@ namespace ResistanceHR.Traits.Combat_Ranged
         {
             float speed = bullet.speed;
 
-            foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
-                speed *= trait.BulletSpeedMultiplier;
+            if (BulletTypeBullets.Contains((int)bullet.bulletType))
+                foreach (T_BulletModification trait in bullet.agent.GetTraits<T_BulletModification>())
+                    speed *= trait.BulletSpeedMultiplier;
 
             return Mathf.Clamp((int)speed, 1, 39);
             // Lowest bad number: 40? Not sure, extreme range
             // Highest good number: 39
         }
+
+        private static readonly List<int> BulletTypeBullets = new List<int>()
+        {
+            1, 2, 19
+        };
     }
 }

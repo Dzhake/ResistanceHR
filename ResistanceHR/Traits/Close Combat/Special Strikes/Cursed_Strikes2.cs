@@ -1,9 +1,11 @@
 ﻿using RogueLibsCore;
 
-namespace ResistanceHR.Traits.Combat_Ranged
+namespace ResistanceHR.Traits.Combat_Melee
 {
-    public class Cursed_Strikes2 : T_CombatMelee
+    public class Cursed_Strikes2 : T_SpecialStrikes
     {
+        public override float DamageMultiplier => 1.50f;
+
         [RLSetup]
         public static void Setup()
         {
@@ -39,7 +41,13 @@ namespace ResistanceHR.Traits.Combat_Ranged
                     }
                 });
         }
+
+        public override bool CanHit(Agent agent)
+        {
+            throw new System.NotImplementedException();
+        }
         public override void OnAdded() { }
         public override void OnRemoved() { }
+        public override void OnStrike(Agent agent) { }
     }
 }

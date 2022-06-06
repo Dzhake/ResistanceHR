@@ -1,29 +1,30 @@
-﻿using ResistanceHR.Traits.Combat_Ranged;
-using RogueLibsCore;
+﻿using RogueLibsCore;
 
-namespace ResistanceHR.Traits.Combat_Ranged
+namespace ResistanceHR.Traits.Combat_Melee
 {
-    public class Cursed_Strikes : T_CombatMelee
+    public class Blessed_Strikes : T_SpecialStrikes
     {
+        public override float DamageMultiplier => 1.50f;
+
         [RLSetup]
         public static void Setup()
         {
-            RogueLibs.CreateCustomTrait<Cursed_Strikes>()
+            RogueLibs.CreateCustomTrait<Blessed_Strikes>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "You didn't call a Voodoo shaman back after a night of... magic. She didn't take it well.\n\n" + 
+                    [LanguageCode.English] = "Your fists are registered deadly weapons, and designated holy Relics by the Catholic Church. It's even documented on a cool scroll. Absolutely wild!\n\n" + 
                     "- Unarmed attacks can hit Ghosts\n" +
-                    "- Unarmed damage to all Non-Supernatural increased by 25%",
+                    "- Unarmed damage to all Supernatural increased by 50%",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo
                 {
-                    [LanguageCode.English] = DisplayName(typeof(Cursed_Strikes)),
+                    [LanguageCode.English] = DisplayName(typeof(Blessed_Strikes)),
                     [LanguageCode.Russian] = "",
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { nameof(Blessed_Strikes), nameof(Blessed_Strikes2) },
+                    Cancellations = { nameof(Cursed_Strikes), nameof(Cursed_Strikes2) },
                     CharacterCreationCost = 3,
                     IsAvailable = false,
                     IsAvailableInCC = true,
@@ -36,11 +37,17 @@ namespace ResistanceHR.Traits.Combat_Ranged
                         isUpgrade = false,
                         prerequisites = { },
                         recommendations = { },
-                        upgrade = nameof(Cursed_Strikes2),
+                        upgrade = nameof(Blessed_Strikes2),
                     }
                 });
         }
+
+        public override bool CanHit(Agent agent)
+        {
+            throw new System.NotImplementedException();
+        }
         public override void OnAdded() { }
         public override void OnRemoved() { }
+        public override void OnStrike(Agent agent) { }
     }
 }
