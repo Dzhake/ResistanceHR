@@ -23,7 +23,7 @@ namespace ResistanceHR.Traits.Vision_Range
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { nameof(Ballistician), nameof(Ballistician2), nameof(Eagle_Eyes), nameof(Eagle_Eyes2) },
+                    Cancellations = { nameof(Powder_Packer), nameof(Powder_Packer2), nameof(Eagle_Eyes), nameof(Eagle_Eyes2) },
                     CharacterCreationCost = -6,
                     IsAvailable = false,
                     IsAvailableInCC = true,

@@ -3,28 +3,32 @@ using RogueLibsCore;
 
 namespace ResistanceHR.Traits.Combat_Ranged
 {
-    public class Sniper : T_CombatRanged
+    public class Dum_Dum_Bum : T_BulletModification
     {
+        public override float BulletDamageMultiplier => 1.15f;
+        public override float BulletRangeMultiplier => 0.75f;
+        public override float BulletPenetrationMultiplier => 0.90f;
+        public override float BulletSpeedMultiplier => 0.90f;
+
         [RLSetup]
         public static void Setup()
         {
-            RogueLibs.CreateCustomTrait<Sniper>()
+            RogueLibs.CreateCustomTrait<Dum_Dum_Bum>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "They can run, but they'll only die tired. But you'll be tired too, so it's best if they just die before.\n\n" +
-                    "- Past a certain distance, Revolver hits deal massive damage\n" + 
-                    "- Minimum range for a sniper hit is lower on unaware targets",
+                    [LanguageCode.English] = "Just a little war crime, as a treat. If you file down the tip of a bullet, it won't go as far but its faster tumble will cause more trauma.\n\n" +
+                    "- Your bullets have lower speed and distance, but deal more damage.",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo
                 {
-                    [LanguageCode.English] = DisplayName(typeof(Sniper)),
+                    [LanguageCode.English] = DisplayName(typeof(Dum_Dum_Bum)),
                     [LanguageCode.Russian] = "",
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { nameof(Myopic) },
-                    CharacterCreationCost = 4,
+                    Cancellations = { },
+                    CharacterCreationCost = 3,
                     IsAvailable = false,
                     IsAvailableInCC = true,
                     IsUnlocked = Core.DebugMode,
@@ -34,9 +38,9 @@ namespace ResistanceHR.Traits.Combat_Ranged
                         cantLose = true,
                         cantSwap = false,
                         isUpgrade = false,
-                        prerequisites = { nameof(Eagle_Eyes) },
-                        recommendations = { nameof(Powder_Packer) },
-                        upgrade = nameof(Sniper2),
+                        prerequisites = { nameof(Myopic) },
+                        recommendations = { },
+                        upgrade = nameof(Dum_Dum_Bum2),
                     }
                 });
         }

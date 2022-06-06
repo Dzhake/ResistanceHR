@@ -3,7 +3,7 @@ using HarmonyLib;
 using ResistanceHR.Localization;
 using ResistanceHR.Traits.Item_Restrictions;
 
-namespace ResistanceHR.Patches.Item
+namespace ResistanceHR.Patches.Items
 {
     [HarmonyPatch(declaringType: typeof(InvItem))]
 	public static class P_InvItem

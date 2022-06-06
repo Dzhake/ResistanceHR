@@ -60,6 +60,28 @@
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>Libraries\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Networking">
+      <HintPath>Libraries\UnityEngine.Networking.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>Libraries\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libraries\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core.cs" />
@@ -70,11 +92,18 @@
     <Compile Include="Localization\VItemCategory.cs" />
     <Compile Include="Localization\VItemType.cs" />
     <Compile Include="Localization\VNameType.cs" />
-    <Compile Include="Patches\Item\P_InvDatabase.cs" />
-    <Compile Include="Patches\Item\P_InvItem.cs" />
-    <Compile Include="Patches\Item\P_ItemFunctions.cs" />
+    <Compile Include="Patches\C_Combat.cs" />
+    <Compile Include="Patches\Items\P_InvDatabase.cs" />
+    <Compile Include="Patches\Items\P_InvItem.cs" />
+    <Compile Include="Patches\Items\P_ItemFunctions.cs" />
+    <Compile Include="Patches\Combat Ranged\P_Bullet.cs" />
+    <Compile Include="Patches\P_Agent.cs" />
     <Compile Include="Patches\P_Camera.cs" />
+    <Compile Include="Patches\P_MeleeHitbox.cs" />
+    <Compile Include="Patches\P_ObjectReal.cs" />
     <Compile Include="Patches\P_PlayerControl.cs" />
+    <Compile Include="Patches\Combat Ranged\P_BulletHitbox.cs" />
+    <Compile Include="Patches\P_PlayfieldObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Traits\Close Combat\Cursed_Strikes.cs" />
     <Compile Include="Traits\Close Combat\Cursed_Strikes2.cs" />
@@ -94,23 +123,23 @@
     <Compile Include="Traits\Item Restrictions\Teetotaller.cs" />
     <Compile Include="Traits\Item Restrictions\DAREdevil.cs" />
     <Compile Include="Traits\Item Restrictions\T_ItemRestrictions.cs" />
+    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
+    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum2.cs" />
+    <Compile Include="Traits\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
     <Compile Include="Traits\Ranged Combat\Wetworker.cs" />
     <Compile Include="Traits\Ranged Combat\Sniper.cs" />
     <Compile Include="Traits\Ranged Combat\Sniper2.cs" />
-    <Compile Include="Traits\Ranged Combat\Ballistician2.cs" />
-    <Compile Include="Traits\Ranged Combat\Ballistician.cs" />
+    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer2.cs" />
+    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
     <Compile Include="Traits\Ranged Combat\T_CombatRanged.cs" />
     <Compile Include="Traits\T_ResistanceHR.cs" />
-    <Compile Include="Traits\Visual Acuity\Eagle_Eyes.cs" />
-    <Compile Include="Traits\Visual Acuity\Eagle_Eyes2.cs" />
-    <Compile Include="Traits\Visual Acuity\Myopic2.cs" />
-    <Compile Include="Traits\Visual Acuity\T_VisionRange.cs" />
-    <Compile Include="Traits\Visual Acuity\Myopic.cs" />
+    <Compile Include="Traits\Vision Range\Eagle_Eyes.cs" />
+    <Compile Include="Traits\Vision Range\Eagle_Eyes2.cs" />
+    <Compile Include="Traits\Vision Range\Myopic2.cs" />
+    <Compile Include="Traits\Vision Range\T_VisionRange.cs" />
+    <Compile Include="Traits\Vision Range\Myopic.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patches\Agent\" />
-    <Folder Include="Patches\ObjectReal\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>set coreDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\core"

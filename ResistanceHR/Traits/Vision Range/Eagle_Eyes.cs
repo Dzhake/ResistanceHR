@@ -4,7 +4,7 @@ namespace ResistanceHR.Traits.Vision_Range
 {
     public class Eagle_Eyes : T_VisionRange
     {
-        public override float ZoomLevel => 0.70f;
+        protected override float ZoomLevel => 0.70f;
 
         [RLSetup]
         public static void Setup()

@@ -41,10 +41,16 @@ Each applicant has a set of traits that you'll learn to identify. The Resistance
 >	- [Item Types](ResistanceHR/Localization/VItemType.cs)
 
 ##			Ranged Combat
-|Trait								|PIV	|Notes	|
-|:----------------------------------|------:|:------|
-|Ballistician						|      4|- Bullets fly faster, further & harder
-|Ballistician +						|	   8|- Bullets fly fasterer, furtherer & harderer
+
+###				Bullet Modifications
+|Trait								|PIV	|Damage	|Distance	|Penetration	|Speed	|
+|:----------------------------------|------:|------:|----------:|--------------:|------:|
+|Dum-Dum Bum						|	   4| + 15 %|     - 25 %|         - 10 %| - 10 %|
+|Dum-Dum Bum +						|      8| + 30 %|     - 50 %|         - 20 %| - 20 %|
+|Powder Packer						|      4| - 10 %|     + 20 %|		  + 50 %| + 10 %|
+|Powder Packer +					|	   8| - 15 %|     + 40 %|        + 100 %| + 20 %|
+
+###				Skills
 |Sniper								|      4|- Past a certain distance, Revolver hits deal massive damage<br>- Minimum range for a sniper hit is lower on unaware targets
 |Sniper +							|      8|- Using a silent ranged weapon from behind a Bush or other object will not remove you from concealment
 |Wetworker							|      8|- Bullet attacks from behind within melee range do 2x damage. 10x if you're invisible or hidden.

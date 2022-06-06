@@ -10,7 +10,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace ResistanceHR.Patches.Item
+namespace ResistanceHR.Patches.Items
 {
     [HarmonyPatch(declaringType: typeof(InvDatabase))]
 	public static class P_InvDatabase

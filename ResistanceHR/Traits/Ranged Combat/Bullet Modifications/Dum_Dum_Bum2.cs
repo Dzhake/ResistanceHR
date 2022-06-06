@@ -3,27 +3,32 @@ using RogueLibsCore;
 
 namespace ResistanceHR.Traits.Combat_Ranged
 {
-    public class Sniper2 : T_CombatRanged
+    public class Dum_Dum_Bum2 : T_BulletModification
     {
+        public override float BulletDamageMultiplier => 1.30f;
+        public override float BulletRangeMultiplier => 0.50f;
+        public override float BulletPenetrationMultiplier => 0.80f;
+        public override float BulletSpeedMultiplier => 0.20f;
+
         [RLSetup]
         public static void Setup()
         {
-            RogueLibs.CreateCustomTrait<Sniper2>()
+            RogueLibs.CreateCustomTrait<Dum_Dum_Bum2>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "Wow, that's a poncho made of garbage, isn't it? Well, whatever it takes to blend into the urban environment.\n\n" +
-                    "- Using a silent ranged weapon while hidden behind a Bush or other object will not remove you from concealment.",
+                    [LanguageCode.English] = "These are barely even bullets at this point, how does this even work??\n\n" +
+                    "- Your bullets have lowerer speed and distance, but deal morer damage.",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo
                 {
-                    [LanguageCode.English] = DisplayName(typeof(Sniper2)),
+                    [LanguageCode.English] = DisplayName(typeof(Dum_Dum_Bum2)),
                     [LanguageCode.Russian] = "",
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { nameof(Myopic) },
-                    CharacterCreationCost = 8,
+                    Cancellations = { },
+                    CharacterCreationCost = 6,
                     IsAvailable = false,
                     IsAvailableInCC = true,
                     IsUnlocked = Core.DebugMode,
@@ -33,8 +38,8 @@ namespace ResistanceHR.Traits.Combat_Ranged
                         cantLose = true,
                         cantSwap = true,
                         isUpgrade = true,
-                        prerequisites = { nameof(Eagle_Eyes) },
-                        recommendations = { nameof(Powder_Packer), /*nameof(Stealth_Bastard_Deluxe)*/ },
+                        prerequisites = { nameof(Myopic) },
+                        recommendations = { },
                         upgrade = null,
                     }
                 });

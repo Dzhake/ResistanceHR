@@ -17,6 +17,7 @@ namespace ResistanceHR.Localization
             RogueLibs.CreateCustomName(CantUseHeadgear, t, new CustomNameInfo("Owie! This is too tight for my big, fat, stupid, ugly head!"));
             RogueLibs.CreateCustomName(CantUseHeavy, t, new CustomNameInfo("With my dainty wrists? I don't think so."));
             RogueLibs.CreateCustomName(CantUseLoud, t, new CustomNameInfo("I can't use that! It's too loooooud.")); // Hardcoded to 1 choice in T_ItemRestrictions.CanUseItem
+            RogueLibs.CreateCustomName(CantUseMelee, t, new CustomNameInfo("Oof, ah, um, yeah, heh. Not my thing. Sorry."));
             RogueLibs.CreateCustomName(CantUseMeat1, t, new CustomNameInfo("Meat is murder!"));
             RogueLibs.CreateCustomName(CantUseMeat2, t, new CustomNameInfo("Just... need... protein. So hungry."));
             RogueLibs.CreateCustomName(CantUseMeat3, t, new CustomNameInfo("I'm perfectly fine with just a salad. *Stomach grumbles*"));
@@ -36,6 +37,7 @@ namespace ResistanceHR.Localization
             CantUseHeadgear = "CantUseHeadgear",
             CantUseHeavy = "CantUseHeavy",
             CantUseLoud = "CantUseLoud",
+            CantUseMelee = "CantUseMelee",
             CantUseMeat1 = "CantUseMeat1",
             CantUseMeat2 = "CantUseMeat2",
             CantUseMeat3 = "CantUseMeat3",

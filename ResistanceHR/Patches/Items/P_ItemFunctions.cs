@@ -2,7 +2,7 @@
 using HarmonyLib;
 using ResistanceHR.Traits.Item_Restrictions;
 
-namespace ResistanceHR.Patches.Item
+namespace ResistanceHR.Patches.Items
 {
     [HarmonyPatch(declaringType: typeof(ItemFunctions))]
 	public static class P_ItemFunctions

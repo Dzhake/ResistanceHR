@@ -21,10 +21,8 @@ namespace ResistanceHR.Patches
         {
             if (GC.playerAgent.GetTraits<T_VisionRange>().Any())
             {
-                T_VisionRange trait = GC.playerAgent.GetTrait<T_VisionRange>();
-
-                GC.cameraScript.zoomLevel = trait.ZoomLevel * T_VisionRange.PlayerZoomFactor;
-                __instance.myCamera.zoomLevel = trait.ZoomLevel * T_VisionRange.PlayerZoomFactor;
+                GC.cameraScript.zoomLevel = T_VisionRange.GetZoomLevel(GC.playerAgent);
+                __instance.myCamera.zoomLevel = T_VisionRange.GetZoomLevel(GC.playerAgent);
             }
         }
     }
