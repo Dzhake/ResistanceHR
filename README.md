@@ -37,7 +37,7 @@ Each applicant has a set of traits that you'll learn to identify. The Resistance
 |Weak Wrists						|    - 4|- Can't use Heavy
 
 > Please consult the following lists when assigning equipment:
->	- [Item Categories](ResistanceHR/Localization/VItem.cs) (Below main item list)
+>	- [Item Categories](ResistanceHR/Localization/VItem.cs#L191)
 >	- [Item Types](ResistanceHR/Localization/VItemType.cs)
 
 ##			Ranged Combat
