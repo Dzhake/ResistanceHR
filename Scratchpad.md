@@ -27,6 +27,10 @@ MeleeHitbox.
 ###			H	Very Hard-On Yourself
 ####			C	New Custom Mali
 ####			C	Cop-style negatives for all classes
+P_SkillPoints.AddPointsLate
+All places where TheLaw is checked.
+Hopefully the IL will be unique and duplicable, to save work!
+OR, you can re-detect for those mali in plain C# in GetNewExperienceAward
 ##		C	Experience Rate
 ###			C	Brainiac
 ###			C	Dim Bulb

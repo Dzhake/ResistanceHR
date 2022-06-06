@@ -5,7 +5,7 @@ namespace ResistanceHR.Traits.Vision_Range
 {
     public class Myopic2 : T_VisionRange
     {
-        public override float ZoomLevel => 2.00f;
+        protected override float ZoomLevel => 2.00f;
 
         [RLSetup]
         public static void Setup()

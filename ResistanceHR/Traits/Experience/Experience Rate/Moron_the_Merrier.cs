@@ -4,7 +4,7 @@ namespace ResistanceHR.Traits.Experience
 {
     public class Moron_the_Merrier : T_ExperienceRate
     {
-        protected override float ExperienceRate => 0.50f;
+        public override float ExperienceRate => 0.50f;
 
         [RLSetup]
         public static void Setup()

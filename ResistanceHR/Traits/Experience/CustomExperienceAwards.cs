@@ -14,13 +14,13 @@ public static class CustomExperienceAwards // Custom Skill Points
 
 	public static Dictionary<string, int> CustomXPValues = new Dictionary<string, int>()
 	{
-		{AngeredMany, 1000000 },
-		{BQMalusDistrict, 1000000 },
-		{BQMalusFloor, 1000000 },
-		{BQMalusGame, 1000000 },
-		{ElectabilityMalus, 1000000 },
+		{AngeredMany, -100 },
+		{BQMalusDistrict, -500 },
+		{BQMalusFloor, -300 },
+		{BQMalusGame, -1000 },
+		{ElectabilityMalus, -100 },
 		{FreePrisonerFailure, 1000000 },
 		{StoleNone, 1000000 },
-		{TookLotsOfDamage, 1000000 }
+		{TookLotsOfDamage, -100 }
 	};
 }

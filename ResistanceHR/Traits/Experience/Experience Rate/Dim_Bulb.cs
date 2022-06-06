@@ -4,7 +4,7 @@ namespace ResistanceHR.Traits.Experience
 {
     public class Dim_Bulb : T_ExperienceRate
     {
-        protected override float ExperienceRate => 0.75f;
+        public override float ExperienceRate => 0.75f;
 
         [RLSetup]
         public static void Setup()

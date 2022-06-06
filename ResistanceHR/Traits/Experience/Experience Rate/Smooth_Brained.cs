@@ -4,7 +4,7 @@ namespace ResistanceHR.Traits.Experience
 {
     public class Smooth_Brained : T_ExperienceRate
     {
-        protected override float ExperienceRate => 0.00f;
+        public override float ExperienceRate => 0.00f;
 
         [RLSetup]
         public static void Setup()

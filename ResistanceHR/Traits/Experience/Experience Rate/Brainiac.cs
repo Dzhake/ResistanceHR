@@ -4,7 +4,7 @@ namespace ResistanceHR.Traits.Experience
 {
     public class Brainiac : T_ExperienceRate
     {
-        protected override float ExperienceRate => 4.00f;
+        public override float ExperienceRate => 4.00f;
 
         [RLSetup]
         public static void Setup()
