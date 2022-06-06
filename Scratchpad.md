@@ -23,6 +23,15 @@ MeleeHitbox.
 ###			C	Cursed Strikes / +
 ###			C	Infernal Strikes / +
 ###			C	Venomous Strikes / +
+##		C	Experience
+###			H	Very Hard-On Yourself
+####			C	New Custom Mali
+####			C	Cop-style negatives for all classes
+##		C	Experience Rate
+###			C	Brainiac
+###			C	Dim Bulb
+###			C	Moron the Merrier
+###			C	Smooth-Brained
 ##		C	Item Restrictions
 ###			C!	00 CC Items not spawning in inventory
 Banana didn't appear in inv with Carnivore, loud stuff with Afraid.
