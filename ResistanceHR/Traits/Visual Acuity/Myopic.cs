@@ -24,7 +24,7 @@ namespace ResistanceHR.Traits.Vision_Range
                 .WithUnlock(new TraitUnlock
                 {
                     Cancellations = { nameof(Ballistician), nameof(Ballistician2), nameof(Eagle_Eyes), nameof(Eagle_Eyes2) },
-                    CharacterCreationCost = -4,
+                    CharacterCreationCost = -6,
                     IsAvailable = false,
                     IsAvailableInCC = true,
                     IsUnlocked = Core.DebugMode,

@@ -13,8 +13,7 @@ namespace ResistanceHR.Traits.Combat_Ranged
                 {
                     [LanguageCode.English] = "They can run, but they'll only die tired. But you'll be tired too, so it's best if they just die before.\n\n" +
                     "- Past a certain distance, Revolver hits deal massive damage\n" + 
-                    "- Minimum range for a sniper hit is lower on unaware targets\n" +
-                    "- Bullet range increased",
+                    "- Minimum range for a sniper hit is lower on unaware targets",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo

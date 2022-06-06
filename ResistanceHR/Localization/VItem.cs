@@ -219,12 +219,9 @@ namespace ResistanceHR.Localization
 
 		public static List<string> vegetarian = new List<string>()
 		{
-				Beer,
 				Banana,
-				Cocktail,
 				Fud,
 				HotFud,
-				Whiskey
 		};
 
 		public static List<string> heavy = new List<string>()

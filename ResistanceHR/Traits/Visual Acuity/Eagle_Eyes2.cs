@@ -24,7 +24,7 @@ namespace ResistanceHR.Traits.Vision_Range
                 .WithUnlock(new TraitUnlock
                 {
                     Cancellations = { nameof(Myopic), nameof(Myopic2) },
-                    CharacterCreationCost = 8,
+                    CharacterCreationCost = 6,
                     IsAvailable = false,
                     IsAvailableInCC = true,
                     IsUnlocked = Core.DebugMode,

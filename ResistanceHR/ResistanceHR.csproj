@@ -85,6 +85,8 @@
     <Compile Include="Traits\Item Restrictions\Fat_Head.cs" />
     <Compile Include="Traits\Item Restrictions\Fatass.cs" />
     <Compile Include="Traits\Item Restrictions\Draw_No_Blood.cs" />
+    <Compile Include="Traits\Item Restrictions\Surgical_Striker.cs" />
+    <Compile Include="Traits\Item Restrictions\Sweaty_Fingers.cs" />
     <Compile Include="Traits\Item Restrictions\Weak_Wrists.cs" />
     <Compile Include="Traits\Item Restrictions\Vegetarian.cs" />
     <Compile Include="Traits\Item Restrictions\Carnivore.cs" />

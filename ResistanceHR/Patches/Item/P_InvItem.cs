@@ -28,7 +28,7 @@ namespace ResistanceHR.Patches.Item
 			if (VItem.heavy.Contains(name))
 				__instance.Categories.Add(CItemCategory.Heavy);
 
-			if (VItem.loud.Contains(name) && !__instance.contents.Contains(VItem.Silencer))
+			if (VItem.loud.Contains(name))
 				__instance.Categories.Add(CItemCategory.Loud);
 
 			if (VItem.piercing.Contains(name))
