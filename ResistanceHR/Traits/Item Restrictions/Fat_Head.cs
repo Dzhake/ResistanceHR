@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Fat_Head : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseHeadgear };
+            new List<string>() { CNameDialogue.CantUseHeadgear };
 
         public override bool ItemUsable(InvItem invItem) =>
             !(invItem.itemType == VItemType.Wearable && invItem.isArmorHead);
@@ -28,7 +28,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { VanillaTraits.BananaLover, nameof(Vegetarian) },
+                    Cancellations = { },
                     CharacterCreationCost = -1,
                     IsAvailable = false,
                     IsAvailableInCC = true,

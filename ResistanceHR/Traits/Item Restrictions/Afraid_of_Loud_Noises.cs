@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Afraid_of_Loud_Noises : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseLoud };
+            new List<string>() { CNameDialogue.CantUseLoud };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(CItemCategory.Loud) || invItem.contents.Contains(VItem.Silencer);

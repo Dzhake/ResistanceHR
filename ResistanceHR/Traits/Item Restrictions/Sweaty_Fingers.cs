@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Sweaty_Fingers : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseMelee };
+            new List<string>() { CNameDialogue.CantUseMelee };
 
         public override bool ItemUsable(InvItem invItem) =>
             !(invItem.itemType == VItemType.WeaponMelee && invItem.invItemName != VItem.Fist);

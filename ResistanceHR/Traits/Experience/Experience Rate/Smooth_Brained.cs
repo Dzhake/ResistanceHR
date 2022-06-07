@@ -12,7 +12,7 @@ namespace ResistanceHR.Traits.Experience
             RogueLibs.CreateCustomTrait<Smooth_Brained>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "I'm going to say this as clearly as I can. You are stupid. Very, very, very, very, very stupid.\n\n" + 
+                    [LanguageCode.English] = "You emerged from the womb fully formed, resolving never to change. The doctor declared you a perfect adult child, and retired. Your mother of course died horribly from birthing a fully-grown human.\n\n" + 
                     "- XP gain rate set to 0%",
                     [LanguageCode.Russian] = "",
                 })
@@ -27,9 +27,9 @@ namespace ResistanceHR.Traits.Experience
                         VanillaTraits.Studious,
                         VanillaTraits.Studious2,
                         nameof(Brainiac),
+                        nameof(Dim_Bulb),
                         nameof(Moron_the_Merrier),
-                        nameof(Smooth_Brained),
-                        nameof(Very_HardOn_Yourself),
+                        nameof(Guilty_Conscience),
                     },
                     CharacterCreationCost = -40,
                     IsAvailable = false,
@@ -42,7 +42,7 @@ namespace ResistanceHR.Traits.Experience
                         cantSwap = true,
                         isUpgrade = true,
                         prerequisites = { },
-                        recommendations = { },
+                        recommendations = { "Probably therapy" },
                         upgrade = null,
                     }
                 });

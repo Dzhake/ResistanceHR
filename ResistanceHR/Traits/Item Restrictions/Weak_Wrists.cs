@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Weak_Wrists : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseHeavy };
+            new List<string>() { CNameDialogue.CantUseHeavy };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(CItemCategory.Heavy);

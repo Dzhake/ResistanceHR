@@ -2,34 +2,27 @@
 
 namespace ResistanceHR.Traits.Experience
 {
-    public class Very_HardOn_Yourself : T_ResistanceHR
+    public class Guilty_Conscience : T_ResistanceHR
     {
-        //[RLSetup]
+        [RLSetup]
         public static void Setup()
         {
-            RogueLibs.CreateCustomTrait<Very_HardOn_Yourself>()
+            RogueLibs.CreateCustomTrait<Guilty_Conscience>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "You were a rigid pianist for years. Any time you commited a boner or a cock-up, you would ejaculate in frustration. The frustrations in your life were seemin' saturated, so you thought you'd come to the Resistance. They appreciate your perfectionism - the hardest job for you to swallow is a wrecked one.\n\n" +
-                    "- Anytime you miss an XP bonus, suffer a penalty.\n" + 
-                    "- All XP penalties are doubled.",
+                    [LanguageCode.English] = "Top researchers in the City are doing their best to understand this weird Kon-shents thing. They're torturing animals around the clock, but coming no closer to answers!\n\n" +
+                    "- You are subject to the XP penalties from The Law\n" +
+                    "- Missing certain XP bonuses results in a penalty",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo
                 {
-                    [LanguageCode.English] = DisplayName(typeof(Very_HardOn_Yourself)),
+                    [LanguageCode.English] = DisplayName(typeof(Guilty_Conscience)),
                     [LanguageCode.Russian] = "",
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = {
-                        VanillaTraits.Studious,
-                        VanillaTraits.Studious2,
-                        nameof(Brainiac),
-                        nameof(Moron_the_Merrier),
-                        nameof(Very_HardOn_Yourself),
-                        nameof(Very_HardOn_Yourself),
-                    },
+                    Cancellations = { },
                     CharacterCreationCost = -6,
                     IsAvailable = false,
                     IsAvailableInCC = true,

@@ -6,7 +6,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
 {
     public class Friend_of_Bill : T_ItemRestrictions
     {
-        protected override List<string> Dialogue => new List<string>() { CDialogue.CantUseAlcohol1, CDialogue.CantUseAlcohol2, CDialogue.CantUseAlcohol3 };
+        protected override List<string> Dialogue => new List<string>() { CNameDialogue.CantUseAlcohol1, CNameDialogue.CantUseAlcohol2, CNameDialogue.CantUseAlcohol3 };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(VItemCategory.Alcohol);

@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Teetotaller : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseTeetotaller };
+            new List<string>() { CNameDialogue.CantUseTeetotaller };
 
         public override bool ItemUsable(InvItem invItem) =>
             !(invItem.Categories.Contains(VItemCategory.Alcohol) || invItem.Categories.Contains(VItemCategory.Drugs));

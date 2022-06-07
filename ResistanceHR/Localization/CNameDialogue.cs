@@ -2,7 +2,7 @@
 
 namespace ResistanceHR.Localization
 {
-    public static class CDialogue
+    public static class CNameDialogue
     {
         [RLSetup]
         public static void Setup()

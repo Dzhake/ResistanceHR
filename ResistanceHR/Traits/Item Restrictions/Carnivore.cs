@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Carnivore : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseVegetarian };
+            new List<string>() { CNameDialogue.CantUseVegetarian };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(CItemCategory.Vegetarian);

@@ -29,7 +29,7 @@ namespace ResistanceHR.Traits.Experience
                         nameof(Brainiac),
                         nameof(Dim_Bulb),
                         nameof(Smooth_Brained),
-                        nameof(Very_HardOn_Yourself),
+                        nameof(Guilty_Conscience),
                     },
                     CharacterCreationCost = -20,
                     IsAvailable = false,

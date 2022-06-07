@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Draw_No_Blood : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUsePiercing1, CDialogue.CantUsePiercing2 };
+            new List<string>() { CNameDialogue.CantUsePiercing1, CNameDialogue.CantUsePiercing2 };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(CItemCategory.Piercing);

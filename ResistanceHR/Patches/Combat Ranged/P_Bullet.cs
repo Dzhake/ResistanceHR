@@ -32,7 +32,7 @@ namespace ResistanceHR.Patches
 				expectedMatches: 8,
 				targetInstructionSequence: new List<CodeInstruction>
 				{
-					new CodeInstruction(OpCodes.Ldc_R4, 13)
+					new CodeInstruction(OpCodes.Ldc_R4, 13f)
 				},
 				insertInstructionSequence: new List<CodeInstruction>
 				{

@@ -25,17 +25,11 @@ MeleeHitbox.
 ###			C	Venomous Strikes / +
 ##		C	Experience
 ###			H	Very Hard-On Yourself
-####			C	New Custom Mali
-####			C	Cop-style negatives for all classes
-P_SkillPoints.AddPointsLate
-All places where TheLaw is checked.
-Hopefully the IL will be unique and duplicable, to save work!
-OR, you can re-detect for those mali in plain C# in GetNewExperienceAward
-##		C	Experience Rate
-###			C	Brainiac
-###			C	Dim Bulb
-###			C	Moron the Merrier
-###			C	Smooth-Brained
+####			C	Split
+Guilty Conscience: Cop Mali
+VeryHard: Doubled mali
+####			T	Custom Mali
+####			C	All BQ Penalties triggered
 ##		C	Item Restrictions
 ###			C!	00 CC Items not spawning in inventory
 Banana didn't appear in inv with Carnivore, loud stuff with Afraid.
@@ -119,3 +113,8 @@ This should be the "oh shit" snag for a Wetworker.
   - CameraScript.RealAwake
 ###			√	Eagle Eyes / +
 ###			T	Myopic / +
+##		√	Experience Rate
+###			√	Brainiac
+###			√	Dim Bulb
+###			√	Moron the Merrier
+###			√	Smooth-Brained

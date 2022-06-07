@@ -27,7 +27,7 @@ namespace ResistanceHR.Patches.Combat_Ranged
 				expectedMatches: 1,
 				targetInstructionSequence: new List<CodeInstruction>
 				{
-					new CodeInstruction(OpCodes.Ldc_R4, 13.44)
+					new CodeInstruction(OpCodes.Ldc_R4, 13.44f)
 				},
 				insertInstructionSequence: new List<CodeInstruction>
 				{

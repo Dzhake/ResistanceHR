@@ -15,7 +15,7 @@ namespace ResistanceHR.Patches.Items
 		/// Adds custom item categories to vanilla items
 		/// </summary>
 		/// <param name="__instance"></param>
-		//[HarmonyPostfix, HarmonyPatch(methodName: nameof(InvItem.SetupDetails), argumentTypes: new[] { typeof(bool) })]
+		[HarmonyPostfix, HarmonyPatch(methodName: nameof(InvItem.SetupDetails), argumentTypes: new[] { typeof(bool) })]
 		public static void SetupDetails_Postfix(InvItem __instance)
 		{
 			string name = __instance.invItemName;
@@ -42,7 +42,7 @@ namespace ResistanceHR.Patches.Items
 		/// </summary>
 		/// <param name="__instance"></param>
 		/// <returns></returns>
-		//[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvItem.UseItem))]
+		[HarmonyPrefix, HarmonyPatch(methodName: nameof(InvItem.UseItem))]
 		public static bool UseItem_Prefix(InvItem __instance)
 		{
 			if (!T_ItemRestrictions.AgentTryUseItem(__instance.agent, __instance, true))

@@ -1,26 +1,31 @@
 ﻿using System.Collections.Generic;
 
-public static class CustomExperienceAwards // Custom Skill Points
+namespace ResistanceHR.Localization
 {
-	public const string
+	public static class CustomExperienceAwards
+	{
+		public const string
 			AngeredMany = "AngeredMany",
-			BQMalusDistrict = "BQMalusDowntown",
-			BQMalusFloor = "BQMalusFloor",
-			BQMalusGame = "BQMalusGame",
-			ElectabilityMalus = "ElectabilityMalus",
+			FailedBigQuestDistrict = "BQMalusDowntown",
+			FailedBigQuestFloor = "BQMalusFloor",
+			FailedBigQuestGame = "BQMalusGame",
+			ElectabilityPenalty = "ElectabilityPenalty",
 			FreePrisonerFailure = "FreePrisonerFailure",
-			StoleNone = "StoleNone", // TODO
+			SetOffAlarms = "SetOffAlarms",
+			StoleNone = "StoleNone",
 			TookLotsOfDamage = "TookLotsOfDamage";
 
-	public static Dictionary<string, int> CustomXPValues = new Dictionary<string, int>()
-	{
-		{AngeredMany, -100 },
-		{BQMalusDistrict, -500 },
-		{BQMalusFloor, -300 },
-		{BQMalusGame, -1000 },
-		{ElectabilityMalus, -100 },
-		{FreePrisonerFailure, 1000000 },
-		{StoleNone, 1000000 },
-		{TookLotsOfDamage, -100 }
-	};
+		public static Dictionary<string, int> CustomXPValues = new Dictionary<string, int>()
+		{
+			{ AngeredMany,              -100 },		//	T
+			{ ElectabilityPenalty,      -100 },		//	C?
+			{ FailedBigQuestDistrict,   -500 },		//	C
+			{ FailedBigQuestFloor,      -300 },		//	√
+			{ FailedBigQuestGame,       -1000 },	//	C
+			{ FreePrisonerFailure,      -100 },		//	T
+			{ SetOffAlarms,             -100 },		//	C
+			{ StoleNone,                300 },		//	C?
+			{ TookLotsOfDamage,         -100 }		//	T
+		};
+	}
 }

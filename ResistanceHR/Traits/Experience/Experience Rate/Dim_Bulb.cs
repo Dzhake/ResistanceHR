@@ -29,7 +29,7 @@ namespace ResistanceHR.Traits.Experience
                         nameof(Brainiac),
                         nameof(Moron_the_Merrier),
                         nameof(Smooth_Brained),
-                        nameof(Very_HardOn_Yourself),
+                        nameof(Guilty_Conscience),
                     },
                     CharacterCreationCost = -10,
                     IsAvailable = false,

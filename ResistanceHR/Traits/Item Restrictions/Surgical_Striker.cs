@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class Surgical_Striker : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseBlunt };
+            new List<string>() { CNameDialogue.CantUseBlunt };
 
         public override bool ItemUsable(InvItem invItem) =>
             !(invItem.Categories.Contains(CItemCategory.Blunt) && invItem.itemType != VItem.Fist);

@@ -7,7 +7,7 @@ namespace ResistanceHR.Traits.Item_Restrictions
     public class DAREdevil : T_ItemRestrictions
     {
         protected override List<string> Dialogue => 
-            new List<string>() { CDialogue.CantUseDrugs };
+            new List<string>() { CNameDialogue.CantUseDrugs };
 
         public override bool ItemUsable(InvItem invItem) =>
             !invItem.Categories.Contains(VItemCategory.Drugs);

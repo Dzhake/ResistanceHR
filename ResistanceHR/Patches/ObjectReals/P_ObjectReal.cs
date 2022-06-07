@@ -1,16 +1,11 @@
 ﻿using BepInEx.Logging;
 using HarmonyLib;
 using ResistanceHR.Traits.Vision_Range;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using UnityEngine;
 
 namespace ResistanceHR.Patches
 {
-	[HarmonyPatch(declaringType: typeof(ObjectReal))]
+    [HarmonyPatch(declaringType: typeof(ObjectReal))]
     public static class P_ObjectReal
 	{
 		private static readonly ManualLogSource logger = RHRLogger.GetLogger();

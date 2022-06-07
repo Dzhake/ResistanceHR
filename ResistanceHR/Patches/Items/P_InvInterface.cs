@@ -50,6 +50,6 @@ namespace ResistanceHR.Patches.Items
 		}
 
 		public static bool CanSeeGuiltyText(Agent agent) =>
-			agent.enforcer || agent.HasTrait<Very_HardOn_Yourself>();
+			agent.enforcer || agent.HasTrait<Guilty_Conscience>();
 	}
 }
