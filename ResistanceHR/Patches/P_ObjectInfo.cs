@@ -1,32 +1,30 @@
 ﻿using BepInEx.Logging;
 using BTHarmonyUtils.TranspilerUtils;
 using HarmonyLib;
-using ResistanceHR.Traits.Experience;
-using RogueLibsCore;
+using ResistanceHR.Patches.Items;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace ResistanceHR.Patches.Items
+namespace ResistanceHR.Patches
 {
-    [HarmonyPatch(declaringType: typeof(InvInterface))]
-    public static class P_InvInterface
+    [HarmonyPatch(declaringType: typeof(ObjectInfo))]
+	public static class P_ObjectInfo
 	{
 		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
 		public static GameController GC => GameController.gameController;
 
 		/// <summary>
-		/// Very HardOn Yourself guilty text
+		/// Very HardOn Yourself
 		/// </summary>
 		/// <param name="codeInstructions"></param>
 		/// <returns></returns>
-		[HarmonyTranspiler, HarmonyPatch(methodName: nameof(InvInterface.ShowCursorText), argumentTypes: new[] { typeof(string), typeof(string), typeof(PlayfieldObject), typeof(int) })]
-		private static IEnumerable<CodeInstruction> ShowCursorText_AllowGuiltyText(IEnumerable<CodeInstruction> codeInstructions)
+        [HarmonyTranspiler, HarmonyPatch(methodName: "LateUpdate", argumentTypes: new Type[0] )]
+		private static IEnumerable<CodeInstruction> LateUpdate_ShowGuiltyText(IEnumerable<CodeInstruction> codeInstructions)
 		{
 			List<CodeInstruction> instructions = codeInstructions.ToList();
-			FieldInfo mainGUI = AccessTools.DeclaredField(typeof(InvInterface), nameof(InvInterface.mainGUI));
-			FieldInfo agent = AccessTools.DeclaredField(typeof(MainGUI), nameof(MainGUI.agent));
 			FieldInfo enforcer = AccessTools.DeclaredField(typeof(Agent), "enforcer");
 			MethodInfo canSeeGuiltyText = AccessTools.DeclaredMethod(typeof(P_InvInterface), nameof(P_InvInterface.CanSeeGuiltyText));
 
@@ -42,14 +40,11 @@ namespace ResistanceHR.Patches.Items
 				{
 					//	CanSeeGuiltyText(agent)
 
-					new CodeInstruction(OpCodes.Call, canSeeGuiltyText),
+					new CodeInstruction(OpCodes.Call, canSeeGuiltyText)
 				});
 
 			patch.ApplySafe(instructions, logger);
 			return instructions;
 		}
-
-		public static bool CanSeeGuiltyText(Agent agent) =>
-			agent.enforcer || agent.HasTrait<Very_HardOn_Yourself>();
 	}
 }
