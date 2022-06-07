@@ -23,11 +23,25 @@ MeleeHitbox.
 ###			C	Cursed Strikes / +
 ###			C	Infernal Strikes / +
 ###			C	Venomous Strikes / +
-##		C	Experience
+##		C	Experience Events
+Possible rewrite:
+Path of Ash - Fire
+Path of Chaos - Anti-Law
+Path of Death - Bad stuff & killing
+Path of Gold - Earning & Spending, buying & selling
+Path of Life - Good stuff & healing
+Path of Order - Law
+Path of Shadows - Stealth
+Path of Water (rename) - Water
+###			C	Guilty Conscience
+Enable Cop mali
+###			C	Flagellant
+Enable new mali including Cop ones (full extension of guilty conscience)
+Double all mali
 ###			H	Very Hard-On Yourself
 ####			C	Split
 Guilty Conscience: Cop Mali
-VeryHard: Doubled mali
+Flagellant: Doubled mali, extra mali
 ####			T	Custom Mali
 ####			C	All BQ Penalties triggered
 ##		C	Item Restrictions
@@ -49,6 +63,18 @@ New features, add here
 ###			T	Friend of Bill
 ###			T	Teetotaller
 ###			T	Vegetarian
+##		√	Quest Count
+###			√	Rushin' Revolution
+###			√	Single-Minded
+###			√	Workhorse
+##		C	Quest Rewards
+###			C	Double-Ply Rewards
+###			C	Monkey Rewards
+Reward banaan
+HR made a typo
+###			C	Unpaid Internship
+Give $0
+One ham sandwich per level
 ##		C	Ranged Combat
 ###			C	00 BM Importation
 This doesn't need to mean the new code works, only that you've got what you need out of the old stuff.

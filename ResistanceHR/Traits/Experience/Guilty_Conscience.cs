@@ -10,9 +10,8 @@ namespace ResistanceHR.Traits.Experience
             RogueLibs.CreateCustomTrait<Guilty_Conscience>()
                 .WithDescription(new CustomNameInfo
                 {
-                    [LanguageCode.English] = "Top researchers in the City are doing their best to understand this weird Kon-shents thing. They're torturing animals around the clock, but coming no closer to answers!\n\n" +
-                    "- You are subject to the XP penalties from The Law\n" +
-                    "- Missing certain XP bonuses results in a penalty",
+                    [LanguageCode.English] = "Top researchers in the City are doing their best to understand this weird 'Kon-shents' thing. They're torturing animals around the clock, but coming no closer to answers!\n\n" +
+                    "- You are subject to XP penalties for hurting and stealing from innocent people",
                     [LanguageCode.Russian] = "",
                 })
                 .WithName(new CustomNameInfo
@@ -22,7 +21,9 @@ namespace ResistanceHR.Traits.Experience
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { },
+                    Cancellations = { 
+                        VanillaTraits.TheLaw
+                    },
                     CharacterCreationCost = -6,
                     IsAvailable = false,
                     IsAvailableInCC = true,

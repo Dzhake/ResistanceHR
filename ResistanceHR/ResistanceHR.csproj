@@ -84,6 +84,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Challenges\C_ResistanceHR.cs" />
+    <Compile Include="Challenges\Quest Count\C_QuestCount.cs" />
+    <Compile Include="Challenges\Quest Count\Single_Minded.cs" />
+    <Compile Include="Challenges\Quest Count\Workhorse.cs" />
+    <Compile Include="Challenges\Quest Count\Rushin_Revolution.cs" />
+    <Compile Include="Challenges\Quest Rewards\C_QuestRewards.cs" />
+    <Compile Include="Challenges\Quest Rewards\Monkey_Rewards.cs" />
+    <Compile Include="Challenges\Quest Rewards\Unpaid_Internship.cs" />
+    <Compile Include="Challenges\Quest Rewards\Double_Ply_Rewards.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Localization\CNameInterface.cs" />
     <Compile Include="Localization\CNameDialogue.cs" />
@@ -99,6 +108,8 @@
     <Compile Include="Patches\Items\P_ItemFunctions.cs" />
     <Compile Include="Patches\Combat Ranged\P_Bullet.cs" />
     <Compile Include="Patches\Agents\P_Agent.cs" />
+    <Compile Include="Patches\ObjectReals\P_ExitPoint.cs" />
+    <Compile Include="Patches\Quests\P_LoadLevel.cs" />
     <Compile Include="Patches\View Distance\P_Camera.cs" />
     <Compile Include="Patches\ObjectReals\P_Door.cs" />
     <Compile Include="Patches\Combat Melee\P_MeleeHitbox.cs" />
@@ -123,7 +134,8 @@
     <Compile Include="Traits\Experience\Experience Rate\Smooth_Brained.cs" />
     <Compile Include="Traits\Experience\Experience Rate\Dim_Bulb.cs" />
     <Compile Include="Traits\Experience\Experience Rate\T_ExperienceRate.cs" />
-    <Compile Include="Traits\Experience\Very_HardOn_Yourself.cs" />
+    <Compile Include="Traits\Experience\Flagellant.cs" />
+    <Compile Include="Traits\Experience\Guilty_Conscience.cs" />
     <Compile Include="Traits\Item Restrictions\Afraid_of_Loud_Noises.cs" />
     <Compile Include="Traits\Item Restrictions\Fat_Head.cs" />
     <Compile Include="Traits\Item Restrictions\Fatass.cs" />
@@ -153,7 +165,10 @@
     <Compile Include="Traits\Vision Range\T_VisionRange.cs" />
     <Compile Include="Traits\Vision Range\Myopic.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Traits\Quests\Quest Count\" />
+    <Folder Include="Traits\Quests\Quest Rewards\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>set coreDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\core"
