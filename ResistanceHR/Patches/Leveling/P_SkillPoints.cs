@@ -133,7 +133,7 @@ namespace ResistanceHR.Patches
             float value = vanilla;
 
             if (agent.HasTrait<Guilty_Conscience>() && vanilla < 0)
-                value *= 2f;
+                value *= 2f; 
             else if (vanilla > 0)
                 foreach (T_ExperienceRate trait in agent.GetTraits<T_ExperienceRate>())
                     value *= trait.ExperienceRate;

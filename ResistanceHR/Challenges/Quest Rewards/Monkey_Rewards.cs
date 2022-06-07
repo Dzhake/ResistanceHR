@@ -8,7 +8,6 @@ namespace ResistanceHR.Challenges.Quest_Rewards
 		public Monkey_Rewards() : base(nameof(Monkey_Rewards)) { }
 
 		public override List<string> RewardItems => new List<string>() { VanillaItems.Banana };
-        public override int Quantity => 3;
 
         [RLSetup]
 		static void Start()

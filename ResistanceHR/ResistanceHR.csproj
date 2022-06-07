@@ -90,6 +90,7 @@
     <Compile Include="Challenges\Quest Count\Workhorse.cs" />
     <Compile Include="Challenges\Quest Count\Rushin_Revolution.cs" />
     <Compile Include="Challenges\Quest Rewards\C_QuestRewards.cs" />
+    <Compile Include="Challenges\Quest Rewards\Lump_Sum.cs" />
     <Compile Include="Challenges\Quest Rewards\Monkey_Rewards.cs" />
     <Compile Include="Challenges\Quest Rewards\Unpaid_Internship.cs" />
     <Compile Include="Challenges\Quest Rewards\Double_Ply_Rewards.cs" />
@@ -110,6 +111,7 @@
     <Compile Include="Patches\Agents\P_Agent.cs" />
     <Compile Include="Patches\ObjectReals\P_ExitPoint.cs" />
     <Compile Include="Patches\Quests\P_LoadLevel.cs" />
+    <Compile Include="Patches\Quests\P_Quests.cs" />
     <Compile Include="Patches\View Distance\P_Camera.cs" />
     <Compile Include="Patches\ObjectReals\P_Door.cs" />
     <Compile Include="Patches\Combat Melee\P_MeleeHitbox.cs" />

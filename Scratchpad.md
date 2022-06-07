@@ -68,13 +68,24 @@ New features, add here
 ###			√	Single-Minded
 ###			√	Workhorse
 ##		C	Quest Rewards
-###			C	Double-Ply Rewards
-###			C	Monkey Rewards
+Do not make them compatible, the logic will be a mess.
+Can make a Prize Bag one later on if you feel like it, to randomly select one.
+###			C!	00 Banana Count 0 Item Rewards
+Banana peel, count 0
+###			H	Double-Ply Rewards
+Item only
+###			H	Lump Sum
+####			H	Double money
+Pending 00 Item Rewards above
+####			C	No XP
+###			H	Monkey Rewards
 Reward banaan
 HR made a typo
-###			C	Unpaid Internship
-Give $0
-One ham sandwich per level
+###			H	Unpaid Internship
+####			C	Double XP
+####			H	No Money
+Pending 00 Item Rewards above
+####			C	One ham sandwich per level
 ##		C	Ranged Combat
 ###			C	00 BM Importation
 This doesn't need to mean the new code works, only that you've got what you need out of the old stuff.

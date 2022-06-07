@@ -7,7 +7,6 @@ namespace ResistanceHR.Challenges.Quest_Rewards
 	{
 		public Unpaid_Internship() : base(nameof(Unpaid_Internship)) { }
 
-		public override int Quantity => 0;
 		public override List<string> RewardItems => new List<string>() { VanillaItems.Money };
 
         [RLSetup]

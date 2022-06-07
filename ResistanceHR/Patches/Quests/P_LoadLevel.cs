@@ -8,7 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
 
-namespace ResistanceHR.Patches.Quests
+namespace ResistanceHR.Patches.Questicles
 {
     [HarmonyPatch(declaringType: typeof(LoadLevel))]
     public static class P_LoadLevel

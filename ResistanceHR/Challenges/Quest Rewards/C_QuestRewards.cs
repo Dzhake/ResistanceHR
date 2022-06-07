@@ -1,5 +1,4 @@
-﻿using RogueLibsCore;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ResistanceHR.Challenges.Quest_Rewards
 {
@@ -8,6 +7,5 @@ namespace ResistanceHR.Challenges.Quest_Rewards
         public C_QuestRewards(string name) : base(name) { }
 
         public abstract List<string> RewardItems { get; }
-        public abstract int Quantity { get; }
     }
 }

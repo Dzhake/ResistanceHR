@@ -8,7 +8,6 @@ namespace ResistanceHR.Challenges.Quest_Rewards
 		public Double_Ply_Rewards() : base(nameof(Double_Ply_Rewards)) { }
 
 		public override List<string> RewardItems => new List<string>() { VanillaItems.FreeItemVoucher, VanillaItems.HiringVoucher };
-        public override int Quantity => 1;
 
         [RLSetup]
 		static void Start()
@@ -30,5 +29,5 @@ namespace ResistanceHR.Challenges.Quest_Rewards
 				[LanguageCode.Russian] = "",
 			});
 		}
-	}
+    }
 }
