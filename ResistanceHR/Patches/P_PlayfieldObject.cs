@@ -24,7 +24,7 @@ namespace ResistanceHR.Patches
 		/// <param name="__instance"></param>
 		/// <param name="__result"></param>
 		/// <returns></returns>
-		[HarmonyTranspiler, HarmonyPatch(methodName: nameof(PlayfieldObject.FindDamage), argumentTypes: new[] { typeof(PlayfieldObject), typeof(bool), typeof(bool), typeof(bool) })]
+		//[HarmonyTranspiler, HarmonyPatch(methodName: nameof(PlayfieldObject.FindDamage), argumentTypes: new[] { typeof(PlayfieldObject), typeof(bool), typeof(bool), typeof(bool) })]
 		private static IEnumerable<CodeInstruction> FindDamage_SetMeleeDamage(IEnumerable<CodeInstruction> codeInstructions)
 		{
 			List<CodeInstruction> instructions = codeInstructions.ToList();

@@ -22,7 +22,11 @@ namespace ResistanceHR.Traits.Vision_Range
                 })
                 .WithUnlock(new TraitUnlock
                 {
-                    Cancellations = { nameof(Myopic), nameof(Myopic2) },
+                    Cancellations = { 
+                        nameof(Eagle_Eyes2), 
+                        nameof(Myopic), 
+                        nameof(Myopic2) 
+                    },
                     CharacterCreationCost = 3,
                     IsAvailable = false,
                     IsAvailableInCC = true,

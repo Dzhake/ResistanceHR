@@ -14,21 +14,26 @@ using System.Reflection.Emit;
 namespace ResistanceHR.Patches
 {
     [HarmonyPatch(declaringType: typeof(SkillPoints))]
-    public static class P_SkillPoints
+    public static class P_SkillPoints_AddPointsLate
     {
         private static readonly ManualLogSource logger = RHRLogger.GetLogger();
         public static GameController GC => GameController.gameController;
 
         [HarmonyTargetMethod, UsedImplicitly]
         private static MethodInfo Find_MoveNext_MethodInfo() =>
-            PatcherUtils.FindIEnumeratorMoveNext(AccessTools.Method(typeof(SkillPoints), nameof(SkillPoints.AddPointsLate), new Type[] { typeof(string), typeof(int) }));
+            PatcherUtils.FindIEnumeratorMoveNext(AccessTools.Method(typeof(SkillPoints), nameof(SkillPoints.AddPointsLate), new[] { typeof(string), typeof(int) }));
 
+        /// <summary>
+        /// Experience Rate
+        /// </summary>
+        /// <param name="codeInstructions"></param>
+        /// <returns></returns>
         [HarmonyTranspiler, UsedImplicitly]
-        private static IEnumerable<CodeInstruction> MultiplyByLearnRate(IEnumerable<CodeInstruction> codeInstructions)
+        private static IEnumerable<CodeInstruction> AddPointsLate_MultiplyExperience(IEnumerable<CodeInstruction> codeInstructions)
         {
             List<CodeInstruction> instructions = codeInstructions.ToList();
             FieldInfo agent = AccessTools.DeclaredField(typeof(SkillPoints), "agent");
-            MethodInfo getNetExperience = AccessTools.DeclaredMethod(typeof(P_SkillPoints), nameof(GetNetExperience));
+            MethodInfo getNetExperience = AccessTools.DeclaredMethod(typeof(P_SkillPoints_AddPointsLate), nameof(GetNetExperience));
 
             CodeReplacementPatch patch = new CodeReplacementPatch(
                 expectedMatches: 1,
@@ -59,7 +64,7 @@ namespace ResistanceHR.Patches
         {
             List<CodeInstruction> instructions = codeInstructions.ToList();
             FieldInfo agent = AccessTools.DeclaredField(typeof(SkillPoints), "agent");
-            MethodInfo getNetExperience = AccessTools.DeclaredMethod(typeof(P_SkillPoints), nameof(GetNetExperience));
+            MethodInfo getNetExperience = AccessTools.DeclaredMethod(typeof(P_SkillPoints_AddPointsLate), nameof(GetNetExperience));
 
             CodeReplacementPatch patch = new CodeReplacementPatch(
                 expectedMatches: 1,
