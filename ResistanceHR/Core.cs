@@ -38,7 +38,7 @@ namespace ResistanceHR
     {
         private static string GetLoggerName(Type containingClass)
         {
-            return $"CCU_{containingClass.Name}";
+            return $"RHR_{containingClass.Name}";
         }
 
         public static ManualLogSource GetLogger()
