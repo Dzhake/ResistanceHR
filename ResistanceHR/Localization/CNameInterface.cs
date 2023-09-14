@@ -18,7 +18,6 @@ namespace ResistanceHR.Localization
 
         public const string
 
-
             NoMoreSemicolon = "";
     }
 }

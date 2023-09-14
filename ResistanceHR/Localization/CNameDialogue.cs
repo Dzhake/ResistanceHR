@@ -21,6 +21,8 @@ namespace ResistanceHR.Localization
             RogueLibs.CreateCustomName(CantUseMeat1, t, new CustomNameInfo("Meat is murder!"));
             RogueLibs.CreateCustomName(CantUseMeat2, t, new CustomNameInfo("Just... need... protein. So hungry."));
             RogueLibs.CreateCustomName(CantUseMeat3, t, new CustomNameInfo("I'm perfectly fine with just a salad. *Stomach grumbles*"));
+            RogueLibs.CreateCustomName(CantUseNonAlcohol1, t, new CustomNameInfo("My hands are shakin'. I need some sauce in me!"));
+            RogueLibs.CreateCustomName(CantUseNonAlcohol2, t, new CustomNameInfo("Nah, this hangover won't let me keep anything down."));
             RogueLibs.CreateCustomName(CantUseNonVegetarian, t, new CustomNameInfo("No! Me want meat!"));
             RogueLibs.CreateCustomName(CantUsePiercing1, t, new CustomNameInfo("Mommy says I can't use sharp things!"));
             RogueLibs.CreateCustomName(CantUsePiercing2, t, new CustomNameInfo("I swore to draw no blood... unless I remove this trait first."));
@@ -41,6 +43,8 @@ namespace ResistanceHR.Localization
             CantUseMeat1 = "CantUseMeat1",
             CantUseMeat2 = "CantUseMeat2",
             CantUseMeat3 = "CantUseMeat3",
+            CantUseNonAlcohol1 = "CantUseNonAlcohol1",
+            CantUseNonAlcohol2 = "CantUseNonAlcohol2",
             CantUseNonVegetarian = "CantUseNonVegetarian",
             CantUsePiercing1 = "CantUsePiercing1",
             CantUsePiercing2 = "CantUsePiercing2",

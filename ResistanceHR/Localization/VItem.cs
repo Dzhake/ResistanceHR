@@ -284,5 +284,12 @@ namespace ResistanceHR.Localization
 				Shuriken,
 				Sword
 		};
+
+
+		public static List<string> tools = new List<string>()
+		{
+			Wrench,
+			Crowbar
+		};
 	}
 }

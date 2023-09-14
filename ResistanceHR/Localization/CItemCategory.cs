@@ -3,6 +3,7 @@
 	public static class CItemCategory
 	{
 		public const string
+			Alcohol = "Alcohol",
 			Blunt = "Blunt",
 			Explosive = "Explosive",
 			Heavy = "Heavy",
