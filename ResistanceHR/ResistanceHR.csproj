@@ -94,8 +94,9 @@
     <Compile Include="Systems\Conduct\Mutators\Diligence_Detector.cs" />
     <Compile Include="Systems\Reputation\NPC_Reputations.cs" />
     <Compile Include="Systems\Conduct\Mutators\Conscience_Configurator.cs" />
-    <Compile Include="Mutators\MutatorManager.cs" />
-    <Compile Include="Mutators\M_RHR.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tool Cost\T_ToolCost.cs" />
+    <Compile Include="Unlocks\Mutators\MutatorManager.cs" />
+    <Compile Include="Unlocks\Mutators\M_RHR.cs" />
     <Compile Include="Systems\Conduct\Mutators\M_ComplianceChip.cs" />
     <Compile Include="Systems\Conduct\Traits\T_XPModifier.cs" />
     <Compile Include="Systems\Inventory\Mutators\M_Inventory.cs" />
@@ -149,8 +150,8 @@
     <Compile Include="Systems\Close Combat\Enchanted Hands\T_EnchantedHands.cs" />
     <Compile Include="Systems\Debt\Bank_Debt_250.cs" />
     <Compile Include="Systems\Debt\T_Debt.cs" />
-    <Compile Include="Traits\IRefreshAtLevelStart.cs" />
-    <Compile Include="Traits\ISetupAgentStats.cs" />
+    <Compile Include="Unlocks\Traits\IRefreshAtLevelStart.cs" />
+    <Compile Include="Unlocks\Traits\ISetupAgentStats.cs" />
     <Compile Include="Systems\Interaction\Snitch.cs" />
     <Compile Include="Systems\Interaction\Snitch_Plus.cs" />
     <Compile Include="Systems\Interaction\T_Interaction.cs" />
@@ -243,10 +244,10 @@
     <Compile Include="Systems\Spawns\Roamers\Haunted.cs" />
     <Compile Include="Systems\Spawns\Roamers\T_Roamers.cs" />
     <Compile Include="Systems\Spawns\T_Spawns.cs" />
-    <Compile Include="Systems\Tampering\Traits\Tamper_Tantrum.cs" />
-    <Compile Include="Systems\Tampering\Traits\Tamper_Tantrum_Plus.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tool Cost\Skilled_Worker.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tool Cost\Skilled_Worker_Plus.cs" />
     <Compile Include="Systems\Tampering\Traits\T_Tampering.cs" />
-    <Compile Include="Traits\T_ResistanceHR.cs" />
+    <Compile Include="Unlocks\Traits\T_ResistanceHR.cs" />
     <Compile Include="Systems\Vision Range\Eagle_Eyes.cs" />
     <Compile Include="Systems\Vision Range\Eagle_Eyes_Plus.cs" />
     <Compile Include="Systems\Vision Range\Myopic_Plus.cs" />
@@ -264,6 +265,7 @@
     <Content Include="Documentation\Images\Alegria_WorkIsFreedom.jpg" />
     <Content Include="Systems\Conduct\Traits\Notes.txt" />
     <Content Include="Systems\Inventory\Mutators\Notes.txt" />
+    <Content Include="Systems\Loot\Notes.txt" />
     <Content Include="Systems\Tampering\Notes.txt" />
     <Content Include="Systems\Inventory\Notes.txt" />
     <Content Include="Systems\Interaction\Notes.txt" />
