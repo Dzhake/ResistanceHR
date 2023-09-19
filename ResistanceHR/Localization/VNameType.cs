@@ -1,6 +1,6 @@
-﻿namespace ResistanceHR.Localization
+﻿namespace ResistanceHR
 {
-    public static class VNameType
+	public static class VNameType
 	{
 		public const string
 				Agent = "Agent",

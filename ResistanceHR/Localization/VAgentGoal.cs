@@ -1,4 +1,4 @@
-﻿namespace ResistanceHR.Localization
+﻿namespace ResistanceHR
 {
 	public static class VAgentGoal // Vanilla Agent Goals
 	{

@@ -1,0 +1,14 @@
+﻿- Trait: Floor traps (except mines) have a 33% chance to turn back into an Item after triggering
+	- + version: 66%
+- Trait: You can disarm floor traps by interacting with them. They're always visible.
+	- + version: Reclaim rate 100% instead of 50%
+- Tamper Tantrum needs a rename
+- Trait: Mechanical Expert
+	- Unlocks new tamper options
+- Trait: Medically Inept (-2)
+	- Can't administer any medical items
+- Trait: Mechanically Inept (-2)
+	- No access to any sort of tampering
+- 
+
+TAMPERING: There's still a LOT more in BunnyMod to move over.

@@ -84,17 +84,52 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Challenges\C_ResistanceHR.cs" />
-    <Compile Include="Challenges\Quest Count\C_QuestCount.cs" />
-    <Compile Include="Challenges\Quest Count\Single_Minded.cs" />
-    <Compile Include="Challenges\Quest Count\Workhorse.cs" />
-    <Compile Include="Challenges\Quest Count\Rushin_Revolution.cs" />
-    <Compile Include="Challenges\Quest Rewards\C_QuestRewards.cs" />
-    <Compile Include="Challenges\Quest Rewards\No_Rewards.cs" />
-    <Compile Include="Challenges\Quest Rewards\Lump_Sum.cs" />
-    <Compile Include="Challenges\Quest Rewards\Monkey_Rewards.cs" />
-    <Compile Include="Challenges\Quest Rewards\Unpaid_Internship.cs" />
-    <Compile Include="Challenges\Quest Rewards\Double_Ply_Rewards.cs" />
+    <Compile Include="Localization\CAgentGroup.cs" />
+    <Compile Include="Localization\VAgentGoal.cs" />
+    <Compile Include="Localization\VRelationship.cs" />
+    <Compile Include="Localization\VTraitCategory.cs" />
+    <Compile Include="Systems\Conduct\Mutators\Retaliation_Reducer.cs" />
+    <Compile Include="Systems\Conduct\Mutators\Discovery_Disincentivizer.cs" />
+    <Compile Include="Systems\Conduct\Mutators\Alarm_Avoider.cs" />
+    <Compile Include="Systems\Conduct\Mutators\Diligence_Detector.cs" />
+    <Compile Include="Systems\Reputation\NPC_Reputations.cs" />
+    <Compile Include="Systems\Conduct\Mutators\Conscience_Configurator.cs" />
+    <Compile Include="Mutators\MutatorManager.cs" />
+    <Compile Include="Mutators\M_RHR.cs" />
+    <Compile Include="Systems\Conduct\Mutators\M_ComplianceChip.cs" />
+    <Compile Include="Systems\Conduct\Traits\T_XPModifier.cs" />
+    <Compile Include="Systems\Inventory\Mutators\M_Inventory.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Light_Packer.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Luggage_Loser.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Liquidator_Plus.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Liquidator.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Spendthrift_Plus.cs" />
+    <Compile Include="Systems\Inventory\Traits\Assets\Spendthrift.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Wastrel.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Venture_Capitalist.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Index_Funder.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Pocket_Changer.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Lifestyle_Creeper.cs" />
+    <Compile Include="Systems\Inventory\Traits\Finances\Lock_and_Loadout.cs" />
+    <Compile Include="Systems\Inventory\Traits\T_Inventory.cs" />
+    <Compile Include="Systems\Loot\Traits\Supply_Smuggler.cs" />
+    <Compile Include="Systems\Loot\T_Loot.cs" />
+    <Compile Include="Systems\Luck\Cursed.cs" />
+    <Compile Include="Systems\Luck\Charmed_Plus.cs" />
+    <Compile Include="Systems\Luck\Charmed.cs" />
+    <Compile Include="Systems\Luck\T_Luck.cs" />
+    <Compile Include="Systems\Conduct\GuiltyText.cs" />
+    <Compile Include="Systems\Conduct\Traits\Malicious.cs" />
+    <Compile Include="Systems\Progression\Traits\Numskulled.cs" />
+    <Compile Include="Systems\Quests\Quest Count\Workaholic.cs" />
+    <Compile Include="Systems\Quests\Quest Count\Rushin_Revolution.cs" />
+    <Compile Include="Systems\Quests\Quest Count\T_QuestCount.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Lump_Sum_Rewards.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Monkey_Rewards.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Loadout_Rewards.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Unpaid_Internship.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Double_Ply_Rewards.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\T_QuestRewards.cs" />
     <Compile Include="Core.cs" />
     <Compile Include="Localization\VAgent.cs" />
     <Compile Include="Localization\CNameInterface.cs" />
@@ -105,90 +140,159 @@
     <Compile Include="Localization\VItemCategory.cs" />
     <Compile Include="Localization\VItemType.cs" />
     <Compile Include="Localization\VNameType.cs" />
-    <Compile Include="Patches\Items\P_InvDatabase.cs" />
-    <Compile Include="Patches\Items\P_InvInterface.cs" />
-    <Compile Include="Patches\Items\P_InvItem.cs" />
-    <Compile Include="Patches\Items\P_ItemFunctions.cs" />
-    <Compile Include="Patches\Combat Ranged\P_Bullet.cs" />
-    <Compile Include="Patches\Agents\P_Agent.cs" />
-    <Compile Include="Patches\ObjectReals\P_ExitPoint.cs" />
-    <Compile Include="Patches\Quests\P_LoadLevel.cs" />
-    <Compile Include="Patches\Quests\P_Quests.cs" />
-    <Compile Include="Patches\View Distance\P_Camera.cs" />
-    <Compile Include="Patches\ObjectReals\P_Door.cs" />
-    <Compile Include="Patches\Combat Melee\P_MeleeHitbox.cs" />
-    <Compile Include="Patches\Interface\P_ObjectInfo.cs" />
-    <Compile Include="Patches\ObjectReals\P_ObjectReal.cs" />
-    <Compile Include="Patches\View Distance\P_PlayerControl.cs" />
-    <Compile Include="Patches\Combat Ranged\P_BulletHitbox.cs" />
-    <Compile Include="Patches\ObjectReals\P_PlayfieldObject.cs" />
-    <Compile Include="Patches\Leveling\P_SkillPoints.cs" />
-    <Compile Include="Patches\Leveling\P_StatsScreen.cs" />
-    <Compile Include="Patches\Agents\P_StatusEffects.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Traits\Close Combat\Special Strikes\Monkey_Paws.cs" />
-    <Compile Include="Traits\Close Combat\Special Strikes\Monkey_Paws_Plus.cs" />
-    <Compile Include="Traits\Close Combat\Special Strikes\Spectral_Palms_Plus.cs" />
-    <Compile Include="Traits\Close Combat\Special Strikes\Spectral_Palms.cs" />
-    <Compile Include="Traits\Close Combat\T_CombatMelee.cs" />
-    <Compile Include="Traits\Close Combat\Special Strikes\T_EnchantedHands.cs" />
-    <Compile Include="Traits\Progression\CustomExperienceAwards.cs" />
-    <Compile Include="Traits\Progression\Experience Rate\Brainiac.cs" />
-    <Compile Include="Traits\Progression\Experience Rate\Moron_the_Merrier.cs" />
-    <Compile Include="Traits\Progression\Experience Rate\Smooth_Brained.cs" />
-    <Compile Include="Traits\Progression\Experience Rate\Dim_Bulb.cs" />
-    <Compile Include="Traits\Progression\Experience Rate\T_ExperienceRate.cs" />
-    <Compile Include="Traits\Progression\Flagellant.cs" />
-    <Compile Include="Traits\Progression\Guilty_Conscience.cs" />
-    <Compile Include="Traits\Item Restrictions\Afraid_of_Loud_Noises.cs" />
-    <Compile Include="Traits\Item Restrictions\Fat_Head.cs" />
-    <Compile Include="Traits\Item Restrictions\Fatass.cs" />
-    <Compile Include="Traits\Item Restrictions\Draw_No_Blood.cs" />
-    <Compile Include="Traits\Item Restrictions\Surgical_Striker.cs" />
-    <Compile Include="Traits\Item Restrictions\Sweaty_Fingers.cs" />
-    <Compile Include="Traits\Item Restrictions\Weak_Wrists.cs" />
-    <Compile Include="Traits\Item Restrictions\Vegetarian.cs" />
-    <Compile Include="Traits\Item Restrictions\Carnivore.cs" />
-    <Compile Include="Traits\Item Restrictions\Friend_of_Bill.cs" />
-    <Compile Include="Traits\Item Restrictions\Teetotaller.cs" />
-    <Compile Include="Traits\Item Restrictions\DAREdevil.cs" />
-    <Compile Include="Traits\Item Restrictions\T_ItemRestrictions.cs" />
-    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
-    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Dum_Dum_Bum_Plus.cs" />
-    <Compile Include="Traits\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
-    <Compile Include="Traits\Ranged Combat\Skills\Wetworker.cs" />
-    <Compile Include="Traits\Ranged Combat\Skills\Sniper.cs" />
-    <Compile Include="Traits\Ranged Combat\Skills\Sniper_Plus.cs" />
-    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer_Plus.cs" />
-    <Compile Include="Traits\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
-    <Compile Include="Traits\Ranged Combat\T_CombatRanged.cs" />
+    <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist.cs" />
+    <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist_Plus.cs" />
+    <Compile Include="Systems\Close Combat\Enchanted Hands\Spectral_Palm_Plus.cs" />
+    <Compile Include="Systems\Close Combat\Enchanted Hands\Spectral_Palm.cs" />
+    <Compile Include="Systems\Close Combat\T_CombatMelee.cs" />
+    <Compile Include="Systems\Close Combat\Enchanted Hands\T_EnchantedHands.cs" />
+    <Compile Include="Systems\Debt\Bank_Debt_250.cs" />
+    <Compile Include="Systems\Debt\T_Debt.cs" />
+    <Compile Include="Traits\IRefreshAtLevelStart.cs" />
+    <Compile Include="Traits\ISetupAgentStats.cs" />
+    <Compile Include="Systems\Interaction\Snitch.cs" />
+    <Compile Include="Systems\Interaction\Snitch_Plus.cs" />
+    <Compile Include="Systems\Interaction\T_Interaction.cs" />
+    <Compile Include="Systems\Special Accommodations\Strict_Alcoholic.cs" />
+    <Compile Include="Systems\Progression\CustomExperienceAwards.cs" />
+    <Compile Include="Systems\Progression\Traits\Brainiac.cs" />
+    <Compile Include="Systems\Progression\Traits\Moron_the_Merrier.cs" />
+    <Compile Include="Systems\Progression\Traits\Smooth_Brained.cs" />
+    <Compile Include="Systems\Progression\Traits\Dim_Bulb.cs" />
+    <Compile Include="Systems\Progression\Traits\T_ExperienceRate.cs" />
+    <Compile Include="Systems\Conduct\Traits\Conscientious.cs" />
+    <Compile Include="Systems\Special Accommodations\Afraid_of_Loud_Noises.cs" />
+    <Compile Include="Systems\Special Accommodations\Fat_Head.cs" />
+    <Compile Include="Systems\Special Accommodations\Fatass.cs" />
+    <Compile Include="Systems\Special Accommodations\Draw_No_Blood.cs" />
+    <Compile Include="Systems\Special Accommodations\Surgical_Striker.cs" />
+    <Compile Include="Systems\Special Accommodations\Sweaty_Fingers.cs" />
+    <Compile Include="Systems\Special Accommodations\Weak_Wrists.cs" />
+    <Compile Include="Systems\Special Accommodations\Vegetarian.cs" />
+    <Compile Include="Systems\Special Accommodations\Carnivore.cs" />
+    <Compile Include="Systems\Special Accommodations\Friend_of_Bill.cs" />
+    <Compile Include="Systems\Special Accommodations\Teetotaller.cs" />
+    <Compile Include="Systems\Special Accommodations\DAREdevil.cs" />
+    <Compile Include="Systems\Special Accommodations\T_ItemRestrictions.cs" />
+    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
+    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Dum_Dum_Bum_Plus.cs" />
+    <Compile Include="Systems\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
+    <Compile Include="Systems\Ranged Combat\Skills\Wetworker.cs" />
+    <Compile Include="Systems\Ranged Combat\Skills\Sniper.cs" />
+    <Compile Include="Systems\Ranged Combat\Skills\Sniper_Plus.cs" />
+    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer_Plus.cs" />
+    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
+    <Compile Include="Systems\Ranged Combat\T_CombatRanged.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Lameass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Lameass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Badass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Underclass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Smartass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Smartass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Deadass_Plus.cs" />
+    <Compile Include="Systems\Reputation\General\Polarizing.cs" />
+    <Compile Include="Systems\Reputation\General\Polarizing_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Underclass.cs" />
+    <Compile Include="Systems\Reputation\General\Combative.cs" />
+    <Compile Include="Systems\Reputation\General\Combative_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Hardass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Hardass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Upperclass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Deadass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Badass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Xenophile_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Xenophobe.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Xenophile.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Dumbass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Dumbass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Punkass.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Upperclass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Punkass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Kissass_Plus.cs" />
+    <Compile Include="Systems\Reputation\Class-Based\Kissass.cs" />
+    <Compile Include="Systems\Reputation\T_Reputation.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Backed_by_the_Blue_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Friend_of_Monke_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Friend_of_Monke.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Job_Creator_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Job_Creator.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Mobbed_Up_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Rollin_Deep_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Thicker_than_Water_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Thicker_than_Water.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Rollin_Deep.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Mobbed_Up.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Backed_by_the_Blue.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Gooned_Up_Plus.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\Gooned_Up.cs" />
+    <Compile Include="Systems\Spawns\Bodyguarded\T_Bodyguarded.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Hacker_Network.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Hacker_Network_Plus.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Guild_Network_Plus.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Guild_Network.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Return_to_Eneme.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Most_Wanted.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Robotnip.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Robait.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Hitlisted.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Reinforced_Plus.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Reinforced.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Mook_Masher.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Loansharked.cs" />
+    <Compile Include="Systems\Spawns\Roamers\Haunted.cs" />
+    <Compile Include="Systems\Spawns\Roamers\T_Roamers.cs" />
+    <Compile Include="Systems\Spawns\T_Spawns.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tamper_Tantrum.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tamper_Tantrum_Plus.cs" />
+    <Compile Include="Systems\Tampering\Traits\T_Tampering.cs" />
     <Compile Include="Traits\T_ResistanceHR.cs" />
-    <Compile Include="Traits\Vision Range\Eagle_Eyes.cs" />
-    <Compile Include="Traits\Vision Range\Eagle_Eyes_Plus.cs" />
-    <Compile Include="Traits\Vision Range\Myopic_Plus.cs" />
-    <Compile Include="Traits\Vision Range\T_VisionRange.cs" />
-    <Compile Include="Traits\Vision Range\Myopic.cs" />
+    <Compile Include="Systems\Vision Range\Eagle_Eyes.cs" />
+    <Compile Include="Systems\Vision Range\Eagle_Eyes_Plus.cs" />
+    <Compile Include="Systems\Vision Range\Myopic_Plus.cs" />
+    <Compile Include="Systems\Vision Range\T_VisionRange.cs" />
+    <Compile Include="Systems\Vision Range\Myopic.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Traits\Quests\Quest Count\" />
-    <Folder Include="Traits\Quests\Quest Rewards\" />
+    <Content Include="Documentation\Images\Alegria_ConscienceEw.jpg" />
+    <Content Include="Documentation\Images\Alegria_DrinkYourSoy.jpg" />
+    <Content Include="Documentation\Images\Alegria_EatBabby.jpg" />
+    <Content Include="Documentation\Images\Alegria_ElevatorTooSlow.jpg" />
+    <Content Include="Documentation\Images\Alegria_GunHead.jpg" />
+    <Content Include="Documentation\Images\Alegria_StopResisting.png" />
+    <Content Include="Documentation\Images\Alegria_WorkIsFreedom.jpg" />
+    <Content Include="Systems\Conduct\Traits\Notes.txt" />
+    <Content Include="Systems\Inventory\Mutators\Notes.txt" />
+    <Content Include="Systems\Tampering\Notes.txt" />
+    <Content Include="Systems\Inventory\Notes.txt" />
+    <Content Include="Systems\Interaction\Notes.txt" />
+    <Content Include="Systems\Social\Notes.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>set coreDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\core"
-set gameDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue"
-set patcherDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\patchers"
-set pluginDirectory="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\plugins"
+    <PostBuildEvent>START /min cmd.exe /c C:\Users\Owner\source\repos\ResistanceHR\Postbuild.bat</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>REM    This script copies mod files currently used by the game into your repository's Libraries folder. This means you only need to update dependencies in one place rather than having to do it for each mod you work on.
+ECHO "======= PRE-BUILD"
 
-set dllBTHU="BTHarmonyUtils.dll" 
-set dllMain="ResistanceHR.dll"
-set dllRLCore="RogueLibsCore.dll"
-set dllRLPatcher="RogueLibsPatcher.dll"
-if exist %25coreDirectory%25 copy /y %25dllBTHU%25 %25coreDirectory%25
-if exist %25patcherDirectory%25 copy /y %25dllRLPatcher%25 %25patcherDirectory%25
-if exist %25pluginDirectory%25 copy /y %25dllMain%25 %25pluginDirectory%25
-if exist %25pluginDirectory%25 copy /y %25dllRLCore%25 %25pluginDirectory%25
+ECHO "    --- Defining directories"
+SET dirBepinex="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\"
+SET dirCore="%25dirBepinex%25core\"
+SET dirPatchers="%25dirBepinex%25patchers\"
+SET dirPlugins="%25dirBepinex%25plugins\"
+CD /D "..\..\..\Libraries"
+SET dirLibraries=%25cd%25\
 
-if exist %25gameDirectory%25 Start "" "C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\StreetsOfRogue.exe"</PostBuildEvent>
+ECHO "    --- Defining series"
+SET importsCore=BTHarmonyUtils.dll
+SET importsPatchers=RogueLibsPatcher.dll
+SET importsPlugins=RogueLibsCore.dll
+
+ECHO "    --- Copying files"
+FOR %25%25a IN (%25importsCore%25) DO (XCOPY /s /y "%25dirCore%25%25%25~a" %25dirLibraries%25)
+FOR %25%25a IN (%25importsPatchers%25) DO (XCOPY /s /y "%25dirPatchers%25%25%25~a" %25dirLibraries%25)
+FOR %25%25a IN (%25importsPlugins%25) DO (XCOPY /s /y "%25dirPlugins%25%25%25~a" %25dirLibraries%25)</PreBuildEvent>
   </PropertyGroup>
 </Project>

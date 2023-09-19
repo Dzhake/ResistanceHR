@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ResistanceHR.Localization
+namespace ResistanceHR
 {
 	public static class VItem
 	{
