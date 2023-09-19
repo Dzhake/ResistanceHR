@@ -83,7 +83,7 @@ namespace ResistanceHR.Vision_Range
 
 		// This one was unsuccessful. No observed difference. :(
 		// This one causes SetRel errors.
-		[HarmonyTranspiler, HarmonyPatch(nameof(BrainUpdate.DoObjectChecks))]
+		//[HarmonyTranspiler, HarmonyPatch(nameof(BrainUpdate.DoObjectChecks))]
 		private static IEnumerable<CodeInstruction> ExpandActivationRange_16(IEnumerable<CodeInstruction> codeInstructions)
 		{
 			List<CodeInstruction> instructions = codeInstructions.ToList();

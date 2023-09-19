@@ -1,10 +1,7 @@
-﻿using BepInEx.Logging;
-using Google2u;
-using HarmonyLib;
+﻿using Google2u;
 using RogueLibsCore;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 namespace ResistanceHR.Tampering
 {
@@ -12,35 +9,55 @@ namespace ResistanceHR.Tampering
 	{
 		public override void OnAdded() { }
 		public override void OnRemoved() { }
-		public abstract float ToolCostFactor { get; }
 
-		public static int ApplyToolCostModifiers(Agent agent, int baseCost)
+		[RLSetup]
+		internal static void Start()
 		{
-			float? costFactor = agent.GetTraits<T_Tampering>().FirstOrDefault()?.ToolCostFactor ?? null;
+			InitializeNames();
+		}
+		internal static void InitializeNames()
+		{
+			string t = VNameType.Dialogue;
+			RogueLibs.CreateCustomName(FlamingBarrelCookDamage, t, new CustomNameInfo("Ow! Fuck!"));
+			RogueLibs.CreateCustomName(FlamingBarrelCookNoDamage, t, new CustomNameInfo("Mmmm, toasty. Just like the burning flesh on my fingers!"));
+			RogueLibs.CreateCustomName(MachineBusy, t, new CustomNameInfo("It's busy doing... machine things."));
+			RogueLibs.CreateCustomName(SlotMachineJackpot_1, t, new CustomNameInfo("Chauvelin Automated Vice, Inc. presents: Jackpot!"));
+			RogueLibs.CreateCustomName(SlotMachineJackpot_2, t, new CustomNameInfo("Winner Winner, Chicken Dinner!"));
+			RogueLibs.CreateCustomName(SlotMachineJackpot_3, t, new CustomNameInfo("NOTE: You are not actually winning a Chicken Dinner, it's an expression."));
+			RogueLibs.CreateCustomName(SlotMachineJackpot_4, t, new CustomNameInfo("Yep... still going."));
+			RogueLibs.CreateCustomName(SlotMachineJackpot_5, t, new CustomNameInfo("Jackpot. Happy for ya."));
 
-			if (!(costFactor is null))
-				return Mathf.FloorToInt((float)(baseCost * costFactor));
-			else
-				return baseCost;
+			t = VNameType.Interface;
+			RogueLibs.CreateCustomName(DispenseIce, t, new CustomNameInfo("Dispense ice"));
+			RogueLibs.CreateCustomName(HideInContainer, t, new CustomNameInfo("Hide inside"));
+			RogueLibs.CreateCustomName(OpenContainer, t, new CustomNameInfo("Open container"));
+			RogueLibs.CreateCustomName(SlotMachineHackJackpot, t, new CustomNameInfo("Penny-Slot Jackpot Promotion"));
+			RogueLibs.CreateCustomName(SlotMachinePlay1, t, new CustomNameInfo("Play"));
+			RogueLibs.CreateCustomName(SlotMachinePlay100, t, new CustomNameInfo("Play"));
 		}
 
-		public static void AgentInteractions_AddButton_Prefix(string buttonName, ref string extraCost, Agent mostRecentInteractingAgent)
-		{
-			if ((WrenchTamperButtonNames.Contains(buttonName)
-					|| CrowbarTamperButtonNames.Contains(buttonName)
-					|| WireCutterTamperButtonNames.Contains(buttonName))//etc
-				&& extraCost.EndsWith("-30"))
-			{
-				int baseCost = 30;
+		public const string
+			// Dialogue
+			FlamingBarrelCookDamage = "FlamingBarrelCookDamage",
+			FlamingBarrelCookNoDamage = "FlamingBarrelCookNoDamage",
+			MachineBusy = "MachineBusy",
+			SlotMachineJackpot_ = "SlotMachineJackpot_", // For concatenation into following
+				SlotMachineJackpot_1 = "SlotMachineJackpot_1",
+				SlotMachineJackpot_2 = "SlotMachineJackpot_2",
+				SlotMachineJackpot_3 = "SlotMachineJackpot_3",
+				SlotMachineJackpot_4 = "SlotMachineJackpot_4",
+				SlotMachineJackpot_5 = "SlotMachineJackpot_5",
 
-				T_Tampering trait = mostRecentInteractingAgent.GetTraits<T_Tampering>().FirstOrDefault();
+			// Interface
+			DispenseIce = "DispenseIce",
+			GrillFudPaid = "GrillFudPaid",
+			HideInContainer = "HideInContainer",
+			OpenContainer = "OpenContainer",
+			SlotMachineHackJackpot = "SlotMachineHackJackpot",
+			SlotMachinePlay1 = "Play1",
+			SlotMachinePlay100 = "Play100",
 
-				if (!(trait is null))
-					baseCost = (int)(baseCost * trait.ToolCostFactor);
-
-				extraCost = extraCost.Substring(0, extraCost.Length - 2) + baseCost.ToString();
-			}
-		}
+			z = "";
 
 		internal static readonly List<string> AxeTamperButtonNames = new List<string>()
 		{
@@ -50,10 +67,9 @@ namespace ResistanceHR.Tampering
 		{
 			nameof(InterfaceNameDB.rowIds.UseCrowbar),
 		};
-		internal static readonly List<string> DrillTamperButtonNames = new List<string>()
+		internal static readonly List<string> PowerDrillTamperButtonNames = new List<string>()
 		{
 			// Drill holes to drain oil (Generators, NOT stove)
-
 		};
 		internal static readonly List<string> PowerSawTamperButtonNames = new List<string>()
 		{
@@ -77,64 +93,15 @@ namespace ResistanceHR.Tampering
 			nameof(InterfaceNameDB.rowIds.UseWrenchToDeactivate),
 			nameof(InterfaceNameDB.rowIds.UseWrenchToDetonate),
 		};
-	}
 
-	[HarmonyPatch(typeof(AgentInteractions))]
-	internal class P_AgentInteractions_Tampering
-	{
-		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
-		private static GameController GC => GameController.gameController;
-
-		[HarmonyPrefix, HarmonyPatch(methodName: nameof(AgentInteractions.AddButton), argumentTypes: new[] { typeof(string), typeof(int), typeof(string) })]
-		private static void AddButton_Prefix(string buttonName, int moneyCost, ref string extraCost, Agent ___mostRecentInteractingAgent)
-		{
-			T_Tampering.AgentInteractions_AddButton_Prefix(buttonName, ref extraCost, ___mostRecentInteractingAgent);
-		}
-	}
-
-
-	[HarmonyPatch(declaringType: typeof(InvDatabase))]
-	class P_InvDatabase
-	{
-		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
-		public static GameController GC => GameController.gameController;
-
-		[HarmonyPrefix, HarmonyPatch(nameof(InvDatabase.SubtractFromItemCount), new[] { typeof(int), typeof(int), typeof(bool) })]
-		public static bool SubtractFromItemCount_c_Prefix(int slotNum, ref int amount, bool toolbarMove, InvDatabase __instance)
-		{
-			logger.LogDebug("InvDatabase_SubtractFromItemCount_c:");
-			logger.LogDebug("\tslotNum = " + slotNum);
-			logger.LogDebug("\tamount = " + amount);
-			logger.LogDebug("\ttoolbarMove = " + toolbarMove);
-
-			if (VItem.tools.Contains(__instance.InvItemList[slotNum].invItemName))
-			{
-				T_Tampering trait = __instance.agent.GetTraits<T_Tampering>().FirstOrDefault();
-
-				if (!(trait is null))
-					amount = (int)(amount * trait.ToolCostFactor);
-			}
-
-			return true;
-		}
-
-		[HarmonyPrefix, HarmonyPatch(nameof(InvDatabase.SubtractFromItemCount), new[] { typeof(InvItem), typeof(int), typeof(bool) })]
-		public static bool SubtractFromItemCount_d_Prefix(InvItem invItem, ref int amount, bool toolbarMove, InvDatabase __instance)
-		{
-			logger.LogDebug("InvDatabase_SubtractFromItemCount_d:");
-			logger.LogDebug("\tInvItem = " + invItem.invItemName);
-			logger.LogDebug("\tamount = " + amount);
-			logger.LogDebug("\ttoolbarMove = " + toolbarMove);
-
-			if (VItem.tools.Contains(invItem.invItemName))
-			{
-				T_Tampering trait = __instance.agent.GetTraits<T_Tampering>().FirstOrDefault();
-
-				if (!(trait is null))
-					amount = (int)(amount * trait.ToolCostFactor);
-			}
-
-			return true;
-		}
+		internal static readonly List<string> AllTamperButtonNames = 
+			AxeTamperButtonNames
+			.Concat(CrowbarTamperButtonNames)
+			.Concat(PowerDrillTamperButtonNames)
+			.Concat(PowerSawTamperButtonNames)
+			.Concat(SledgehammerTamperButtonNames)
+			.Concat(WireCutterTamperButtonNames)
+			.Concat(WrenchTamperButtonNames)
+			.ToList();
 	}
 }

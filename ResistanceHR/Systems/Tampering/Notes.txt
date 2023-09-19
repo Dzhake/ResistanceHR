@@ -10,5 +10,6 @@
 - Trait: Mechanically Inept (-2)
 	- No access to any sort of tampering
 - 
-
-TAMPERING: There's still a LOT more in BunnyMod to move over.
+- Trait: Gas Attacker / Item: Vent Injector
+	- Can use Vents to inject gas into system. Doesn't spew from used vent.
+	- Operate to attach. Then activate the item to operate it again.

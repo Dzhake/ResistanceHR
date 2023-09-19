@@ -2,22 +2,20 @@
 
 namespace ResistanceHR.Tampering
 {
-	internal class Tamper_Tantrum_Plus : T_Tampering
+	internal class Skilled_Worker_Plus : T_ToolCost
 	{
-		public override float ToolCostFactor => 0.333f;
-
-		//[RLSetup]
+		[RLSetup]
 		internal static void Setup()
 		{
-			RogueLibs.CreateCustomTrait<Tamper_Tantrum_Plus>()
+			RogueLibs.CreateCustomTrait<Skilled_Worker_Plus>()
 				.WithDescription(new CustomNameInfo
 				{
-					[LanguageCode.English] = "Your tools take no wear from use.",
-					[LanguageCode.Russian] = "Ваши инструменты не изнашиваются когда вы подделываете что-то.",
+					[LanguageCode.English] = "Your tools take very little wear from use.",
+					[LanguageCode.Russian] = "Ваши инструменты портятся гораздо меньше, когда вы манипулируете предметами.", // Google Translate for update
 				})
 				.WithName(new CustomNameInfo
 				{
-					[LanguageCode.English] = DisplayName(typeof(Tamper_Tantrum_Plus)),
+					[LanguageCode.English] = DisplayName(typeof(Skilled_Worker_Plus)),
 					[LanguageCode.Russian] = "Вспышка Гнева +",
 				})
 				.WithUnlock(new TraitUnlock
@@ -43,5 +41,7 @@ namespace ResistanceHR.Tampering
 				});
 		}
 
+		internal override int NewToolCost(int vanilla) =>
+			vanilla / 3;
 	}
 }

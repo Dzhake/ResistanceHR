@@ -2,14 +2,12 @@
 
 namespace ResistanceHR.Tampering
 {
-	internal class Tamper_Tantrum : T_Tampering
+	internal class Skilled_Worker : T_ToolCost
 	{
-		public override float ToolCostFactor => 0.666f;
-
-		//[RLSetup]
+		[RLSetup]
 		internal static void Setup()
 		{
-			RogueLibs.CreateCustomTrait<Tamper_Tantrum>()
+			RogueLibs.CreateCustomTrait<Skilled_Worker>()
 				.WithDescription(new CustomNameInfo
 				{
 					[LanguageCode.English] = "Your tools take less wear from use.",
@@ -17,7 +15,7 @@ namespace ResistanceHR.Tampering
 				})
 				.WithName(new CustomNameInfo
 				{
-					[LanguageCode.English] = DisplayName(typeof(Tamper_Tantrum)),
+					[LanguageCode.English] = DisplayName(typeof(Skilled_Worker)),
 					[LanguageCode.Russian] = "Вспышка Гнева",
 				})
 				.WithUnlock(new TraitUnlock
@@ -38,22 +36,12 @@ namespace ResistanceHR.Tampering
 						isUpgrade = false,
 						prerequisites = { },
 						recommendations = { },
-						upgrade = nameof(Tamper_Tantrum_Plus),
+						upgrade = nameof(Skilled_Worker_Plus),
 					}
 				});
 		}
 
-		public static void AgentInteractions_AddButton_Prefix(string buttonName, ref string extraCost, Agent mostRecentInteractingAgent)
-		{
-			if ((WrenchTamperButtonNames.Contains(buttonName)
-					|| CrowbarTamperButtonNames.Contains(buttonName)
-					|| WireCutterTamperButtonNames.Contains(buttonName))
-				&& extraCost.EndsWith("-30")
-				&& mostRecentInteractingAgent.HasTrait<Tamper_Tantrum>())
-			{
-				extraCost = extraCost.Substring(0, extraCost.Length - 2) + "15";
-			}
-		}
-
+		internal override int NewToolCost(int vanilla) =>
+			(vanilla * 2) / 3;
 	}
 }
