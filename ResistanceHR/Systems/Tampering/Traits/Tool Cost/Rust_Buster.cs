@@ -2,12 +2,12 @@
 
 namespace ResistanceHR.Tampering
 {
-	internal class Skilled_Worker : T_ToolCost
+	internal class Rust_Buster : T_ToolCost
 	{
 		[RLSetup]
 		internal static void Setup()
 		{
-			RogueLibs.CreateCustomTrait<Skilled_Worker>()
+			RogueLibs.CreateCustomTrait<Rust_Buster>()
 				.WithDescription(new CustomNameInfo
 				{
 					[LanguageCode.English] = "Your tools take less wear from use.",
@@ -15,8 +15,8 @@ namespace ResistanceHR.Tampering
 				})
 				.WithName(new CustomNameInfo
 				{
-					[LanguageCode.English] = DisplayName(typeof(Skilled_Worker)),
-					[LanguageCode.Russian] = "Вспышка Гнева",
+					[LanguageCode.English] = DisplayName(typeof(Rust_Buster)),
+					[LanguageCode.Russian] = "средство от ржавчины",
 				})
 				.WithUnlock(new TraitUnlock
 				{
@@ -29,14 +29,14 @@ namespace ResistanceHR.Tampering
 					UnlockCost = 5,
 					Unlock =
 					{
-						categories = {  },
+						categories = { },
 						cancellations = { VanillaTraits.PoorHandEyeCoordination },
 						cantLose = true,
 						cantSwap = false,
 						isUpgrade = false,
 						prerequisites = { },
 						recommendations = { },
-						upgrade = nameof(Skilled_Worker_Plus),
+						upgrade = nameof(Rust_Buster_Plus),
 					}
 				});
 		}

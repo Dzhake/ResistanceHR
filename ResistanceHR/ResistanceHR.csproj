@@ -244,8 +244,8 @@
     <Compile Include="Systems\Spawns\Roamers\Haunted.cs" />
     <Compile Include="Systems\Spawns\Roamers\T_Roamers.cs" />
     <Compile Include="Systems\Spawns\T_Spawns.cs" />
-    <Compile Include="Systems\Tampering\Traits\Tool Cost\Skilled_Worker.cs" />
-    <Compile Include="Systems\Tampering\Traits\Tool Cost\Skilled_Worker_Plus.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tool Cost\Rust_Buster.cs" />
+    <Compile Include="Systems\Tampering\Traits\Tool Cost\Rust_Buster_Plus.cs" />
     <Compile Include="Systems\Tampering\Traits\T_Tampering.cs" />
     <Compile Include="Unlocks\Traits\T_ResistanceHR.cs" />
     <Compile Include="Systems\Vision Range\Eagle_Eyes.cs" />
