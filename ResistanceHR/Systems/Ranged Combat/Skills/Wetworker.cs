@@ -4,7 +4,7 @@ namespace ResistanceHR.Combat_Ranged
 {
 	internal class Wetworker : T_CombatRanged
 	{
-		[RLSetup]
+		//[RLSetup]
 		internal static void Setup()
 		{
 			RogueLibs.CreateCustomTrait<Wetworker>()

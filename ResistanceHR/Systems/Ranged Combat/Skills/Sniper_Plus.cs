@@ -5,7 +5,7 @@ namespace ResistanceHR.Combat_Ranged
 {
 	internal class Sniper_Plus : T_CombatRanged
 	{
-		[RLSetup]
+		//[RLSetup]
 		internal static void Setup()
 		{
 			RogueLibs.CreateCustomTrait<Sniper_Plus>()

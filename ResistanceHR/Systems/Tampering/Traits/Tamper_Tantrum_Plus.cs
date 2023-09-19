@@ -6,7 +6,7 @@ namespace ResistanceHR.Tampering
 	{
 		public override float ToolCostFactor => 0.333f;
 
-		[RLSetup]
+		//[RLSetup]
 		internal static void Setup()
 		{
 			RogueLibs.CreateCustomTrait<Tamper_Tantrum_Plus>()
