@@ -127,7 +127,7 @@ namespace ResistanceHR.Ethics
 						if (!myFreedAgents[i].dead || myFreedAgents[i].teleporting)
 							return;
 
-					myAgent.skillPoints.AddPoints(CustomExperienceAwards.FreePrisonerFailure);
+					myAgent.skillPoints.AddPoints(CExperienceType.FreePrisonerFailure);
 				}
 			}
 		}

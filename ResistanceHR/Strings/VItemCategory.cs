@@ -16,7 +16,7 @@
 			Movement = "Movement",
 			NonStandardWeapons = "NonStandardWeapons",
 			NonStandardWeapons2 = "NonStandardWeapons2",
-			NonUsableTool = "NonUsableTool",
+			NonUsableTool = "NonUsableTool", // Mostly Stealth
 			NonViolent = "NonViolent",
 			NotRealWeapons = "NotRealWeapons",
 			NPCsCantPickUp = "NPCsCantPickUp",
