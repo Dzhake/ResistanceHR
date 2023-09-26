@@ -1,0 +1,105 @@
+﻿Interaction System
+
+Change traits so that base version adds Friendly/Annoyed/Rival. Get rid of the Hostile/Loyal ones.
+Both levels add a bonus to an interaction trait, and a malus to another.
+
+Badass			Impress
+Deadass			Intimidate
+Dumbass			Ask Nicely
+Hardass			Intimidate
+Kissass			Beg
+Lameass			Ask Nicely
+Punkass			Bluff
+Smartass		Persuade
+Underclass		Beg
+Upperclass		Bribe
+
+
+## Silver Tongue - Special Requests for NPCs
+[Note: This was COPIED to RHR. Consider that version to be updated if it still exists.
+Request NPCs to do special actions in a much greater variety of situations. Ask them to abuse their power, violate their principles, and cave to your threats.
+Mugging and Extortion are examples of Vanilla Special Requests.
+
+### Methods of Requesting
+
+Base chances of outcome, without modifiers.
+
+|Request			|Requirements + % roll  	|Results besides compliance	|Fearful	|Hostile	|Annoyed	|Neutral	|Success	|Notes  |
+|:------------------|:--------------------------|--------------------------:|----------:|----------:|----------:|----------:|----------:|:------|
+|Asking Nicely		|Relationship				|Friendly					|5			|10			|50			|5			|30			|
+|Bribery			|Money scaled to request	|Friendly					|0			|15			|35			|5			|45			|
+|Threat				|None						|Submissive					|25			|50			|10			|5			|35			|
+
+The following increase the *weighted* chance of Success above:
+- Luck
+- Traits (below)
+- Scariness (Sum of you & followers' equipped damage vs. theirs)
+
+The following decrease the *weighted* chance of Success above:
+- Severity of request
+- Security level of target chunk
+- NPC type (Supercops are hard to corrupt) 
+
+- SOME failed checks that result in Hostility can be resolved by making the NPC submissive (A la Extortionist) via:
+  - Destroying their Objects & Walls
+  - Damaging them and their allies
+- Making an NPC submissive 
+
+- NPC reactions to failed Requests are based on Threat and NPC type:
+  - Fight to death
+  - Fight until beaten, then flee
+  - Alarm Button if applicable
+  - Fight until beaten, then Submissive
+
+### Traits
+- Dirty Deeds, Done Dirt Cheap
+  - Discount on all Bribes
+- Insinuator
+  - Unsuccessful Requests don't hurt relationship with NPC as badly, and may offer a second attempt
+- Judas Pleased
+  - Successful Requests improve relationship with that NPC
+- Palm Greaser
+  - Bonus to success% on all Bribe checks
+- Plata o Plomo
+  - Bonus to success% on all Threaten checks
+- Silver-tongued
+  - Bonus to success% on all Asking Nicely checks
+- Demonstrably Persuasive
+- Terminally Honest
+  - You are unable to do request in which you have to lie, for example:
+    -That One's Trouble
+    -Blood Inspection Day
+    -Fight Fire with Fire
+    -Mayoral Pardon
+
+### Requests
+
+|Eligible NPC               |Request                    |Difficulty |Effect |
+|:--------------------------|:--------------------------|----------:|:------|
+|Any                        |Ask for Key & Safe Combo   |Vanilla    |- Vanilla
+|Any                        |Hire                       |Vanilla    |- Gate hires behind your general persuasion / criminal cred
+|Any                        |Leave Town                 |Vanilla    |- Vanilla
+|Bouncer                    |It's a Pacemaker           |50 %       |- Bouncer deactivates Weapon Detector (Laser Emitter) if within ~5 tiles
+|Bouncer                    |I'm Actually Cool          |75 %       |- Free Bribe to enter
+|Cannibal                   |I Just Ate, You Go Ahead   | 5 %       |- Eat target corpse
+|Clerk (Bathroom)           |Toilet Paper's Out         | 5 %       |- Clerk gives you Banana Peel
+|Clerk (Hospital)           |Blood Inspection Day       |90 %       |- Clerk gives you Blood Bags
+|Clerk (Fire Station)       |Fight Fire with Fire       |95 %       |- Firefighters' water cannons now shoot Oil
+|Cop                        |Bake 'Em Away, Toys        |10 %       |- Arrest target
+|Cop                        |Mayoral Pardon             |80 %       |- Target prisoner<br>- They go free, Cops aren't hostile
+|Cop                        |Strike Bust                |20 %       |- If Firefighters are on Strike, Cops are hostile to them
+|Doctor (Hospital)          |Do just a little Harm, AAT |75 %       |- Target patient<br>- Doctor Chloroforms them
+|Doctor (Hospital)          |Pawn Kidney                |10 %       |- Get some money<br>- Permanently reduce HP max
+|Drug Dealer                |Criminal Mischief          |50 %       |- Target A/C or Water Pump<br>- Drug Dealer inserts Poison syringe
+|Firefighter                |Union Strike               |20 %       |- Difficulty scaled to total number of Firefighters<br>- Firefighters no longer put out fires
+|Musician                   |Mosh Pit                   |75 %       |- All dancing patrons get the Enraged status
+|Resistance Leader          |Mission Accomplished       |95 %       |- Requires one mission left<br>- Mission is immediately declared successful
+|Scientist                  |Criminal Mischief          |90 %       |- Target A/C or Water Pump<br>- Scientist inserts Poison syringe
+|Shopkeeper                 |Thief!                     |15 %       |- Target patron<br>- Shopkeeper becomes annoyed at Patron, runs them out
+|Shopkeeper                 |The Good Shit              |10 %       |- Opens a secret, higher-tier inventory for sale
+|Shopkeeper                 |It Fell off the Truck      |25 %       |- Shopkeeper will buy your stuff at a bad rate
+|Slum Dweller               |Dance!                     | 5 %       |- Slum Dweller dances
+|Slum Dweller               |Hey, Try This for Me       |80 %       |- Target syringe<br>- Test it on Slum Dweller without repercussions
+|Soldier                    |Can I Test it Out?         |90 %       |- Hands you a gun from stock for free. You're allowed to shoot it in his chunk but he will go hostile if you break stuff or exit his property with it.<br>- If you have "Promise I'll Return It!" they won't go hostile if you run off with it.
+|Upper-Cruster              |Button Abuse               |75 %       |- Target NPC<br>- Upper-Cruster presses alarm button and reports your target<br>- No indicator of whether he's reporting them or you, so better hide!
+|Worker                     |Work Order                 |85 %       |- Target Object<br>- Worker Tampers with target object
