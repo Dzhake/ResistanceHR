@@ -37,6 +37,9 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>Libraries\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="AstarPathfindingProject">
+      <HintPath>..\..\..\..\Downloads\AstarPathfindingProject.dll</HintPath>
+    </Reference>
     <Reference Include="BepInEx">
       <HintPath>Libraries\BepInEx.dll</HintPath>
     </Reference>
@@ -56,6 +59,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
       <HintPath>Libraries\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\Freiling87\CCU\Libraries\UnityEngine.AnimationModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>Libraries\UnityEngine.CoreModule.dll</HintPath>
@@ -84,22 +90,33 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Localization\CAgentGroup.cs" />
-    <Compile Include="Localization\VAgentGoal.cs" />
-    <Compile Include="Localization\VRelationship.cs" />
-    <Compile Include="Localization\VTraitCategory.cs" />
-    <Compile Include="Systems\Conduct\Mutators\Retaliation_Reducer.cs" />
-    <Compile Include="Systems\Conduct\Mutators\Discovery_Disincentivizer.cs" />
-    <Compile Include="Systems\Conduct\Mutators\Alarm_Avoider.cs" />
-    <Compile Include="Systems\Conduct\Mutators\Diligence_Detector.cs" />
-    <Compile Include="Systems\Reputation\NPC_Reputations.cs" />
-    <Compile Include="Systems\Conduct\Mutators\Conscience_Configurator.cs" />
+    <Compile Include="Sandbox.cs" />
+    <Compile Include="Strings\CAgentGroup.cs" />
+    <Compile Include="Strings\VAgentGoal.cs" />
+    <Compile Include="Strings\VExperienceType.cs" />
+    <Compile Include="Strings\VRelationship.cs" />
+    <Compile Include="Strings\VTraitCategory.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\Retaliation_Reducer.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\Discovery_Disincentivizer.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\Alarm_Avoider.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\Diligence_Detector.cs" />
+    <Compile Include="Systems\Learning Style\Traits\Pyrokinetic_Learning_Style.cs" />
+    <Compile Include="Systems\Interaction\Hawker.cs" />
+    <Compile Include="Systems\Interaction\Boozer_Schmoozer.cs" />
+    <Compile Include="Systems\Interaction\Burning_Aspirations.cs" />
+    <Compile Include="Systems\Quests\Quest Rewards\Smoke_Up_Johnny.cs" />
+    <Compile Include="Systems\Personality\NPC_Reputations.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\Conscience_Configurator.cs" />
+    <Compile Include="Systems\Tampering\Items\I_Tampering.cs" />
+    <Compile Include="Systems\Tampering\Objects\O_TamperObject.cs" />
+    <Compile Include="Systems\Tampering\Objects\Stove_GrillFud.cs" />
+    <Compile Include="Systems\Tampering\Tampering.cs" />
     <Compile Include="Systems\Tampering\Traits\Tool Cost\T_ToolCost.cs" />
     <Compile Include="Unlocks\Mutators\MutatorManager.cs" />
     <Compile Include="Unlocks\Mutators\M_RHR.cs" />
-    <Compile Include="Systems\Conduct\Mutators\M_ComplianceChip.cs" />
-    <Compile Include="Systems\Conduct\Traits\T_XPModifier.cs" />
-    <Compile Include="Systems\Inventory\Mutators\M_Inventory.cs" />
+    <Compile Include="Systems\Learning Style\Mutators\M_ComplianceChip.cs" />
+    <Compile Include="Systems\Learning Style\Traits\T_XPModifier.cs" />
+    <Compile Include="Systems\Inventory\M_Inventory.cs" />
     <Compile Include="Systems\Inventory\Traits\Assets\Light_Packer.cs" />
     <Compile Include="Systems\Inventory\Traits\Assets\Luggage_Loser.cs" />
     <Compile Include="Systems\Inventory\Traits\Assets\Liquidator_Plus.cs" />
@@ -112,15 +129,15 @@
     <Compile Include="Systems\Inventory\Traits\Finances\Pocket_Changer.cs" />
     <Compile Include="Systems\Inventory\Traits\Finances\Lifestyle_Creeper.cs" />
     <Compile Include="Systems\Inventory\Traits\Finances\Lock_and_Loadout.cs" />
-    <Compile Include="Systems\Inventory\Traits\T_Inventory.cs" />
+    <Compile Include="Systems\Inventory\T_Inventory.cs" />
     <Compile Include="Systems\Loot\Traits\Supply_Smuggler.cs" />
     <Compile Include="Systems\Loot\T_Loot.cs" />
     <Compile Include="Systems\Luck\Cursed.cs" />
     <Compile Include="Systems\Luck\Charmed_Plus.cs" />
     <Compile Include="Systems\Luck\Charmed.cs" />
     <Compile Include="Systems\Luck\T_Luck.cs" />
-    <Compile Include="Systems\Conduct\GuiltyText.cs" />
-    <Compile Include="Systems\Conduct\Traits\Malicious.cs" />
+    <Compile Include="Systems\Learning Style\GuiltyText.cs" />
+    <Compile Include="Systems\Learning Style\Traits\Malicious.cs" />
     <Compile Include="Systems\Progression\Traits\Numskulled.cs" />
     <Compile Include="Systems\Quests\Quest Count\Workaholic.cs" />
     <Compile Include="Systems\Quests\Quest Count\Rushin_Revolution.cs" />
@@ -132,15 +149,15 @@
     <Compile Include="Systems\Quests\Quest Rewards\Double_Ply_Rewards.cs" />
     <Compile Include="Systems\Quests\Quest Rewards\T_QuestRewards.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="Localization\VAgent.cs" />
-    <Compile Include="Localization\CNameInterface.cs" />
-    <Compile Include="Localization\CNameDialogue.cs" />
-    <Compile Include="Localization\CItemCategory.cs" />
-    <Compile Include="Localization\VDialogue.cs" />
-    <Compile Include="Localization\VItem.cs" />
-    <Compile Include="Localization\VItemCategory.cs" />
-    <Compile Include="Localization\VItemType.cs" />
-    <Compile Include="Localization\VNameType.cs" />
+    <Compile Include="Strings\VAgent.cs" />
+    <Compile Include="Strings\CNameInterface.cs" />
+    <Compile Include="Strings\CNameDialogue.cs" />
+    <Compile Include="Strings\CItemCategory.cs" />
+    <Compile Include="Strings\VDialogue.cs" />
+    <Compile Include="Strings\VItem.cs" />
+    <Compile Include="Strings\VItemCategory.cs" />
+    <Compile Include="Strings\VItemType.cs" />
+    <Compile Include="Strings\VNameType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist.cs" />
     <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist_Plus.cs" />
@@ -148,21 +165,20 @@
     <Compile Include="Systems\Close Combat\Enchanted Hands\Spectral_Palm.cs" />
     <Compile Include="Systems\Close Combat\T_CombatMelee.cs" />
     <Compile Include="Systems\Close Combat\Enchanted Hands\T_EnchantedHands.cs" />
-    <Compile Include="Systems\Debt\Bank_Debt_250.cs" />
-    <Compile Include="Systems\Debt\T_Debt.cs" />
-    <Compile Include="Unlocks\Traits\IRefreshAtLevelStart.cs" />
+    <Compile Include="Unlocks\Traits\IRefreshAtStartOfLevelStart.cs" />
+    <Compile Include="Unlocks\Traits\IRefreshAtEndOfLevelStart.cs" />
     <Compile Include="Unlocks\Traits\ISetupAgentStats.cs" />
     <Compile Include="Systems\Interaction\Snitch.cs" />
     <Compile Include="Systems\Interaction\Snitch_Plus.cs" />
     <Compile Include="Systems\Interaction\T_Interaction.cs" />
     <Compile Include="Systems\Special Accommodations\Strict_Alcoholic.cs" />
-    <Compile Include="Systems\Progression\CustomExperienceAwards.cs" />
+    <Compile Include="Strings\CExperienceType.cs" />
     <Compile Include="Systems\Progression\Traits\Brainiac.cs" />
     <Compile Include="Systems\Progression\Traits\Moron_the_Merrier.cs" />
     <Compile Include="Systems\Progression\Traits\Smooth_Brained.cs" />
     <Compile Include="Systems\Progression\Traits\Dim_Bulb.cs" />
     <Compile Include="Systems\Progression\Traits\T_ExperienceRate.cs" />
-    <Compile Include="Systems\Conduct\Traits\Conscientious.cs" />
+    <Compile Include="Systems\Learning Style\Traits\Conscientious.cs" />
     <Compile Include="Systems\Special Accommodations\Afraid_of_Loud_Noises.cs" />
     <Compile Include="Systems\Special Accommodations\Fat_Head.cs" />
     <Compile Include="Systems\Special Accommodations\Fatass.cs" />
@@ -185,34 +201,34 @@
     <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer_Plus.cs" />
     <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
     <Compile Include="Systems\Ranged Combat\T_CombatRanged.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Lameass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Lameass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Badass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Underclass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Smartass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Smartass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Deadass_Plus.cs" />
-    <Compile Include="Systems\Reputation\General\Polarizing.cs" />
-    <Compile Include="Systems\Reputation\General\Polarizing_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Underclass.cs" />
-    <Compile Include="Systems\Reputation\General\Combative.cs" />
-    <Compile Include="Systems\Reputation\General\Combative_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Hardass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Hardass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Upperclass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Deadass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Badass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Xenophile_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Xenophobe.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Xenophile.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Dumbass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Dumbass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Punkass.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Upperclass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Punkass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Kissass_Plus.cs" />
-    <Compile Include="Systems\Reputation\Class-Based\Kissass.cs" />
-    <Compile Include="Systems\Reputation\T_Reputation.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Lameass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Lameass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Badass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Underclass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Smartass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Smartass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Deadass_Plus.cs" />
+    <Compile Include="Systems\Personality\General\Polarizing.cs" />
+    <Compile Include="Systems\Personality\General\Polarizing_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Underclass.cs" />
+    <Compile Include="Systems\Personality\General\Combative.cs" />
+    <Compile Include="Systems\Personality\General\Combative_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Hardass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Hardass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Upperclass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Deadass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Badass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Xenophile_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Xenophobe.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Xenophile.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Dumbass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Dumbass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Punkass.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Upperclass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Punkass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Kissass_Plus.cs" />
+    <Compile Include="Systems\Personality\Class-Based\Kissass.cs" />
+    <Compile Include="Systems\Personality\T_Reputation.cs" />
     <Compile Include="Systems\Spawns\Bodyguarded\Backed_by_the_Blue_Plus.cs" />
     <Compile Include="Systems\Spawns\Bodyguarded\Friend_of_Monke_Plus.cs" />
     <Compile Include="Systems\Spawns\Bodyguarded\Friend_of_Monke.cs" />
@@ -246,7 +262,6 @@
     <Compile Include="Systems\Spawns\T_Spawns.cs" />
     <Compile Include="Systems\Tampering\Traits\Tool Cost\Rust_Buster.cs" />
     <Compile Include="Systems\Tampering\Traits\Tool Cost\Rust_Buster_Plus.cs" />
-    <Compile Include="Systems\Tampering\Traits\T_Tampering.cs" />
     <Compile Include="Unlocks\Traits\T_ResistanceHR.cs" />
     <Compile Include="Systems\Vision Range\Eagle_Eyes.cs" />
     <Compile Include="Systems\Vision Range\Eagle_Eyes_Plus.cs" />
@@ -263,9 +278,10 @@
     <Content Include="Documentation\Images\Alegria_GunHead.jpg" />
     <Content Include="Documentation\Images\Alegria_StopResisting.png" />
     <Content Include="Documentation\Images\Alegria_WorkIsFreedom.jpg" />
-    <Content Include="Systems\Conduct\Traits\Notes.txt" />
+    <Content Include="Systems\Learning Style\Traits\Notes.txt" />
     <Content Include="Systems\Inventory\Mutators\Notes.txt" />
     <Content Include="Systems\Loot\Notes.txt" />
+    <Content Include="Systems\Personality\Class-Based\Notes.txt" />
     <Content Include="Systems\Tampering\Notes.txt" />
     <Content Include="Systems\Inventory\Notes.txt" />
     <Content Include="Systems\Interaction\Notes.txt" />
