@@ -44,6 +44,7 @@ namespace ResistanceHR.Inventory
 				});
 		}
 
+		public override void RefreshAtLevelStart() { }
 		public override void RefreshAtLevelStart(Agent agent)
 		{
 			BuyRandomShit(agent, UnityEngine.Random.Range(1, 3), 1.0f);
@@ -51,5 +52,6 @@ namespace ResistanceHR.Inventory
 
 		public override void OnAdded() { }
 		public override void OnRemoved() { }
+
 	}
 }

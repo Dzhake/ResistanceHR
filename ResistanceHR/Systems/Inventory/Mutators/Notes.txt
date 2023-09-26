@@ -1,3 +1,6 @@
 ﻿Mutator versions of:
 	Luggage Loser
 	Lifestyle Creeper
+	Lose all Weapons
+	Lose all Contraband
+		These should go into confiscation centers

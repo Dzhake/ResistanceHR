@@ -5,15 +5,13 @@ using System.Linq;
 
 namespace ResistanceHR.Inventory
 {
-	internal abstract class T_Inventory : T_RHR, IRefreshAtLevelStart
+	internal abstract class T_Inventory : T_RHR, IRefreshAtEndOfLevelStart
 	{
 		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
 		private static GameController GC => GameController.gameController;
 
 		public override void OnAdded() { }
 		public override void OnRemoved() { }
-
-		public abstract void RefreshAtLevelStart(Agent agent);
 
 		internal static List<InvItem> FungibleItems(Agent agent) =>
 			agent.inventory.InvItemList.Where(ii =>
@@ -119,6 +117,9 @@ namespace ResistanceHR.Inventory
 		}
 
 		public bool RefreshThisLevel(int curLevelEndless) =>
-			curLevelEndless == 1;
+			curLevelEndless > 1;
+
+		public abstract void RefreshAtLevelStart();
+		public abstract void RefreshAtLevelStart(Agent agent);
 	}
 }
