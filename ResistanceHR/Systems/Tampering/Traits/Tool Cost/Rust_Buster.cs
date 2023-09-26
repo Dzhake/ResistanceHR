@@ -41,6 +41,9 @@ namespace ResistanceHR.Tampering
 				});
 		}
 
+		public override void OnAdded() { }
+		public override void OnRemoved() { }
+
 		internal override int NewToolCost(int vanilla) =>
 			(vanilla * 2) / 3;
 	}

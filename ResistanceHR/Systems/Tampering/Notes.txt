@@ -13,3 +13,25 @@
 - Trait: Gas Attacker / Item: Vent Injector
 	- Can use Vents to inject gas into system. Doesn't spew from used vent.
 	- Operate to attach. Then activate the item to operate it again.
+
+- Item: Duct Tape
+	- Repair weapons/armor/tools
+	- Blind security cams
+- Item: Power Drill
+	- Lighten weapons, reducing damage but increasing speed
+	- Drill through safe for massive durability cost
+	- Drill through locks for minor durability cost
+- Item: Swiss Army Knife
+	- Does almost any tampering task but has a higher durability cost
+- Item: Swiss Spec Ops Knife
+	- As above but infinite durability
+- Item: WD-420
+	- Apply to a ranged weapon to temporarily increase all its stats
+	- While in inventory, applies Nimble Fingers to tampering tasks and depletes durability whenever used
+- Item: Wire Cutters
+	- Tamper to deactivate: Camera, Turret, Alarms on Doors/Windows/Containers
+	- Tamper to destroy Barbed Wire fence
+- Item: A Towel, yes a Towel
+	- Tamper to cover up Security Cam
+	- Tamper to cover up a Barbed Wire Fence and make it climbable
+	- LOTS of other things I'm sure

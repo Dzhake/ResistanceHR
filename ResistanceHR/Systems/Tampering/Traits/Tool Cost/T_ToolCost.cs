@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace ResistanceHR.Tampering
 {
-	internal abstract class T_ToolCost : T_Tampering
+	internal abstract class T_ToolCost : T_RHR
 	{
 		internal abstract int NewToolCost(int vanilla);
 
@@ -30,7 +30,7 @@ namespace ResistanceHR.Tampering
 		[HarmonyPrefix, HarmonyPatch(nameof(AgentInteractions.AddButton), new[] { typeof(string), typeof(int), typeof(string) })]
 		private static void AddButton_Prefix(string buttonName, int moneyCost, ref string extraCost, Agent ___mostRecentInteractingAgent)
 		{
-			if (T_Tampering.AllTamperButtonNames.Contains(buttonName)
+			if (Tampering.AllTamperButtonNames.Contains(buttonName)
 				&& extraCost.EndsWith("-30"))
 			{
 				int baseCost = 30;
