@@ -12,6 +12,9 @@ namespace ResistanceHR.Interaction
 		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
 		private static GameController GC => GameController.gameController;
 
+		internal const string SnitchOnSomeone = "SnitchOnSomeone";
+		internal static Agent informee;
+
 		//[RLSetup]
 		internal static void Setup()
 		{
@@ -46,6 +49,28 @@ namespace ResistanceHR.Interaction
 						upgrade = nameof(Snitch_Plus),
 					}
 				});
+
+			RogueLibs.CreateCustomName(SnitchOnSomeone, NameTypes.Interface, new CustomNameInfo
+			{
+				[LanguageCode.English] = "Snitch",
+			});
+
+			RogueInteractions.CreateProvider<Agent>(h =>
+			{
+				informee = h.Object;
+				Agent interactingAgent = h.Agent;
+
+				if (interactingAgent.HasTrait<Snitch>() || interactingAgent.HasTrait<Snitch_Plus>())
+				{
+					h.AddButton(SnitchOnSomeone, m =>
+					{
+						informee.Say("Great job pressing a button!");
+						informee.commander = interactingAgent;
+						informee.commander.target.targetType = SnitchOnSomeone;
+						interactingAgent.mainGUI.invInterface.ShowTarget(informee, SnitchOnSomeone);
+					});
+				}
+			});
 		}
 
 		internal static void CommenceSnitching(Agent informee, Agent informant, Agent targetAgent)
@@ -71,7 +96,7 @@ namespace ResistanceHR.Interaction
 			Agent informant = informee.commander;
 			float maxDistance = 100f; // 17f
 
-			if (informant.target.targetType == T_Interaction.SnitchOnSomeone
+			if (informant.target.targetType == Snitch.SnitchOnSomeone
 				&& GC.mainGUI.targetObject is Agent targetAgent
 				&& Vector2.Distance(informant.curPosition, targetAgent.curPosition) < maxDistance)
 			{
@@ -96,18 +121,15 @@ namespace ResistanceHR.Interaction
 		{
 			FieldInfo noMoreObjectActions = AccessTools.DeclaredField(typeof(Agent), "noMoreObjectActions");
 
-			if (myAction == T_Interaction.SnitchOnSomeone
+			if (myAction == Snitch.SnitchOnSomeone
 				&& !(bool)noMoreObjectActions.GetValue(__instance))
 			{
 				__instance.Say("Great job sending an Object Action!");
 
 				MethodInfo objectAction_base = AccessTools.DeclaredMethod(typeof(Agent).BaseType, "ObjectAction");
 				objectAction_base.GetMethodWithoutOverrides<Action<string, string, float, Agent, PlayfieldObject>>(__instance).Invoke(myAction, extraString, extraFloat, causerAgent, extraObject);
-
 				Snitch.CommenceSnitching(__instance, causerAgent, (Agent)extraObject);
-
 				noMoreObjectActions.SetValue(__instance, false);
-
 				return false;
 			}
 

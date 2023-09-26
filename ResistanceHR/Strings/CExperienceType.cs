@@ -20,9 +20,9 @@ namespace ResistanceHR
 
 		public static Dictionary<string, int> CustomXPValues = new Dictionary<string, int>()
 		{
-			{ Boozer_Schmoozer.DrankBooze, 50 },	//	√
-			{ Pyrokinetic_Learning_Style.WatchBurn,          1 },		//	√
-			{ Smoker_Schmoozer.Smoked,   100 },		//	√
+			{ Boozer_Schmoozer.DrankBooze, 25 },
+			{ Burning_Aspirations.Smoked,   50 },
+			{ Pyrokinetic_Learning_Style.WatchBurn,          1 },
 			{ AngeredMany,              -100 },     //	T
 			{ ElectabilityPenalty,      -100 },		//	C?
 			{ FailedBigQuestDistrict,   -500 },		//	C

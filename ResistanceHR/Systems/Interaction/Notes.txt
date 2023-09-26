@@ -1,5 +1,7 @@
 ﻿Snitch / Instigator - Interact with an NPC to bring up the targeting reticle. If you click an NPC THEY are hostile to, they'll path to the target with any nearby allies and attack as a group. They might turn down the proposition if they feel outmatched, according to normal follower Attack rules. No one likes a snitch though. If the NPC isn't a Scumbag, snitching reduces their respect for you, capping off at Annoyed. This might also be a % persuasion chance.
- 
- Current issues:
-	- Code triggers on mouseover rather than click.
-	- ObjectAction code is a rube goldberg machine and hell to work with.
+	 Current issues:
+		- Code triggers on mouseover rather than click.
+		- ObjectAction code is a rube goldberg machine and hell to work with.
+
+Food vendor
+	Sell food to almost anyone
