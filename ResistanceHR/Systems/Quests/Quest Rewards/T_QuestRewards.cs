@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace ResistanceHR.Quest_Modifiers
 {
-	public abstract class T_QuestRewards : T_RHR, IRefreshAtLevelStart
+	public abstract class T_QuestRewards : T_RHR, IRefreshAtEndOfLevelStart
 	{
 		private static readonly ManualLogSource logger = RHRLogger.GetLogger();
 		private static GameController GC => GameController.gameController;
@@ -47,6 +47,8 @@ namespace ResistanceHR.Quest_Modifiers
 		}
 
 		public bool RefreshThisLevel(int level) => true;
+
+		public void RefreshAtLevelStart() { }
 	}
 
 	[HarmonyPatch(typeof(Quests))]

@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 namespace ResistanceHR.Quest_Modifiers
 {
-	internal class Lump_Sum_Rewards : T_QuestRewards
+	internal class Smoke_Up_Johnny : T_QuestRewards
 	{
-		public override int? RewardItemBaseQty => null;
-		public override List<string> RewardItems => new List<string>() { VanillaItems.Money };
-		public override float RewardMoneyMultiplier => 2f;
-		public override float RewardXPMultiplier => 0f;
+		public override int? RewardItemBaseQty => 3;
+		public override List<string> RewardItems => new List<string>() { VanillaItems.Cigarettes };
+		public override float RewardMoneyMultiplier => 1f;
+		public override float RewardXPMultiplier => 1f;
 
 		[RLSetup]
 		public static void Setup()
 		{
-			RogueLibs.CreateCustomTrait<Lump_Sum_Rewards>()
+			RogueLibs.CreateCustomTrait<Smoke_Up_Johnny>()
 				.WithDescription(new CustomNameInfo
 				{
-					[LanguageCode.English] = "No XP or reward item for quests. Just da cash!",
+					[LanguageCode.English] = "You wanted to get paid in smokes. Wooooow, look at the cool guy here.",
 					[LanguageCode.Russian] = "",
 				})
 				.WithName(new CustomNameInfo
 				{
-					[LanguageCode.English] = DisplayName(typeof(Lump_Sum_Rewards)),
+					[LanguageCode.English] = DisplayName(typeof(Smoke_Up_Johnny), "Smoke Up, Johnny!"),
 					[LanguageCode.Russian] = "",
 				})
 				.WithUnlock(new TraitUnlock
@@ -29,23 +29,23 @@ namespace ResistanceHR.Quest_Modifiers
 					Cancellations = {
 						nameof(Double_Ply_Rewards),
 						nameof(Loadout_Rewards),
+						nameof(Lump_Sum_Rewards),
 						nameof(Monkey_Rewards),
-						nameof(Smoke_Up_Johnny),
 						nameof(Unpaid_Internship),
 					},
-					CharacterCreationCost = 3,
+					CharacterCreationCost = 1,
 					IsAvailable = false,
 					IsAvailableInCC = true,
 					IsUnlocked = Core.DebugMode,
-					UnlockCost = 5,
+					UnlockCost = 3,
 					Unlock =
 					{
-						categories = { VTraitCategory.Trade },
+						categories = { },
 						cantLose = true,
 						cantSwap = true,
 						isUpgrade = false,
 						prerequisites = { },
-						recommendations = { },
+						recommendations = { "Matt Dabrowski says: <i>Smoking is fun, kids!</i>" },
 						upgrade = null,
 					}
 				});

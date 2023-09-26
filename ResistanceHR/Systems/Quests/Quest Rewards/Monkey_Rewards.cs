@@ -30,6 +30,7 @@ namespace ResistanceHR.Quest_Modifiers
 						nameof(Double_Ply_Rewards),
 						nameof(Loadout_Rewards),
 						nameof(Lump_Sum_Rewards),
+						nameof(Smoke_Up_Johnny),
 						nameof(Unpaid_Internship),
 					},
 					CharacterCreationCost = 3,

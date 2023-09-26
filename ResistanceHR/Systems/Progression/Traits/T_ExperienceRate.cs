@@ -42,8 +42,8 @@ namespace ResistanceHR.Progression
 		{
 			int amount = 0;
 
-			if (CustomExperienceAwards.CustomXPValues.ContainsKey(text))
-				amount = CustomExperienceAwards.CustomXPValues[text];
+			if (CExperienceType.CustomXPValues.ContainsKey(text))
+				amount = CExperienceType.CustomXPValues[text];
 
 			return amount;
 		}
@@ -268,13 +268,13 @@ namespace ResistanceHR.Progression
 			if (agent.health > 0f)
 			{
 				if (GC.stats.angered[agentNum] >= (GC.agentCount / 4))
-					agent.skillPoints.AddPoints(CustomExperienceAwards.AngeredMany);
+					agent.skillPoints.AddPoints(CExperienceType.AngeredMany);
 
 				if (GC.stats.stoleItems[agentNum] == 0)
-					agent.skillPoints.AddPoints(CustomExperienceAwards.StoleNone);
+					agent.skillPoints.AddPoints(CExperienceType.StoleNone);
 
 				if (GC.stats.damageTaken[agentNum] >= 200)
-					agent.skillPoints.AddPoints(CustomExperienceAwards.TookLotsOfDamage);
+					agent.skillPoints.AddPoints(CExperienceType.TookLotsOfDamage);
 			}
 
 			return true;

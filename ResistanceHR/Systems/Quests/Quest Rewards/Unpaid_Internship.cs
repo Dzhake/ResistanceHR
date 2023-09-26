@@ -21,7 +21,7 @@ namespace ResistanceHR.Quest_Modifiers
 				})
 				.WithName(new CustomNameInfo
 				{
-					[LanguageCode.English] = DisplayName(typeof(Unpaid_Internship)),
+					[LanguageCode.English] = DisplayName(typeof(Unpaid_Internship), "Smoke up, Johnny!"),
 					[LanguageCode.Russian] = "",
 				})
 				.WithUnlock(new TraitUnlock
@@ -31,6 +31,7 @@ namespace ResistanceHR.Quest_Modifiers
 						nameof(Loadout_Rewards),
 						nameof(Lump_Sum_Rewards),
 						nameof(Monkey_Rewards),
+						nameof(Smoke_Up_Johnny),
 					},
 					CharacterCreationCost = 3,
 					IsAvailable = false,
