@@ -7,6 +7,38 @@ Listed in order of Parent tier summary symbol priority:
 	√e = Fully implemented feature or group of features
 #		Bugs
 You didn't take notes! July was nuts.
+##		C	Weak Wrists can't use bulletproof vest
+
+##		C	Weapon Scroll broken only for mousewheel down
+When ammo is broken, plays "Ammo out" sound and doesn't switch
+##		C	Give Item
+Can't give melee weapons to followers when you have Sweaty Fingerss
+##		C	Supply Dropper
+Add one that's paid at ATM or Resistance Leader. Trait is just automatic.
+Also drops watergun with E_HatRed
+##		C	Smoker awards XP without lighter
+Should be easy check
+##		C	Light Packer
+Left 4 items, lost my lighter :(
+##		C	Burning Aspirations
+Can't offer to cops on Industrial
+##		C	Ignite with object in completed chunk
+Chunk quest completed/chest robbed already, trying to ignite object. May be related to security on-sight check error under same chunk-completed circumstances.
+	[Error  : Unity Log] NullReferenceException: Object reference not set to an instance of an object
+	Stack trace:
+	Relationships.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.Int32 tagType, System.String ownCheckType, System.Boolean extraSprite, System.Int32 strikes, Fire fire) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	GameController.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.String ownCheckType, System.Int32 strikes, Fire fire) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	GameController.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.String ownCheckType, System.Int32 strikes) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ResistanceHR.Conduct.Pyrokinetic_Learning_Style+<>c.<Setup>b__10_1 (RogueLibsCore.InteractionModel m) (at <289ed0f988774ed6983a60fca755d15a>:0)
+	RogueLibsCore.SimpleInteraction.OnPressed () (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton2 (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.RogueLibsPlugin.PressedButtonHook1 (PlayfieldObject __instance, System.String buttonText) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	Bed.PressedButton (System.String buttonText) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	WorldSpaceGUI.PressedButton (System.Int32 buttonNum) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.PushButton () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.DoUpdate (System.Boolean onlySetImages) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.Update () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
 ##		C	Hidden Bombs not on map
 Explored all chunks too. I THINK it's Loadout Smuggler.
 ##		C	Sweaty Palms
@@ -14,6 +46,55 @@ Causes issues when there are no ranged weapons to switch to. Still shows a fist 
 ##		C	Dum Dum Bum +
 Makes bullets almost zero-slow. Might be applied multiple times, which I assume is squaring some ratio in an interface property by patching bullet update rather than bullet start
 #		Scope
+##		C	Favorite tools
+Weapons accrued lifelong damage counters, and level up intermittently. Generally the 1st level up should make the item last forever as its own item type. Using the item on 0 durability rolls to break the item.
+
+|Name								|Type	|Tier	|Notes	|
+|:----------------------------------|:------|:-----:|:------|
+|Lead Pipe							|Bat	|	2	|- Slower attack, more damage
+|Katana								|Sword	|	2	|- More criticals
+|Kil-Bar							|Knife	|	2	|- Backstabber effect
+|Kukri								|Sword	|	2	|- Rapid fire
+|Machete							|Sword	|	2	|- More critical damage
+|Sap								|Bat	|	2	|- Backstabber effect, knocks out
+|Shining Axe						|Axe	|	2	|- A kill gives you a temporary boost to stats
+|Stiletto							|Knife	|	2	|- Rapid fire, high attack rate and armor penetration
+|Stun Baton							|Baton	|	3	|- Momentarily electrocutes hit enemies and deals electrical damage
+##		C	Trusted Employer
+Agents who:
+  - You hired
+  - Survived better than Neutral
+  - Stayed on the level you're leaving
+Will generate as Roamers on the next level.
+Alternatively, they level up at 1, 3 and 7 completed jobs. Leveled up agents follow to the next floor. Leveled agents may spawn anew, rarely.
+Agents gain a trait and a stat on level up:
+	Thief: Modern Warfarer, Nimble Fingers, Blends in Nicely, Sneaky Fingers
+	Hacker: Modern Warfarer, Nimble Fingers, Cyber Nuke
+	Soldier; Modern Warfarer, 
+##		C	Mutator: Skipping Town
+Many actions generate Notoriety: anything done to faction agents, leaving many physical evidence traces, and leaving witnesses to crimes.
+
+Depending on your heat level, you skip town a different way.
+Call the Movers: Keep everything. Vanilla behavior.
+Pack Light, Go Far: Keep half your inventory, preferring the most valuable items.
+Pack Fast, Go, Fuck, Why Are You Still Reading This: Keep 5 items, randomly determined.
+
+|Type								|HeatLevel	|InvToKeep	|SortBy		|Notes	|
+|:----------------------------------|----------:|----------:|:----------|:------|
+|Call the Movers					|0			|100%		|N/A		|
+|Pack Light, Go Far					|25			|75%		|Value		|	
+|Ride or Die						|50			|50%		|Value		|
+|
+|Pack Fast, Fuck, Now, Seriously	|80-100		|5			|Random		|
+|From the Jaws						|80-100		|1-3		|Random		|- Applies if you left while in danger
+
+###			C	Notoriety Disasters
+If you cap out at 100 Notoriety, any of variouos disasters happen. Could be Supercop task force, etc. with other factions based on whichever hates you the most.
+
+|Disaster							|Effect	|
+|:----------------------------------|:------|
+|Task Force							|- Duos of Supercops track you through the level, investigating properties. Maybe this could be forced by spawning noises in the chunk.
+|
 ##		C	Spawns
 ###			C	Removeable traits
 ScrollingMenu.GetTraitsRemoveTrait
@@ -32,10 +113,12 @@ You can remove a Reputation, but you will need to pick a new one when you exit t
 Bonuses:
 - Raise dead, drink blood, kill Werewolf, etc
 Turns into Council Master, Enemy, etc. based on conduct
-
-
 ##		C	Trait QA
 Fill out trait Categories, upgrade info, etc. rebalance to vanilla CCPV#s
+Use vanilla trait values if:
+	- IsAvaiable
+	- CanSwap
+	- Otherwise, feel free to use any number for CCPV
 ##		C	Moods
 These are not chosen in character creation, and not gained on level up. They are gained and lost immediately according to their specific conditions. They have their own section on the character sheet.
 I guess they could be added to the character creator, but with a warning that they are loseable. This will help familiarize them with the various triggers.

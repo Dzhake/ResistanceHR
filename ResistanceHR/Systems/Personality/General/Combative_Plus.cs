@@ -22,7 +22,7 @@ namespace ResistanceHR.Reputation
 				{
 					Cancellations = {
 					},
-					CharacterCreationCost = -10,
+					CharacterCreationCost = -16,
 					IsAvailable = false,
 					IsAvailableInCC = true,
 					IsUnlocked = Core.DebugMode,

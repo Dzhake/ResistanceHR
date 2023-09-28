@@ -1,0 +1,6 @@
+﻿Sharp Hearing
+	Detect agents within a range. Sensitivity is reduced by intervening walls & objects.
+	RogueVision only
+Item - RF Scanner
+	Discovers all electronic objects within a medium range
+	RogueVision only

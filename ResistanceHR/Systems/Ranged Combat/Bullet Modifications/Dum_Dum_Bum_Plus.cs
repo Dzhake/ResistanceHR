@@ -8,7 +8,7 @@ namespace ResistanceHR.Combat_Ranged
 		internal override float BulletDamageMultiplier => 1.30f;
 		internal override float BulletRangeMultiplier => 0.50f;
 		internal override float BulletPenetrationMultiplier => 0.80f;
-		internal override float BulletSpeedMultiplier => 0.20f;
+		internal override float BulletSpeedMultiplier => 0.80f;
 
 		[RLSetup]
 		internal static void Setup()

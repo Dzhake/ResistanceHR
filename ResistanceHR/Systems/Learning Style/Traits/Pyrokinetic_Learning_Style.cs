@@ -19,19 +19,13 @@ namespace ResistanceHR.Conduct
 		internal static List<string> IgniteableObjects => new List<string>()
 		{
 			VanillaObjects.Altar,
-			VanillaObjects.Barbecue,
 			VanillaObjects.Bed,
 			VanillaObjects.Bush,
 			VanillaObjects.Chair,
 			VanillaObjects.Chair2,
-			VanillaObjects.Chest,
-			VanillaObjects.Counter,
 			VanillaObjects.Crate,
 			VanillaObjects.Desk,
 			VanillaObjects.ExplodingBarrel,
-			VanillaObjects.Fireplace,
-			VanillaObjects.FlamingBarrel,
-			VanillaObjects.MovieScreen,
 			VanillaObjects.PoolTable,
 			"Shelf",
 			"Sign",
@@ -61,7 +55,7 @@ namespace ResistanceHR.Conduct
 			RogueLibs.CreateCustomTrait<Pyrokinetic_Learning_Style>()
 				.WithDescription(new CustomNameInfo
 				{
-					[LanguageCode.English] = "Enables XP penalties for destroying objects with fire and watching.",
+					[LanguageCode.English] = "Enables XP penalties for destroying objects with fire.",
 				})
 				.WithName(new CustomNameInfo
 				{
@@ -97,20 +91,18 @@ namespace ResistanceHR.Conduct
 				[LanguageCode.English] = "Ignite",
 			});
 
-			RogueInteractions.CreateProvider(h =>
+			RogueInteractions.CreateProvider<ObjectReal>(h => // testing Type argument
 			{
-				if (!(h.Object is ObjectReal)
-					|| h.Agent is null)
+				if (/*!(h.Object is ObjectReal)
+					||*/ h.Agent is null)
 					return;
 
 				InvItem cigaretteLighter = h.Agent.inventory.FindItem(VanillaItems.CigaretteLighter);
 
 				if (cigaretteLighter is null
-					|| h.Helper.interactingFar
-					|| h.Object.playfieldObjectReal.fireProof
-					|| !(h.Object.fire is null)
-					|| !IgniteableObjects.Contains(h.Object.objectName)
-					|| (SpecialFireParticleObjects.Contains(h.Object.objectName) && h.Object.ora.hasParticleEffect))
+						|| h.Helper.interactingFar
+						|| h.Object.playfieldObjectReal.fireProof || !(h.Object.fire is null) || !IgniteableObjects.Contains(h.Object.objectName)
+						|| (SpecialFireParticleObjects.Contains(h.Object.objectName) && h.Object.ora.hasParticleEffect)) // These aren't implemented here
 					return;
 
 				h.AddButton(Ignite, m =>

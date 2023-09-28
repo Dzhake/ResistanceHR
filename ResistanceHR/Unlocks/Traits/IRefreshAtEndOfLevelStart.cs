@@ -54,7 +54,7 @@ namespace ResistanceHR
 		public static void Refresh()
 		{
 			foreach (Agent agent in GC.agentList)
-			{
+			{ 
 				foreach (IRefreshAtEndOfLevelStart trait in agent.GetTraits<IRefreshAtEndOfLevelStart>())
 					if (trait.RefreshThisLevel(GC.sessionDataBig.curLevelEndless))
 						trait.RefreshAtLevelStart(agent);

@@ -40,7 +40,7 @@ namespace ResistanceHR.Reputation
 						categories = { VTraitCategory.Social },
 						cantLose = true,
 						cantSwap = true,
-						isUpgrade = false,
+						isUpgrade = true,
 						prerequisites = { },
 						recommendations = { },
 						upgrade = null,
