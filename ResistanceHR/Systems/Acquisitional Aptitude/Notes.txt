@@ -1,4 +1,0 @@
-﻿- Mutator - Heists Matter More
-	- Agent money spawns reduced
-	- All costs multiplied
-	- Chest/Safe money spawns multiplied by same factor

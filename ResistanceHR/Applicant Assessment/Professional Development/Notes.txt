@@ -1,0 +1,27 @@
+﻿Two idea groups:
+
+|Trait							|Trait Weights					
+|:------------------------------|:--------------------------|
+|  Group A:
+|Extra Bonky					|Melee +3				
+|Extra Shooty					|Guns +3
+|Extra Stealthy					|Stealth +3
+|etc.							|
+
+|  Group B:
+|Tanky							|Defense +3, Movement -3
+|Upstanding						|Social +3, Stealth -3
+|Businesslike					|Trade +3, Social -3
+|etc.
+
+Using trait weight system would depend on the ability for it to handle duplicates from the same trait, or if it assumes a single category, or at least distinct ones.
+
+They also don't need to use the weight system per se. They could have an automated reject/retry in trait rolls. E.g., mandate at least one choice from the target category on each level up, and prefer it when trait-swapping, and a 50% chance to reject traits from the anti-category.
+
+#		Feature Dump
+Trait where loadout is replenished per level
+Trait where inventory is cleared per level
+	Might leave five randoms, so sell off if you can
+Cache Stasher
+	Forces choosing a chunk with a crate on every level
+	The crate contains your item loadout

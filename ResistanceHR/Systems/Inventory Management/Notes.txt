@@ -1,3 +1,0 @@
-﻿Mutator that takes contraband could place them into a confiscation center for funsies.
-	You will need to pull from SORCE on how to force confiscation centers to spawn, though.
-		In fact, that's probably a better mutator for SORCE then.

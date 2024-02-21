@@ -1,0 +1,16 @@
+﻿gc.loadLevel.replaceCopWithGangbanger
+	Set to true after LevelTransition.ChangeLevel
+	Then, abstract string per mutator, boom
+
+Enforcers:
+	Blahd
+	Bouncer	(Giant club!)
+	Crepe
+	Cannibal
+	Goon
+	Gorilla
+	Mobster
+	Slavemaster
+	Soldier
+	Vampire
+	Werewolf

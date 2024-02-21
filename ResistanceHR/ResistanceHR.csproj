@@ -46,8 +46,15 @@
     <Reference Include="BTHarmonyUtils">
       <HintPath>Libraries\BTHarmonyUtils.dll</HintPath>
     </Reference>
-    <Reference Include="RogueLibsCore">
-      <HintPath>Libraries\RogueLibsCore.dll</HintPath>
+    <Reference Include="BunnyLibs, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\plugins\BunnyLibs.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="RogueLibsCore, Version=3.6.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\plugins\RogueLibsCore.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,162 +97,222 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applicant Assessment\Onboarding\Tactician.cs" />
+    <Compile Include="Documentation\DocGen.cs" />
     <Compile Include="Sandbox.cs" />
-    <Compile Include="Strings\CAgentGroup.cs" />
-    <Compile Include="Strings\VAgentGoal.cs" />
-    <Compile Include="Strings\VExperienceType.cs" />
-    <Compile Include="Strings\VRelationship.cs" />
-    <Compile Include="Strings\VTraitCategory.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\Liquid_Lunch.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Calculating.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\Retaliation_Reducer.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\Discovery_Disincentivizer.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\Alarm_Avoider.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\Diligence_Detector.cs" />
-    <Compile Include="Systems\Learning Style\Traits\Pyrokinetic_Learning_Style.cs" />
-    <Compile Include="Systems\Sensory Acuity\Hearing\T_Hearing.cs" />
-    <Compile Include="Systems\Social Skills\Hawker.cs" />
-    <Compile Include="Systems\Social Skills\Boozer_Schmoozer.cs" />
-    <Compile Include="Systems\Social Skills\Burning_Aspirations.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\Smoke_Up_Johnny.cs" />
-    <Compile Include="Systems\Personality\NPC_Reputations.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\Conscience_Configurator.cs" />
-    <Compile Include="Systems\Equipment Certifications\Items\I_Tampering.cs" />
-    <Compile Include="Systems\Equipment Certifications\Objects\O_TamperObject.cs" />
-    <Compile Include="Systems\Equipment Certifications\Objects\Stove_GrillFud.cs" />
-    <Compile Include="Systems\Equipment Certifications\Tampering.cs" />
-    <Compile Include="Systems\Equipment Certifications\Traits\Tool Cost\T_ToolCost.cs" />
-    <Compile Include="Unlocks\Mutators\MutatorManager.cs" />
-    <Compile Include="Unlocks\Mutators\M_RHR.cs" />
-    <Compile Include="Systems\Learning Style\Mutators\M_ComplianceChip.cs" />
-    <Compile Include="Systems\Learning Style\Traits\T_XPModifier.cs" />
-    <Compile Include="Systems\Inventory Management\M_Inventory.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Light_Packer.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Luggage_Loser.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Liquidator_Plus.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Liquidator.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Spendthrift_Plus.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Spendthrift.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Financial Acumen\Wastrel.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Financial Acumen\Venture_Capitalist.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Financial Acumen\Index_Funder.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Financial Acumen\Pocket_Changer.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Financial Acumen\Lifestyle_Creeper.cs" />
-    <Compile Include="Systems\Inventory Management\Traits\Asset Management\Lock_and_Loadout.cs" />
-    <Compile Include="Systems\Inventory Management\T_Inventory.cs" />
-    <Compile Include="Systems\Acquisitional Aptitude\Traits\Supply_Smuggler.cs" />
-    <Compile Include="Systems\Acquisitional Aptitude\T_Loot.cs" />
-    <Compile Include="Systems\Luck\Cursed.cs" />
-    <Compile Include="Systems\Luck\Charmed_Plus.cs" />
-    <Compile Include="Systems\Luck\Charmed.cs" />
-    <Compile Include="Systems\Luck\T_Luck.cs" />
-    <Compile Include="Systems\Learning Style\GuiltyText.cs" />
-    <Compile Include="Systems\Learning Style\Traits\Malicious.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Numskulled.cs" />
-    <Compile Include="Systems\Contract Negotiation\Workload\Workaholic.cs" />
-    <Compile Include="Systems\Contract Negotiation\Workload\Rushin_Revolution.cs" />
-    <Compile Include="Systems\Contract Negotiation\Workload\T_QuestCount.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\Monkey_Rewards.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\Supply_Drops.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\Double_Ply_Rewards.cs" />
-    <Compile Include="Systems\Contract Negotiation\Remuneration\T_QuestRewards.cs" />
+    <Compile Include="Strings\CTraitCategory.cs" />
+    <Compile Include="Applicant Assessment\Acquisitional Aptitude\Smuggler\Bomb_Smuggler.cs" />
+    <Compile Include="Applicant Assessment\Acquisitional Aptitude\Smuggler\Drug_Smuggler.cs" />
+    <Compile Include="Applicant Assessment\Acquisitional Aptitude\Smuggler\Luggage_Smuggler.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Unarmed\Punch_Drunk.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Unarmed\Punch_Drunk_Plus.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Unarmed\Speedbagger.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Mutators\Body_Size_Variation.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Mutators\Body_Size_Variation_Visual.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Average_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Huge_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Lanky_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Massive_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Short_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Stout_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Tall_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Thin_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Tiny_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\T_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Test_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\Traits\Physique\Wide_Physique.cs" />
+    <Compile Include="Applicant Assessment\Demographics\T_Demographic.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Enchanted Hands\T_EnchantedHands.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\Liquid_Lunch.cs" />
+    <Compile Include="Applicant Assessment\Damage_Healing.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Objects\Container_RemoveImplicitWhenEmpty.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tampering\Spark_of_Insight_Plus.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tampering\Spark_of_Insight.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tampering\T_Tampering.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Calculating.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Index_Funder_2.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Venture_Capitalist_2.cs" />
+    <Compile Include="Applicant Assessment\Laws\Traits\Extralegal.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\Retaliation_Reducer.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\Discovery_Disincentivizer.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\Alarm_Avoider.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\Diligence_Detector.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Traits\Pyrokinetic_Learning_Style.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Above_the_Laws.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Bulletproofish.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Conductive.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Critter_Hitter.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Desecondive.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Dying.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Enfastened.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Enstrongened.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Gigantic.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Invisibility_Enjoyer.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Killer_Throwerer.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Lucky_Duck.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\LyCANthrope.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Ragestart.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Regenerationist.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Slothful.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Strong_Immune_System.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\The_Invincibility_Gambit.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Thicker_Skin.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Thickester_Skin.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Thickest_Skin.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Thick_Skin.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\T_PermanentStatusEffect.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Undying.cs" />
+    <Compile Include="Applicant Assessment\Permanent SE\Unlucky_Duck.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Cannibal_Crusher.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Drone_Downsizer.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Liberator.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Vampire_Vanquisher.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Mobster_Mutilator.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Werewolf_Wrecker.cs" />
+    <Compile Include="Applicant Assessment\Personality\French Vanilla\Soldier_Snuffer.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Mercenary_Network.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Resistance_Network.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Emergency_Influencer.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Feastmaster.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Athletic_Recruiter.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Subcontractor.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Sergeant_Contractor.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Ancient_One.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Consigliere.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\BPPCC.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\Union_Rep.cs" />
+    <Compile Include="Applicant Assessment\Onboarding\Onboarder\T_Onboarder.cs" />
+    <Compile Include="Applicant Assessment\Social Skills\Hawker.cs" />
+    <Compile Include="Applicant Assessment\Social Skills\Boozer_Schmoozer.cs" />
+    <Compile Include="Applicant Assessment\Social Skills\Smoker_Schmoozer.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\Smoke_Up_Johnny.cs" />
+    <Compile Include="Applicant Assessment\Personality\NPC_Reputations.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\Conscience_Configurator.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Objects\O_TamperObject.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Objects\GrillFud.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Tampering.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tool Cost\T_ToolCost.cs" />
+    <Compile Include="Unlocks\MutatorManager.cs" />
+    <Compile Include="Unlocks\M_RHR.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Mutators\M_ComplianceChip.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Traits\T_XPModifier.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\M_Inventory.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Light_Packer.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Luggage_Loser.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Liquidator_Plus.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Liquidator.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Spendthrift_Plus.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Spendthrift.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Wastrel.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Venture_Capitalist.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Index_Funder.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Pocket_Changer.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Financial Acumen\Lifestyle_Creeper.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\Traits\Asset Management\Lock_and_Loadout.cs" />
+    <Compile Include="Applicant Assessment\Inventory Management\T_Inventory.cs" />
+    <Compile Include="Applicant Assessment\Acquisitional Aptitude\Smuggler\Loadout_Smuggler.cs" />
+    <Compile Include="Applicant Assessment\Acquisitional Aptitude\T_Smuggler.cs" />
+    <Compile Include="Applicant Assessment\Luck\Cursed.cs" />
+    <Compile Include="Applicant Assessment\Luck\Charmed_Plus.cs" />
+    <Compile Include="Applicant Assessment\Luck\Charmed.cs" />
+    <Compile Include="Applicant Assessment\Luck\T_Luck.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\GuiltyText.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Traits\Malicious.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Numskulled.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Workload\Workaholic.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Workload\Rushin_Revolution.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Workload\T_QuestCount.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\Monkey_Rewards.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\Supply_Drops.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\Double_Ply_Rewards.cs" />
+    <Compile Include="Applicant Assessment\Contract Negotiation\Remuneration\T_QuestRewards.cs" />
     <Compile Include="Core.cs" />
-    <Compile Include="Strings\VAgent.cs" />
-    <Compile Include="Strings\CNameInterface.cs" />
-    <Compile Include="Strings\CNameDialogue.cs" />
-    <Compile Include="Strings\CItemCategory.cs" />
-    <Compile Include="Strings\VDialogue.cs" />
-    <Compile Include="Strings\VItem.cs" />
-    <Compile Include="Strings\VItemCategory.cs" />
-    <Compile Include="Strings\VItemType.cs" />
-    <Compile Include="Strings\VNameType.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\NameDialogue.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\ItemCategory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist.cs" />
-    <Compile Include="Systems\Close Combat\Enchanted Hands\Cursed_Fist_Plus.cs" />
-    <Compile Include="Systems\Close Combat\Enchanted Hands\Spectral_Palm_Plus.cs" />
-    <Compile Include="Systems\Close Combat\Enchanted Hands\Spectral_Palm.cs" />
-    <Compile Include="Systems\Close Combat\T_CombatMelee.cs" />
-    <Compile Include="Systems\Close Combat\Enchanted Hands\T_EnchantedHands.cs" />
-    <Compile Include="Unlocks\Traits\IRefreshAtStartOfLevelStart.cs" />
-    <Compile Include="Unlocks\Traits\IRefreshAtEndOfLevelStart.cs" />
-    <Compile Include="Unlocks\Traits\ISetupAgentStats.cs" />
-    <Compile Include="Systems\Social Skills\Snitch.cs" />
-    <Compile Include="Systems\Social Skills\Snitch_Plus.cs" />
-    <Compile Include="Systems\Social Skills\T_Interaction.cs" />
-    <Compile Include="Systems\Special Accommodations\Strict_Alcoholic.cs" />
-    <Compile Include="Strings\CExperienceType.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Brainiac.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Moron_the_Merrier.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Smooth_Brained.cs" />
-    <Compile Include="Systems\Intelligence\Traits\Dim_Bulb.cs" />
-    <Compile Include="Systems\Intelligence\Traits\T_ExperienceRate.cs" />
-    <Compile Include="Systems\Learning Style\Traits\Conscientious.cs" />
-    <Compile Include="Systems\Special Accommodations\Afraid_of_Loud_Noises.cs" />
-    <Compile Include="Systems\Special Accommodations\Fat_Head.cs" />
-    <Compile Include="Systems\Special Accommodations\Fatass.cs" />
-    <Compile Include="Systems\Special Accommodations\Draw_No_Blood.cs" />
-    <Compile Include="Systems\Special Accommodations\Surgical_Striker.cs" />
-    <Compile Include="Systems\Special Accommodations\Sweaty_Fingers.cs" />
-    <Compile Include="Systems\Special Accommodations\Weak_Wrists.cs" />
-    <Compile Include="Systems\Special Accommodations\Vegetarian.cs" />
-    <Compile Include="Systems\Special Accommodations\Carnivore.cs" />
-    <Compile Include="Systems\Special Accommodations\Friend_of_Bill.cs" />
-    <Compile Include="Systems\Special Accommodations\Teetotaller.cs" />
-    <Compile Include="Systems\Special Accommodations\DAREdevil.cs" />
-    <Compile Include="Systems\Special Accommodations\T_ItemRestrictions.cs" />
-    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
-    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Dum_Dum_Bum_Plus.cs" />
-    <Compile Include="Systems\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
-    <Compile Include="Systems\Ranged Combat\Skills\Wetworker.cs" />
-    <Compile Include="Systems\Ranged Combat\Skills\Sniper.cs" />
-    <Compile Include="Systems\Ranged Combat\Skills\Sniper_Plus.cs" />
-    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer_Plus.cs" />
-    <Compile Include="Systems\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
-    <Compile Include="Systems\Ranged Combat\T_CombatRanged.cs" />
-    <Compile Include="Systems\Personality\General\Polarizing.cs" />
-    <Compile Include="Systems\Personality\General\Polarizing_Plus.cs" />
-    <Compile Include="Systems\Personality\General\Combative.cs" />
-    <Compile Include="Systems\Personality\General\Combative_Plus.cs" />
-    <Compile Include="Systems\Personality\T_Reputation.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Backed_by_the_Blue_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Friend_of_Monke_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Friend_of_Monke.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Job_Creator_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Job_Creator.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Mobbed_Up_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Rollin_Deep_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Thicker_than_Water_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Thicker_than_Water.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Rollin_Deep.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Mobbed_Up.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Backed_by_the_Blue.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Gooned_Up_Plus.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\Gooned_Up.cs" />
-    <Compile Include="Systems\Social Network\Support Staff\T_Bodyguarded.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Hacker_Network.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Hacker_Network_Plus.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Guild_Network_Plus.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Guild_Network.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Return_to_Eneme.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Most_Wanted.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Robotnip.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Robait.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Hitlisted.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Reinforced_Plus.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Reinforced.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Mook_Masher.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Loansharked.cs" />
-    <Compile Include="Systems\Social Network\Contacts\Haunted.cs" />
-    <Compile Include="Systems\Social Network\Contacts\T_Roamers.cs" />
-    <Compile Include="Systems\Social Network\T_Spawns.cs" />
-    <Compile Include="Systems\Equipment Certifications\Traits\Tool Cost\Rust_Buster.cs" />
-    <Compile Include="Systems\Equipment Certifications\Traits\Tool Cost\Rust_Buster_Plus.cs" />
-    <Compile Include="Unlocks\Traits\T_ResistanceHR.cs" />
-    <Compile Include="Systems\Sensory Acuity\Vision\Myopic_Plus.cs" />
-    <Compile Include="Systems\Sensory Acuity\Vision\T_VisionRange.cs" />
-    <Compile Include="Systems\Sensory Acuity\Vision\Myopic.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Enchanted Hands\Cursed_Fist.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Enchanted Hands\Cursed_Fist_Plus.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Enchanted Hands\Spectral_Palm_Plus.cs" />
+    <Compile Include="Applicant Assessment\Close Combat\Enchanted Hands\Spectral_Palm.cs" />
+    <Compile Include="Applicant Assessment\Social Skills\T_Interaction.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Strict_Alcoholic.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\CExperienceType.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Brainiac.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Moron_the_Merrier.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Smooth_Brained.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\Dim_Bulb.cs" />
+    <Compile Include="Applicant Assessment\Intelligence\Traits\T_ExperienceRate.cs" />
+    <Compile Include="Applicant Assessment\Learning Style\Traits\Conscientious.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Afraid_of_Loud_Noises.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Fat_Head.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Fatass.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Draw_No_Blood.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Surgical_Striker.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Sweaty_Fingers.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Weak_Wrists.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Vegetarian.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Carnivore.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Friend_of_Bill.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\Teetotaller.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\DAREdevil.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Special Accommodations\T_ItemRestrictions.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Bullet Modifications\Dum_Dum_Bum.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Bullet Modifications\Dum_Dum_Bum_Plus.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Bullet Modifications\T_BulletModification.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Skills\Wetworker.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Skills\Sniper.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Skills\Sniper_Plus.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Bullet Modifications\Powder_Packer_Plus.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\Bullet Modifications\Powder_Packer.cs" />
+    <Compile Include="Applicant Assessment\Ranged Combat\T_CombatRanged.cs" />
+    <Compile Include="Applicant Assessment\Personality\General\Polarizing.cs" />
+    <Compile Include="Applicant Assessment\Personality\General\Polarizing_Plus.cs" />
+    <Compile Include="Applicant Assessment\Personality\General\Combative.cs" />
+    <Compile Include="Applicant Assessment\Personality\General\Combative_Plus.cs" />
+    <Compile Include="Applicant Assessment\Personality\T_Reputation.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Backed_by_the_Blue_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Friend_of_Monke_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Friend_of_Monke.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Job_Creator_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Job_Creator.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Mobbed_Up_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Rollin_Deep_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Thicker_than_Water_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Thicker_than_Water.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Rollin_Deep.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Mobbed_Up.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Backed_by_the_Blue.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Gooned_Up_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\Gooned_Up.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Support Staff\T_Bodyguarded.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Mononymous_Network.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Mononymous_Network_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Guild_Network_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Guild_Network.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Return_to_Eneme.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Most_Wanted.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Robotnip.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Robait.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Hitlisted.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Reinforced_Plus.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Reinforced.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Mook_Masher.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Loansharked.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\Haunted.cs" />
+    <Compile Include="Applicant Assessment\Social Network\Contacts\T_Roamers.cs" />
+    <Compile Include="Applicant Assessment\Social Network\T_Spawns.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tool Cost\Rust_Buster.cs" />
+    <Compile Include="Applicant Assessment\Equipment Certification\Traits\Tool Cost\Rust_Buster_Plus.cs" />
+    <Compile Include="Unlocks\I_RHR.cs" />
+    <Compile Include="Unlocks\SE_RHR.cs" />
+    <Compile Include="Unlocks\T_RHR.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Notes\Bugs.md" />
+    <None Include="Notes\Ideas.md" />
+    <None Include="Notes\Scope.md" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Documentation\Images\Alegria_ConscienceEw.jpg" />
     <Content Include="Documentation\Images\Alegria_DrinkYourSoy.jpg" />
@@ -254,39 +321,28 @@
     <Content Include="Documentation\Images\Alegria_GunHead.jpg" />
     <Content Include="Documentation\Images\Alegria_StopResisting.png" />
     <Content Include="Documentation\Images\Alegria_WorkIsFreedom.jpg" />
-    <Content Include="Systems\Learning Style\Traits\Notes.txt" />
-    <Content Include="Systems\Inventory Management\Mutators\Notes.txt" />
-    <Content Include="Systems\Acquisitional Aptitude\Notes.txt" />
-    <Content Include="Systems\Equipment Certifications\Notes.txt" />
-    <Content Include="Systems\Inventory Management\Notes.txt" />
-    <Content Include="Systems\Sensory Acuity\Hearing\Notes.txt" />
-    <Content Include="Systems\Social Skills\Notes.txt" />
-    <Content Include="Systems\Social\Notes.txt" />
+    <Content Include="Applicant Assessment\Laws\Notes.txt" />
+    <Content Include="Applicant Assessment\Learning Style\Traits\Notes.txt" />
+    <Content Include="Applicant Assessment\Inventory Management\Mutators\Notes.txt" />
+    <Content Include="Applicant Assessment\Acquisitional Aptitude\Notes.txt" />
+    <Content Include="Applicant Assessment\Equipment Certification\Notes.txt" />
+    <Content Include="Applicant Assessment\Inventory Management\Notes.txt" />
+    <Content Include="Applicant Assessment\Social Network\Contacts\Notes.txt" />
+    <Content Include="Applicant Assessment\Onboarding\Onboarder\Notes.txt" />
+    <Content Include="Applicant Assessment\Social Network\Support Staff\Notes.txt" />
+    <Content Include="Applicant Assessment\Social Skills\Notes.txt" />
+    <Content Include="Applicant Assessment\Social\Notes.txt" />
+    <Content Include="The Lab\Notes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Applicant Assessment\Social Network\Reputation\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>START /min cmd.exe /c C:\Users\Owner\source\repos\ResistanceHR\Postbuild.bat</PostBuildEvent>
+    <PostBuildEvent>xcopy /y "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\plugins"</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>REM    This script copies mod files currently used by the game into your repository's Libraries folder. This means you only need to update dependencies in one place rather than having to do it for each mod you work on.
-ECHO "======= PRE-BUILD"
-
-ECHO "    --- Defining directories"
-SET dirBepinex="C:\Program Files (x86)\Steam\steamapps\common\Streets of Rogue\BepInEx\"
-SET dirCore="%25dirBepinex%25core\"
-SET dirPatchers="%25dirBepinex%25patchers\"
-SET dirPlugins="%25dirBepinex%25plugins\"
-CD /D "..\..\..\Libraries"
-SET dirLibraries=%25cd%25\
-
-ECHO "    --- Defining series"
-SET importsCore=BTHarmonyUtils.dll
-SET importsPatchers=RogueLibsPatcher.dll
-SET importsPlugins=RogueLibsCore.dll
-
-ECHO "    --- Copying files"
-FOR %25%25a IN (%25importsCore%25) DO (XCOPY /s /y "%25dirCore%25%25%25~a" %25dirLibraries%25)
-FOR %25%25a IN (%25importsPatchers%25) DO (XCOPY /s /y "%25dirPatchers%25%25%25~a" %25dirLibraries%25)
-FOR %25%25a IN (%25importsPlugins%25) DO (XCOPY /s /y "%25dirPlugins%25%25%25~a" %25dirLibraries%25)</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

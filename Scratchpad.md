@@ -1,12 +1,123 @@
-﻿#		How to read this
-If you wandered in here out of curiosity, this is my working notes file, and completed/planned feature list. It's in Markdown, but best viewed in raw form since a lot of its organization has to do with text characters' alignment.
-
-Listed in order of Parent tier summary symbol priority:
-	C, T = Code this, Test this
-	H = Hold, usually pending resolution of a separate or grouped issue
-	√e = Fully implemented feature or group of features
+﻿
 #		Bugs
 You didn't take notes! July was nuts.
+##		C	Carnivorous Plant 
+On bite player:
+	[Debug  :BL_P_PlayfieldObject_DamageReceived] === GetDamageReceived: Miller - VANILLA: 10
+	[Debug  :BL_P_PlayfieldObject_DamageReceived]   Caught isObjectReal
+	[Debug  :BL_P_PlayfieldObject_DamageReceived]   NET DAMAGE: 10 / 1 = 10
+	[Error  : Unity Log] NullReferenceException: Object reference not set to an instance of an object
+	Stack trace:
+	RHR.Combat_Ranged.P_PlayfieldObject_CombatRanged.CustomMethod (System.Single penetration, Agent shooter) (at <42b12b872af14bcf84205de65e0da326>:0)
+	PlayfieldObject.FindDamage (PlayfieldObject damagerObject, System.Boolean generic, System.Boolean testOnly, System.Boolean fromClient) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	PlayfieldObject.FindDamage (PlayfieldObject damagerObject, System.Boolean generic, System.Boolean fromClient) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	Agent.Damage (PlayfieldObject damagerObject, System.Boolean fromClient) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	Agent.Damage (PlayfieldObject damagerObject) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	KillerPlant.MyCollision (PlayfieldObject collidingObject) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	KillerPlant.ObjectCollideStay (PlayfieldObject collidingObject, System.Boolean isTrigger) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ObjectReal.CollisionStay (UnityEngine.Collider2D collider2D, System.Boolean isTrigger) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ObjectColliderChild.OnTriggerStay2D (UnityEngine.Collider2D other) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+
+##		C	Loadout Smuggler
+Smuggles all items into crate, including Sunglasses.
+##		C	FlamingBarrel Grill Fud
+- Interrupted operation
+- Made cop Hostile
+- 
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] Operating Volume (Roy McRoy) : 0.5
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] RHR.Body.Tall_Physique effect: 0
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] --- Net Operating noise: 0
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] Operating Volume (Roy McRoy) : 0.5
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] RHR.Body.Tall_Physique effect: 0
+	[Debug  :CCU_P_PlayfieldObject_OperatingVolume] --- Net Operating noise: 0
+	[Error  : Unity Log] Operating Bar Error 2
+##		C	Physique
+###			C	Random add
+Broken again
+But that's a good thing.
+###			C	Copied to Mech
+Disable
+###			C	Copy to Zombies?
+New
+###			T	Average-sized Shapeshifters
+Added to Exclusion list
+###			T	Test Mech Pilot
+StatusEffects
+	.MechTransform
+	.MechTransformBack
+###			T	Test Werewolf
+StatusEffects
+	.WerewolfTransform
+	.WerewolfTransformBack
+###			T	Test Shapeshifter
+StatusEffects
+	.Possess
+	.Depossess
+##		C	Spark of Insight
+- OwnCheck on unowned items
+- Can use on used furniture, check for sit/sleep
+##		C	Followers rerolled physique on next level
+Average Bouncer
+Next level named Huge, but still has Average trait
+##		C	Verify all special spawns apply to Physique
+New
+##		C	Supply Crates not owned
+New
+##		C	Excessive Crates (SORCE)
+New
+##		T	Zombie relationships
+Zombies had Annoyed, Friendly, etc.
+Had Polarizing
+##		T	Zombies Reroll Physique
+Might be kinda cool tho
+##		C	Unknown
+Threatened Bank Clerk for Key/Combo, went hostile without closing interaction menu
+
+	[Info   : Unity Log] SETRELHATE: Clerk (1224) (Agent) - Playerr (Agent)A
+	[Debug  :CCU_H_AgentCachedStats] Applying bonus (RHR.Body.Wide_Physique): 1
+	[Error  : Unity Log] NotImplementedException: The method or operation is not implemented.
+	Stack trace:
+	RHR.Body.Wide_Physique.SetMobility () (at <5b0aadf611424da6b1a4da3b0f00e64e>:0)
+	BunnyLibs.P_Melee_IModMeleeAttack+<>c.<ApplyMobility>b__3_0 (BunnyLibs.IModMeleeAttack t) (at C:/Users/Owner/source/repos/SOR/BunnyLibs/MyAwesomeMod/Interfaces/IModMeleeAttack.cs:107)
+	System.Linq.Enumerable.Any[TSource] (System.Collections.Generic.IEnumerable`1[T] source, System.Func`2[T,TResult] predicate) (at <55b3683038794c198a24e8a1362bfc61>:0)
+	BunnyLibs.P_Melee_IModMeleeAttack.ApplyMobility (Melee __instance) (at C:/Users/Owner/source/repos/SOR/BunnyLibs/MyAwesomeMod/Interfaces/IModMeleeAttack.cs:107)
+	Melee.Attack (System.Boolean specialAbility) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	Melee.CheckAttack (System.Boolean specialAbility) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	Melee.Attack (PlayfieldObject myAttackObject) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	AgentInteractions.ThreatenKeyAndSafeCombination (Agent agent, Agent interactingAgent) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	AgentInteractions.PressedButton (Agent agent, Agent interactingAgent, System.String buttonText, System.Int32 buttonPrice) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	RogueLibsCore.VanillaInteractions+<>c__DisplayClass10_2.<Patch_Agent>b__3 (RogueLibsCore.InteractionModel`1[T] m) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.SimpleInteraction`1[T].OnPressed () (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton2 (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.RogueLibsPlugin.PressedButtonHook2 (PlayfieldObject __instance, System.String buttonText, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	Agent.PressedButton (System.String buttonText, System.Int32 buttonPrice) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	Agent.PressedButton (System.String buttonText) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	WorldSpaceGUI.PressedButton (System.Int32 buttonNum) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.PushButton () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.DoUpdate (System.Boolean onlySetImages) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.Update () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+##		C	Annoyed Prisoners
+Polarizing
+Make them Neutral at least, or Friendly
+##		C	Ignite in Hideout
+Gave a goon cigs to make friendly. Snuck into back of hideout and pressed Ignite on Bookshelves:
+	[Error  : Unity Log] NullReferenceException: Object reference not set to an instance of an object
+	Stack trace:
+	Relationships.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.Int32 tagType, System.String ownCheckType, System.Boolean extraSprite, System.Int32 strikes, Fire fire) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	GameController.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.String ownCheckType, System.Int32 strikes, Fire fire) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	GameController.OwnCheck (Agent otherAgent, UnityEngine.GameObject affectedGameObject, System.String ownCheckType, System.Int32 strikes) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ResistanceHR.Tampering.Spark_of_Insight+<>c__DisplayClass3_0.<Setup>b__1 (RogueLibsCore.InteractionModel m) (at <7a6205b4a6e943b1b9f402bae16898d7>:0)
+	RogueLibsCore.SimpleInteraction.OnPressed () (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton2 (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.InteractionModel.OnPressedButton (System.String buttonName, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	RogueLibsCore.RogueLibsPlugin.PressedButtonHook2 (PlayfieldObject __instance, System.String buttonText, System.Int32 buttonPrice) (at <a3d3f875b99344cba12c5f8ead40c647>:0)
+	ObjectReal.PressedButton (System.String buttonText, System.Int32 buttonPrice) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ObjectReal.PressedButton (System.String buttonText) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	WorldSpaceGUI.PressedButton (System.Int32 buttonNum) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.PushButton () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.DoUpdate (System.Boolean onlySetImages) (at <c91d003c54a541caabaa8c305d5e31e5>:0)
+	ButtonHelper.Update () (at <c91d003c54a541caabaa8c305d5e31e5>:0)
 ##		C	Weak Wrists can't use bulletproof vest
 
 ##		C	Weapon Scroll broken only for mousewheel down
@@ -313,6 +424,11 @@ backstabs
 Dissociated: HP bar always says ??/??, damage you take is hidden
 No Taste: Half healing from consumables
 No Smell: Status effects are always unknown, reduces Rogue Vision cone slightly
+Sociopath (-6): Your lack of empathy makes your gestures come off as lizardlike. You can't form Loyal or Friendly relationships.
+Sociopath + (48?): As above, but Annoyed goes straight to Hostile. Boosts XP for murderhoboing, because that playstyle isn't too easy already. So this would have to be a really expensive upgrade. 
+Trait where lighter becomes an equippable mini flamethrower. The flame particles are tiny, slow, come out one at a time, and don't go far. Each click has a chance not to fire, because it's a shitty lighter. Makes a little bit of noise either way.
+	Picking up lighters now stacks into it, but each one has a random count from 0 to the max capacity, 100. Deals 1 damage. 
+	Also lets you combine the lighter with armor/melee durability spray to make it work like a normal flamethrower for 50 shots
 ##		C	Debt
 ###			C	Bank Debt 250
 Standard boring shitty Assassins
@@ -628,9 +744,9 @@ All 1st level traits: durability decreases 25% slower
 |Trait								|Type			|CCP	|Effects|
 |:----------------------------------|:--------------|------:|:------|
 |Always Baton Red					|Police Baton	|		|- Damage to Guilty +<br>- Non-lethal knockout (Good for Doctor quest or The Law)
-|Always Baton Red +				 |Police Baton	|		|- Attack Speed +
+|Always Baton Red +					|Police Baton	|		|- Attack Speed +
 |Axe-Pert							|Axe			|		|- Destroy Trees in one hit (maybe make trees harder to break normally)<br>- Wall Walloper effect for Hedge Walls
-|Axe-Pert +						 |Axe			|		|- Destroy Doors in one hit<br>- Swing arc size +<br>- Wall Walloper effect for Wooden walls
+|Axe-Pert +							|Axe			|		|- Destroy Doors in one hit<br>- Swing arc size +<br>- Wall Walloper effect for Wooden walls
 |Crowbartender						|Crowbar		|		|- Sneaky Fingers effect when tampering<br>- Floats like Butterfly effect
 |Crowbartender +					|Crowbar		|		|- Backstabber effect<br>- Tamper tantrum effect
 |King Hammer-abi					|Sledgehammer	|		|- Long lunge effect<br>- Kneecapper effect
@@ -661,11 +777,11 @@ Traits with minor enough benefits that their only cost is a Trait slot.
 |Trait								|CCP	|Effects|
 |:----------------------------------|------:|:------|
 |Banana Splitter					|0		|- Get 2 banana peels from eating a banana
-|Polyglot							|0		|- Counts as having Translator
 |Long Fingers						|0		|- Operating bar is slower, but stays active further away (1.5 tiles?)
 |Long Distance Runner				|0		|- +1 Speed but you accelerate slowly
 |Spinmaster						 |0		|- Always succeed at Turntables
 |Swimmer							|0		|- Movement speed increased in water
+
 ### Combat 
 |Trait								|CCP	|Effects|
 |:----------------------------------|------:|:------|

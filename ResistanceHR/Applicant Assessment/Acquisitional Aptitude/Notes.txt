@@ -1,0 +1,10 @@
+﻿// BUG: Spawns loadout in every crate on the level.
+// BUG: Spawns non-item headgear like E_Sunglasses
+// BUG: Owners don't react to opening/destroying crate.
+
+- Mutator - Heists Matter More
+	- Agent money spawns reduced
+	- All costs multiplied
+	- Chest/Safe money spawns multiplied by same factor
+
+- There should be one or two mutator-dependent ones about bypassing security checkpoints that take away cash, contraband, etc.

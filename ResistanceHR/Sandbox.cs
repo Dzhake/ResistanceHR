@@ -1,15 +1,16 @@
 
 using BepInEx.Logging;
+using BunnyLibs;
 using HarmonyLib;
-using ResistanceHR;
+using RHR;
 using System.Collections;
 using System.Reflection;
 using UnityEngine;
 
-[HarmonyPatch(typeof(Relationships))]
+//[HarmonyPatch(typeof(Relationships))]
 static class DebugulationsUponYe
 {
-	private static readonly ManualLogSource logger = RHRLogger.GetLogger();
+	private static readonly ManualLogSource logger = BLLogger.GetLogger();
 	private static GameController GC => GameController.gameController;
 
 	[HarmonyPrefix, HarmonyPatch(typeof(Relationships), nameof(Relationships.SetRel), new[] { typeof(Agent), typeof(string), typeof(bool) })]
@@ -22,6 +23,7 @@ static class DebugulationsUponYe
 		{
 			foreach (Relationship relationship in __instance.RelList)
 			{
+				logger.LogDebug($"SetRel: {relationship} between {relationship.agent} / {relationship.thisAgent}");
 				if (relationship.agent.agentID == otherAgent.agentID)
 				{
 					try

@@ -17,6 +17,9 @@ One of the best things in an applicant is how much loot they can score. Uh, don'
 
 |Trait								|PIV	|Effects|
 |:----------------------------------|------:|:------|
+|Bomb Smuggler						|
+|Drug Smuggler						|
+|Loadout Smuggler					|
 |Supply Smuggler					|	7	|- Each level contains a Crate with some items from your character loadout.
 
 ##			Close Combat Skills
@@ -211,7 +214,7 @@ When issuing equipment to an applicant, please take note of their personal restr
 |Weak Wrists						|    - 4|- Can't use Heavy
 
 > Use the following lists when filling out equipment allocations:
->	- [Item Categories](ResistanceHR/Localization/VItem.cs#L191)
+>	- [Item Categories](ResistanceHR/Localization/VItemName.cs#L191)
 >	- [Item Types](ResistanceHR/Localization/VItemType.cs)
 
 ##			Visual Acuity
